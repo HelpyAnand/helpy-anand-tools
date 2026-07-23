@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Word Counter Tool</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Word Counter</h1>
+
+<textarea id="text" oninput="countText()" placeholder="Type or Paste your text here..."></textarea>
+
+<div class="result">
+
+<p>Words :
+<span id="words">0</span></p>
+
+<p>Characters :
+<span id="characters">0</span></p>
+
+</div>
+
+<div class="button-group">
+    <button onclick="copyText()">📋 Copy</button>
+    <button onclick="clearText()">🗑️ Clear</button>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

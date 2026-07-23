@@ -1,77 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Helpy Anand Tools</title>
 
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#f4f4f4;
-}
-
-header{
-background:#0d6efd;
-color:white;
-padding:20px;
-text-align:center;
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
-
-.tool{
-background:white;
-padding:20px;
-margin:15px 0;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,.1);
-}
-
-button{
-background:#0d6efd;
-color:white;
-padding:10px 20px;
-border:none;
-border-radius:5px;
-cursor:pointer;
-}
-
-footer{
-background:#222;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
-
-</style>
+<link rel="stylesheet" href="css/style.css">
 
 </head>
-
 <body>
 
 <header>
 
+<div class="container">
+
 <h1>Helpy Anand Tools</h1>
 
-<p>Free AI & Online Tools</p>
+<nav>
+
+<a href="#">Home</a>
+<a href="#">AI Tools</a>
+<a href="#">Online Tools</a>
+<a href="#">Contact</a>
+
+</nav>
+
+</div>
 
 </header>
 
+<section class="hero">
+
 <div class="container">
 
-<div class="tool">
+<h2>Free AI & Online Tools</h2>
 
-<h2>Welcome</h2>
+<p>
+Fast, Free and Easy-to-use Online Tools for Everyone.
+</p>
 
-<p>This is our first online tools website.</p>
+</div>
+
+</section>
+
+<section class="tools">
+
+<div class="container">
+
+<h2 class="section-title">
+Popular Tools
+</h2>
+
+<div class="tool-grid">
+
+<div class="tool-card">
+
+<h3>📝 Word Counter</h3>
+
+<p>
+Count words, characters and paragraphs instantly.
+</p>
+
+<a href="tools/word-counter/index.html">
+    <button>Open Tool</button>
+</a>
+
+</div>
+
+<div class="tool-card">
+
+<h3>🔐 Password Generator</h3>
+
+<p>
+Generate strong secure passwords.
+</p>
+
+<button>Coming Soon</button>
+
+</div>
+
+<div class="tool-card">
+
+<h3>📷 QR Code Generator</h3>
+
+<p>
+Create QR Codes in one click.
+</p>
 
 <button>Coming Soon</button>
 
@@ -79,12 +95,19 @@ margin-top:40px;
 
 </div>
 
+</div>
+
+</section>
+
 <footer>
 
+<p>
 © 2026 Helpy Anand
+</p>
 
 </footer>
 
-</body>
+<script src="js/script.js"></script>
 
+</body>
 </html>
