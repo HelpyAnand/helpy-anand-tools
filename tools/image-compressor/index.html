@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Image Compressor</h1>
+
+    <div class="tool-area">
+
+    <!-- Left Side -->
+     <div class="left-panel">
+
+    <div class="preview" id="dropArea">
+
+    <p id="placeholder">
+        📷 Drag & Drop Image Here
+        <br><br>
+        or Click Choose File
+    </p>
+
+    <img id="previewImage">
+
+</div>
+<input type="file" id="imageInput" accept="image/*">
+</div>
+
+        
+
+    <!-- Right Side -->
+    <div class="controls">
+
+     
+
+        <label>Compression Quality</label>
+
+        <input
+            type="range"
+            id="quality"
+            min="10"
+            max="100"
+            value="80">
+
+        <p>
+            Quality :
+            <span id="qualityValue">80%</span>
+        </p>
+
+        <div class="info">
+
+            <p>Original Size :
+                <span id="originalSize">0 KB</span>
+            </p>
+
+            <p>Compressed Size :
+                <span id="compressedSize">0 KB</span>
+            </p>
+
+            <p>Space Saved :
+                <span id="savedPercent">0%</span>
+            </p>
+
+        </div>
+
+       
+    <div class="button-group">
+
+    <button onclick="compressImage()">
+        Compress Image
+    </button>
+
+    <button id="downloadBtn" onclick="downloadImage()" disabled>
+        Download
+    </button>
+
+    <button onclick="resetTool()">
+        Reset
+    </button>
+
+</div>
+
+<p id="statusMessage"></p>
+
+</div>
+
+
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
