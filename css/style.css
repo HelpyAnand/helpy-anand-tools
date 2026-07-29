@@ -45,6 +45,14 @@ nav{
     gap:12px;
     align-items:center;
 }
+nav a.active{
+    color:#ffd54f;
+}
+    nav a.active{
+    color:#ffd54f;
+    background:rgba(255,255,255,0.15);
+    border-radius:6px;
+}
 
 
 nav a{
@@ -265,6 +273,12 @@ font-size:34px;
 
 .tool-card button{
     width:140px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 .logo-icon{
     width:40px;
