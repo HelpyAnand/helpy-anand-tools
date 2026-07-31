@@ -1,33 +1,43 @@
-function countText(){
+const textInput = document.getElementById("textInput");
 
-    let text = document.getElementById("text").value;
+const words = document.getElementById("words");
+const characters = document.getElementById("characters");
+const sentences = document.getElementById("sentences");
+const paragraphs = document.getElementById("paragraphs");
 
-    let words = text.trim();
+textInput.addEventListener("input", updateCount);
 
-    if(words===""){
-        document.getElementById("words").innerHTML=0;
-    }else{
-        document.getElementById("words").innerHTML=words.split(/\s+/).length;
-    }
+function updateCount() {
 
-    document.getElementById("characters").innerHTML=text.length;
+    const text = textInput.value;
 
+    // Characters
+    characters.textContent = text.length;
+
+    // Words
+    const wordArray = text.trim().split(/\s+/).filter(word => word.length > 0);
+    words.textContent = text.trim() === "" ? 0 : wordArray.length;
+
+    // Sentences
+    const sentenceArray = text.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0);
+    sentences.textContent = sentenceArray.length;
+
+    // Paragraphs
+    const paragraphArray = text.split(/\n+/).filter(paragraph => paragraph.trim().length > 0);
+    paragraphs.textContent = paragraphArray.length;
 }
-function copyText() {
-    let text = document.getElementById("text");
 
-    if(text.value==""){
-        alert("Please enter some text first.");
-        return;
-    }
+// Clear Button
+document.getElementById("clearBtn").addEventListener("click", () => {
+    textInput.value = "";
+    updateCount();
+});
 
-    text.select();
-    navigator.clipboard.writeText(text.value);
+// Copy Button
+document.getElementById("copyBtn").addEventListener("click", () => {
+    navigator.clipboard.writeText(textInput.value);
+    alert("Text Copied!");
+});
 
-    alert("Text Copied Successfully!");
-}
-
-function clearText() {
-    document.getElementById("text").value = "";
-    countText();
-}
+// Initial Count
+updateCount();

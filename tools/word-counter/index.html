@@ -1,38 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Word Counter Tool</title>
+    <title>Word Counter - Helpy Anand Tools</title>
+    <meta name="description" content="Free Online Word Counter Tool. Count words, characters, sentences and paragraphs instantly.">
 
-<link rel="stylesheet" href="style.css">
-
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+<header>
+    <div class="container">
 
-<h1>Word Counter</h1>
+        <div class="logo">
 
-<textarea id="text" oninput="countText()" placeholder="Type or Paste your text here..."></textarea>
+    <a href="../../index.html" class="logo-link">
 
-<div class="result">
+        <img src="../../favicon-32x32.png" class="logo-icon" alt="Helpy Anand Tools Logo">
 
-<p>Words :
-<span id="words">0</span></p>
+        <h1>Helpy Anand Tools</h1>
 
-<p>Characters :
-<span id="characters">0</span></p>
-
-</div>
-
-<div class="button-group">
-    <button onclick="copyText()">📋 Copy</button>
-    <button onclick="clearText()">🗑️ Clear</button>
-</div>
+    </a>
 
 </div>
+
+        <nav>
+            <a href="../../index.html">Home</a>
+        </nav>
+
+    </div>
+</header>
+
+<section class="tool-section">
+
+    <div class="tool-box">
+
+        <h2>📝 Word Counter</h2>
+        <p class="tool-desc">
+Count words, characters, sentences and paragraphs instantly.
+</p>
+
+        <textarea id="textInput"
+        placeholder="Type or paste your text here..."></textarea>
+
+        <div class="result-grid">
+
+            <div class="result-card">
+                <h3 id="words">0</h3>
+                <p>Words</p>
+            </div>
+
+            <div class="result-card">
+                <h3 id="characters">0</h3>
+                <p>Characters</p>
+            </div>
+
+            <div class="result-card">
+                <h3 id="sentences">0</h3>
+                <p>Sentences</p>
+            </div>
+
+            <div class="result-card">
+                <h3 id="paragraphs">0</h3>
+                <p>Paragraphs</p>
+            </div>
+
+        </div>
+
+        <div class="buttons">
+
+            <button id="copyBtn">Copy</button>
+
+            <button id="clearBtn">Clear</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Helpy Anand Tools | Version 1.0</p>
+
+</footer>
 
 <script src="script.js"></script>
 

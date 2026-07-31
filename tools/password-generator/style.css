@@ -1,110 +1,262 @@
-body{
+*{
     margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f4f4;
-}
-
-.container{
-    max-width:750px;
-    margin:50px auto;
-    background:#fff;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
-}
-
-h1{
-    text-align:center;
-    color:#0d6efd;
-}
-
-input[type="text"],
-input[type="password"]{
-    display:block;
-    width:90%;
-    margin:20px auto;
-    padding:15px;
-    font-size:22px;
-    text-align:center;
-    border:2px solid #ddd;
-    border-radius:8px;
+    padding:0;
     box-sizing:border-box;
 }
 
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    color:#333;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+header{
+    background:#0d6efd;
+    padding:15px 0;
+}
+
+header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.logo-link:hover{
+    transform:scale(1.03);
+}
+
+.logo-icon{
+    width:40px;
+    height:40px;
+}
+
+.logo-link h1{
+    color:#fff;
+    font-size:30px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:8px 16px;
+    border-radius:6px;
+    font-weight:700;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.15);
+    color:#ffd54f;
+    transform:translateY(-2px);
+}
+
+.tool-section{
+    padding:20px;
+}
+
+.tool-box{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.tool-box h2{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.tool-desc{
+    text-align:center;
+    color:#666;
+    margin-bottom:15px;
+}
+
+#password{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:18px;
+    margin-bottom:20px;
+}
+
+.length-box{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:10px;
+    font-weight:bold;
+}
+
+input[type="range"]{
+    width:100%;
+    margin-bottom:15px;
+}
 
 .options{
     display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin:20px 0;
+    flex-direction:column;
+    gap:8px;
+    margin-bottom:15px;
 }
 
 .options label{
-    margin-right:15px;
+    cursor:pointer;
+}
+
+.strength{
+    background:#f8f9fa;
+    padding:12px;
+    border-radius:8px;
+    text-align:center;
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+#strengthText{
+    color:green;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:10px;
 }
 
 button{
     background:#0d6efd;
-    color:white;
+    color:#fff;
     border:none;
-    padding:12px 18px;
-    margin-top:15px;
+    padding:12px 24px;
+    border-radius:8px;
     cursor:pointer;
-    border-radius:6px;
     font-size:16px;
+    transition:.3s;
 }
 
 button:hover{
-    background:#0b5ed7;
+    background:#084fc7;
+    transform:translateY(-2px);
 }
 
-#length{
-    width:60px;
+footer{
+    margin-top:20px;
+    background:#222;
+    color:#fff;
     text-align:center;
+    padding:20px;
 }
-.options label{
-    display:flex;
-    align-items:center;
-    gap:5px;
-    white-space:nowrap;
+
+@media(max-width:768px){
+
+header .container{
+    flex-direction:column;
+    gap:15px;
 }
+
+.logo-link h1{
+    font-size:24px;
+}
+
+.tool-box{
+    padding:20px;
+}
+
 .buttons{
+    flex-direction:column;
+}
+
+button{
+    width:100%;
+}
+
+}
+/* Password Box */
+
+.password-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.password-box input{
+    flex:1;
+    height:50px;
+    padding:0 15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:18px;
+}
+
+
+.eye-btn{
+    width:50px;
+    height:50px;       /* Textbox की Height के बराबर */
+    border:none;
+    border-radius:8px;
+    background:#0d6efd;
+    color:white;
+    cursor:pointer;
+
     display:flex;
     justify-content:center;
-    gap:15px;
-    margin-top:20px;
-    flex-wrap:wrap;
-}
-.show-password{
-    width:90%;
-    margin:10px auto 20px auto;
-    text-align:left;
+    align-items:center;
+
+    font-size:18px;
+    padding:0;
 }
 
-.show-password label{
-    font-size:18px;
-    cursor:pointer;
+
+.eye-btn:hover{
+    background:#084fc7;
 }
-.strength{
-    margin-top:15px;
-    font-size:20px;
+
+/* Strength Bar */
+
+.strength-label{
+    margin-bottom:10px;
     font-weight:bold;
-    text-align:center;
 }
+
 .strength-bar{
-    width:80%;
-    height:12px;
+    width:100%;
+    height:10px;
     background:#ddd;
-    margin:10px auto 20px;
     border-radius:20px;
     overflow:hidden;
 }
 
-#strength-bar-fill{
+#strengthFill{
     width:0%;
     height:100%;
-    background:red;
-    transition:0.4s;
+    background:green;
+    transition:.3s;
+}
+.input-label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:10px;
+    font-size:18px;
+}
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+    color:#333;
+    min-height:100vh;
 }

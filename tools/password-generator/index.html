@@ -1,77 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Password Generator</title>
+    <title>Password Generator - Helpy Anand Tools</title>
 
-<link rel="stylesheet" href="style.css">
+    <meta name="description" content="Generate strong, secure and random passwords online for free.">
 
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<header>
 
-<h1>Password Generator</h1>
+    <div class="container">
 
-<input type="password" id="password">
+        <div class="logo">
 
-<div class="show-password">
-    <label>
-        <input type="checkbox" onclick="togglePassword()">
-        Show Password
-    </label>
+            <a href="../../index.html" class="logo-link">
+
+                <img src="../../favicon-32x32.png"
+                class="logo-icon"
+                alt="Helpy Anand Tools">
+
+                <h1>Helpy Anand Tools</h1>
+
+            </a>
+
+        </div>
+
+        <nav>
+
+            <a href="../../index.html">Home</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<section class="tool-section">
+
+<div class="tool-box">
+
+<h2>🔐 Password Generator</h2>
+
+<p class="tool-desc">
+
+Generate strong and secure passwords instantly.
+
+</p>
+
+
+<label class="input-label">Generated Password</label>
+
+<div class="password-box">
+
+    <input
+    type="password"
+    id="password"
+    placeholder="Your password will appear here"
+    readonly>
+
+    <button
+    id="togglePassword"
+    class="eye-btn">
+    👁️
+    </button>
+
 </div>
-<div id="strength" class="strength">
-    Strength : -
+
+<div class="length-box">
+
+    <label>Password Length</label>
+
+    <span id="lengthValue">12</span>
+
 </div>
 
-<div class="strength-bar">
-    <div id="strength-bar-fill"></div>
-</div>
+<input
+type="range"
+id="length"
+min="6"
+max="32"
+value="12">
 
 <div class="options">
 
-<label>Password Length</label>
-
-<input
-type="number"
-id="length"
-value="12"
-min="8"
-max="32">
-
 <label>
 <input type="checkbox" id="uppercase" checked>
-Uppercase
+Uppercase (A-Z)
 </label>
 
 <label>
 <input type="checkbox" id="lowercase" checked>
-Lowercase
+Lowercase (a-z)
 </label>
 
 <label>
 <input type="checkbox" id="numbers" checked>
-Numbers
+Numbers (0-9)
 </label>
 
 <label>
 <input type="checkbox" id="symbols" checked>
-Symbols
+Symbols (!@#$)
 </label>
 
 </div>
 
+<div class="strength">
+
+    <div class="strength-label">
+
+        Strength :
+        <span id="strengthText">Strong</span>
+
+    </div>
+
+    <div class="strength-bar">
+
+        <div id="strengthFill"></div>
+
+    </div>
+
+</div>
+
 <div class="buttons">
-    <button onclick="generatePassword()">Generate Password</button>
 
-    <button onclick="copyPassword()">Copy Password</button>
+<button id="generateBtn">
+
+Generate Password
+
+</button>
+
+<button id="copyBtn">
+
+Copy
+
+</button>
+
 </div>
 
 </div>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 Helpy Anand Tools | Version 1.0
+
+</p>
+
+</footer>
 
 <script src="script.js"></script>
 

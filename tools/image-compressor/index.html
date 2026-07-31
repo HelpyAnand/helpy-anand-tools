@@ -3,97 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Compressor</title>
 
+    <title>Image Compressor - Helpy Anand Tools</title>
+
+    <meta name="description" content="Compress images online for free.">
+
+    <link rel="icon" href="../../favicon.ico">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
+<header>
+    <div class="container">
 
-    <h1>Image Compressor</h1>
+        <a href="../../index.html" class="logo-link">
+            <img src="../../favicon-32x32.png"
+                 class="logo-icon"
+                 alt="Helpy Anand Tools">
+
+            <h1 class="site-title">Helpy Anand Tools</h1>
+        </a>
+
+        <nav>
+            <a href="../../index.html">Home</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main class="compressor-container">
+
+    <h2 class="tool-title">🖼️ Image Compressor</h2>
 
     <div class="tool-area">
 
-    <!-- Left Side -->
-     <div class="left-panel">
+        <!-- Left -->
 
-    <div class="preview" id="dropArea">
+        <div class="left-panel">
 
-    <p id="placeholder">
-        📷 Drag & Drop Image Here
-        <br><br>
-        or Click Choose File
-    </p>
+            <div class="preview" id="dropArea">
 
-    <img id="previewImage">
+                <p id="placeholder">
 
-</div>
-<input type="file" id="imageInput" accept="image/*">
-</div>
+                    📷 Drag & Drop Image Here
 
-        
+                    <br><br>
 
-    <!-- Right Side -->
-    <div class="controls">
+                    or Click Choose File
 
-     
+                </p>
 
-        <label>Compression Quality</label>
+                <img id="previewImage">
 
-        <input
-            type="range"
-            id="quality"
-            min="10"
-            max="100"
-            value="80">
+            </div>
 
-        <p>
-            Quality :
-            <span id="qualityValue">80%</span>
-        </p>
-
-        <div class="info">
-
-            <p>Original Size :
-                <span id="originalSize">0 KB</span>
-            </p>
-
-            <p>Compressed Size :
-                <span id="compressedSize">0 KB</span>
-            </p>
-
-            <p>Space Saved :
-                <span id="savedPercent">0%</span>
-            </p>
+            <input type="file"
+                   id="imageInput"
+                   accept="image/*">
 
         </div>
 
-       
-    <div class="button-group">
 
-    <button onclick="compressImage()">
-        Compress Image
-    </button>
+        <!-- Right -->
 
-    <button id="downloadBtn" onclick="downloadImage()" disabled>
-        Download
-    </button>
+        <div class="controls">
 
-    <button onclick="resetTool()">
-        Reset
-    </button>
+            <label>Compression Quality</label>
 
-</div>
+            <input type="range"
+                   id="quality"
+                   min="10"
+                   max="100"
+                   value="80">
 
-<p id="statusMessage"></p>
+            <p>
+                Quality :
+                <span id="qualityValue">80%</span>
+            </p>
 
-</div>
+            <div class="info">
+
+                <p>Original Size :
+                    <span id="originalSize">0 KB</span>
+                </p>
+
+                <p>Compressed Size :
+                    <span id="compressedSize">0 KB</span>
+                </p>
+
+                <p>Space Saved :
+                    <span id="savedPercent">0%</span>
+                </p>
+
+            </div>
+
+            <div class="button-group">
+
+                <button onclick="compressImage()">
+                    Compress Image
+                </button>
+
+                <button id="downloadBtn"
+                        onclick="downloadImage()"
+                        disabled>
+                    Download
+                </button>
+
+                <button onclick="resetTool()">
+                    Reset
+                </button>
+
+            </div>
+
+            <p id="statusMessage"></p>
+
+        </div>
+
+    </div>
+
+</main>
 
 
+<footer>
 
-</div>
-</div>
+    <p>
+
+        © 2026 Helpy Anand Tools | Version 1.0
+        </p>
+              
+</footer>
 
 <script src="script.js"></script>
 
