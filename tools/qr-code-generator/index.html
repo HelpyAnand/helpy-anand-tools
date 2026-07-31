@@ -9,9 +9,47 @@
 </head>
 <body>
 
-<div class="container">
+    <header>
 
-    <h1>QR Code Generator</h1>
+    <div class="container header-container">
+
+        <div class="logo">
+
+            <a href="../../index.html" class="logo-link">
+
+                <img src="../../favicon-32x32.png"
+                     class="logo-icon"
+                     alt="Helpy Anand Tools">
+
+                <h1>Helpy Anand Tools</h1>
+
+            </a>
+
+        </div>
+
+        <nav>
+
+            <a href="../../index.html">Home</a>
+
+            <a href="../../about.html">About</a>
+
+            <a href="../../contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<main class="tool-section">
+
+<div class="tool-box">
+
+    <h2>📱 QR Code Generator</h2>
+
+    <p class="tool-desc">
+        Generate QR Codes instantly for URLs, Text and More.
+    </p>
 
     <input
         type="text"
@@ -19,7 +57,9 @@
         placeholder="Enter Text or Website URL">
 
     <div id="imgBox">
-        <img id="qrImage">
+
+        <img id="qrImage" alt="QR Code">
+
     </div>
 
     <div class="buttons">
@@ -33,14 +73,27 @@
         </button>
 
         <button onclick="clearQR()">
-            Clear
+            Reset
         </button>
 
     </div>
 
 </div>
 
+</main>
+
+
 <script src="script.js"></script>
+
+<footer>
+
+    <p class="copyright">
+
+        © 2026 Helpy Anand Tools | Version 1.0
+
+    </p>
+
+</footer>
 
 </body>
 </html>

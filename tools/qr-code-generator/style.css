@@ -1,97 +1,254 @@
+/* ======================================================
+   RESET
+====================================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-    background:#f4f4f4;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
 }
+/* ======================================================
+   COMMON CONTAINER
+====================================================== */
 
 .container{
-    background:#fff;
     width:90%;
-    max-width:800px;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    max-width:1200px;
+    margin:auto;
+}
+/* ======================================================
+   HEADER
+====================================================== */
+
+header{
+    background:linear-gradient(135deg,#0d6efd,#2563eb);
+    padding:18px 0;
+    box-shadow:0 3px 12px rgba(0,0,0,.12);
+}
+
+.header-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+/* ======================================================
+   LOGO
+====================================================== */
+
+.logo-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+}
+
+.logo-icon{
+    width:40px;
+    height:40px;
+}
+
+.logo-link h1{
+    color:#fff;
+    font-size:30px;
+    margin:0;
+}
+/* ======================================================
+   NAVIGATION
+====================================================== */
+
+nav{
+    display:flex;
+    gap:12px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    padding:8px 16px;
+    border-radius:6px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:rgba(255,255,255,.18);
+    color:#ffd54f;
+}
+/* ======================================================
+   TOOL SECTION
+====================================================== */
+
+.tool-section{
+    padding:40px 20px;
+}
+
+.tool-box{
+    max-width:700px;
+    margin:auto;
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.10);
+}
+
+.tool-box h2{
     text-align:center;
-}
-
-h1{
+    margin-bottom:10px;
     color:#2563eb;
-    margin-bottom:30px;
-    font-size:48px;
 }
 
-input{
+.tool-desc{
+    text-align:center;
+    color:#666;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+/* ======================================================
+   INPUT BOX
+====================================================== */
+
+#qrText{
     width:100%;
-    padding:15px;
-    font-size:18px;
-    border:2px solid #ddd;
+    height:50px;
+    padding:0 15px;
+    border:1px solid #ccc;
     border-radius:8px;
+    font-size:16px;
     outline:none;
+    transition:.3s;
 }
 
-input:focus{
-    border-color:#2563eb;
+#qrText:focus{
+    border-color:#0d6efd;
+    box-shadow:0 0 8px rgba(13,110,253,.25);
 }
+/* ======================================================
+   QR PREVIEW
+====================================================== */
 
 #imgBox{
-    margin:30px 0;
-    min-height:250px;
+    width:220px;
+    height:220px;
+    margin:30px auto;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
+    border:2px dashed #d1d5db;
+    border-radius:12px;
+    background:#f8fafc;
 }
 
-#imgBox img{
-    max-width:250px;
-    display:none;
-    border:8px solid white;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+#qrImage{
+    max-width:180px;
+    max-height:180px;
 }
+/* ======================================================
+   BUTTONS
+====================================================== */
 
 .buttons{
     display:flex;
     justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+    gap:12px;
+    margin-top:20px;
 }
 
-button{
-    background:#2563eb;
-    color:white;
+.buttons button{
+    flex:1;
+    max-width:170px;
+    height:48px;
+
+    background:#0d6efd;
+    color:#fff;
+
     border:none;
-    padding:14px 28px;
-    font-size:17px;
     border-radius:8px;
+
+    font-size:16px;
+    font-weight:bold;
+
     cursor:pointer;
     transition:.3s;
 }
 
-button:hover{
-    background:#0b5ed7;
-    transform:translateY(-3px);
+.buttons button:hover{
+    background:#084fc7;
+    transform:translateY(-2px);
+}
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer{
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:50px;
 }
 
-@media(max-width:600px){
-
-h1{
-    font-size:34px;
+.footer-links{
+    margin-bottom:15px;
 }
 
-.buttons{
-    flex-direction:column;
+.footer-links a{
+    color:#ddd;
+    text-decoration:none;
+    margin:0 12px;
+    transition:.3s;
 }
 
-button{
-    width:100%;
+.footer-links a:hover{
+    color:#ffd54f;
 }
+
+.copyright{
+    color:#bbb;
+    font-size:14px;
+}
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media(max-width:768px){
+
+    .header-container{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .logo-link h1{
+        font-size:24px;
+    }
+
+    .tool-box{
+        padding:20px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .buttons button{
+        max-width:none;
+        width:100%;
+    }
+
+    #imgBox{
+        width:200px;
+        height:200px;
+    }
 
 }

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Prompt Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+    <div class="container header-container">
+
+        <div class="logo">
+
+            <a href="../../index.html" class="logo-link">
+
+                <img src="../../favicon-32x32.png"
+                     class="logo-icon"
+                     alt="Helpy Anand Tools">
+
+                <h1>Helpy Anand Tools</h1>
+
+            </a>
+
+        </div>
+
+        <nav>
+
+            <a href="../../index.html">Home</a>
+            <a href="../../about.html">About</a>
+            <a href="../../contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!--Main Tool Box-->
+<main class="tool-section">
+
+    <div class="tool-box">
+
+        <h2>🤖 AI Prompt Generator</h2>
+
+        <p class="tool-desc">
+            Generate professional AI prompts for ChatGPT, Gemini, Claude and more.
+        </p>
+
+    
+
+<!-- AI Platform -->
+
+<label class="input-label">AI Platform</label>
+
+<select id="platform">
+
+    <option>ChatGPT</option>
+    <option>Gemini</option>
+    <option>Claude</option>
+    <option>Grok</option>
+    <option>DeepSeek</option>
+
+</select>
+
+<!-- Prompt Category -->
+
+<label class="input-label">Prompt Category</label>
+
+<select id="category">
+
+    <option>Blog Writing</option>
+    <option>SEO Article</option>
+    <option>YouTube Script</option>
+    <option>Facebook Post</option>
+    <option>Instagram Caption</option>
+    <option>Email</option>
+    <option>Coding</option>
+    <option>Image Prompt</option>
+
+</select>
+
+<!-- Topic -->
+
+<label class="input-label">Topic</label>
+
+<input
+type="text"
+id="topic"
+placeholder="Enter your topic">
+
+<!-- Tone -->
+
+<label class="input-label">Tone</label>
+
+<select id="tone">
+
+    <option>Professional</option>
+    <option>Friendly</option>
+    <option>Formal</option>
+    <option>Casual</option>
+    <option>Persuasive</option>
+
+</select>
+
+<!-- Language -->
+
+<label class="input-label">Language</label>
+
+<select id="language">
+
+    <option>English</option>
+    <option>Hindi</option>
+
+</select>
+
+<!-- Word Count -->
+
+<label class="input-label">Word Count</label>
+
+<input
+type="number"
+id="wordCount"
+value="500"
+min="100"
+max="5000">
+
+
+
+
+<!-- Generate Button -->
+
+<button id="generateBtn">
+    🚀 Generate Prompt
+</button>
+
+<!-- Output Box -->
+
+<div class="output-box">
+
+    <h3>Generated Prompt</h3>
+
+    <textarea
+        id="outputPrompt"
+        readonly
+        placeholder="Your AI Prompt will appear here..."></textarea>
+
+</div>
+
+<!-- Copy & Reset -->
+
+<div class="button-group">
+
+    <button id="copyBtn">
+        📋 Copy
+    </button>
+
+    <button id="resetBtn">
+        🔄 Reset
+    </button>
+
+
+</div>
+</main>
+
+<script src="script.js"></script>
+
+
+<footer>
+        © 2026 Helpy Anand Tools | Version 1.0
+
+   </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
