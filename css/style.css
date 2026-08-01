@@ -305,3 +305,64 @@ footer{
     }
 
 }
+
+/* ===== AI TOOLS PAGE ===== */
+
+.tool-icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.tool-btn{
+    display:inline-block;
+    margin-top:auto;
+    background:#0d6efd;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.tool-btn:hover{
+    background:#084fc7;
+    transform:translateY(-3px);
+}
+
+.tool-card{
+    text-align:center;
+}
+
+.tool-card p{
+    line-height:1.6;
+}
+
+/* ===== AI TOOLS PAGE ===== */
+
+.ai-tools-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px,350px));
+    justify-content:center;
+    gap:25px;
+}
+
+.ai-tools-grid .tool-card{
+    width:100%;
+}
+
+
+
+html,
+body{
+    min-height:100%;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1;
+}
