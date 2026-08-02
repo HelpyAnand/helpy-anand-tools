@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://helpy-anand-tools.vercel.app/sitemap.xml
