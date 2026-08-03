@@ -16,7 +16,7 @@
 .tool-box h2{
     text-align:center;
     color:#2563eb;
-    font-size:40px;
+    font-size:36px;
     margin-bottom:15px;
 }
 
@@ -232,4 +232,89 @@ footer{
         justify-content:center;
     }
 
+}
+
+/* FAQ Section */
+
+.faq-section{
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.faq-section h2{
+    text-align:center;
+    font-size:30px;
+    margin-bottom:25px;
+    color:#2563eb;
+}
+
+
+.faq-item{
+    background:#fff;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.faq-item h3{
+    font-size:16px;
+    margin-bottom:10px;
+    color:#2563eb;
+}
+
+
+.faq-item p{
+    font-size:14px;
+    line-height:1.6;
+    color:#444;
+}
+
+
+
+/* Related Tools */
+
+.related-tools{
+    max-width:1100px;
+    margin:60px auto;
+    padding:20px;
+}
+
+.related-tools h2{
+    /*text-align:center;
+    margin-bottom:30px;*/
+
+    text-align:center;
+    font-size:24px;
+    margin-bottom:25px;
+    /*color:#2563eb;*/
+}
+
+.related-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.related-card{
+    background:#fff;
+    padding:20px;
+    border-radius:12px;
+    text-decoration:none;
+    color:#333;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 6px 20px rgba(0,0,0,.15);
+}
+
+.related-card h3{
+    font-size:16px;
+    margin:12px 0;
+    color:#2563eb;
 }
