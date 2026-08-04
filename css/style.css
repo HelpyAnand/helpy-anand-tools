@@ -366,3 +366,87 @@ body{
 main{
     flex:1;
 }
+
+/* 404 Page Buttons */
+
+.button-group{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.btn{
+display:inline-block;
+padding:12px 24px;
+background:#2563eb;
+color:#fff;
+text-decoration:none;
+border-radius:8px;
+font-weight:600;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1d4ed8;
+transform:translateY(-2px);
+}
+
+.btn:active{
+transform:translateY(0);
+}
+
+/* for page 404 */
+
+.tool-section{
+min-height:70vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 20px;
+}
+
+.tool-box{
+max-width:700px;
+width:100%;
+text-align:center;
+}
+
+/* tool box heading big*/
+
+.tool-box h2{
+font-size:80px;
+color:#2563eb;
+margin-bottom:10px;
+}
+
+.tool-box h3{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.tool-box p{
+font-size:18px;
+color:#555;
+line-height:1.6;
+margin-bottom:30px;
+}
+
+/* footer setting */
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1;
+}
+
+
+.error-icon{
+    font-size:70px;
+    margin-right:10px;
+}
