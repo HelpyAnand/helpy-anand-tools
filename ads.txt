@@ -1,0 +1,2 @@
+# ads.txt placeholder
+# Google AdSense Publisher ID will be added after approval.
