@@ -27,27 +27,49 @@ header .container{
     align-items:center;
 }
 
+/* ===========================
+   Logo Link
+=========================== */
+
 .logo-link{
     display:flex;
     align-items:center;
     gap:12px;
     text-decoration:none;
-    transition:.3s;
+    color:#fff;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+
+.logo-link:hover{
+    color:#ffd54f;
+}
+
+.logo-link:hover .logo-icon{
+    transform:scale(1.08) rotate(-5deg);
+    transition:transform .3s ease;
+}
+
+.logo-link:hover h1{
+    color:#ffd54f;
+}
+
+.logo-icon{
+width:40px;
+height:40px;
+transition:transform .3s ease;
 }
 
 .logo-link:hover{
     transform:scale(1.03);
 }
 
-.logo-icon{
-    width:40px;
-    height:40px;
-}
-
 .logo-link h1{
     color:#fff;
     font-size:30px;
 }
+/*---------End-----------*/
 
 nav a{
     color:#fff;

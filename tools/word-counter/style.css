@@ -27,11 +27,16 @@ header .container{
     align-items:center;
 }
 
+/*============================
+         LOGO LINK
+==============================*/
+
 .logo-link{
     display:flex;
     align-items:center;
     gap:12px;
     text-decoration:none;
+    color:#fff;
     transition:transform .3s ease;
     cursor:pointer;
 }
@@ -42,11 +47,11 @@ header .container{
 }
 
 .logo-link:hover{
+    color:#ffd54f;
     opacity:0.9;
     transform:scale(1.03);
     transition:0.3s ease;
 }
-
 
 .logo{
     display:flex;
@@ -54,15 +59,28 @@ header .container{
     gap:12px;
 }
 
+.logo-link:hover .logo-icon{
+    transform:scale(1.08) rotate(-5deg);
+    transition:transform .3s ease;
+}
+
+.logo-link:hover h1{
+    color:#ffd54f;
+}
+
+
 .logo-icon{
     width:40px;
     height:40px;
+    transition:transform .3s ease;
 }
 
 header h1{
     color:#fff;
     font-size:30px;
 }
+
+/*==========END==========*/
 
 nav a{
     color:#fff;

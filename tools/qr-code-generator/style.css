@@ -36,7 +36,7 @@ header{
     justify-content:space-between;
     align-items:center;
 }
-/* ======================================================
+/* ===================================================
    LOGO
 ====================================================== */
 
@@ -45,11 +45,28 @@ header{
     align-items:center;
     gap:12px;
     text-decoration:none;
+    color:#fff;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.logo-link:hover{
+    color:#ffd54f;
+}
+
+.logo-link:hover .logo-icon{
+    transform:scale(1.08) rotate(-5deg);
+    transition:transform .3s ease;
+}
+
+.logo-link:hover h1{
+    color:#ffd54f;
 }
 
 .logo-icon{
     width:40px;
     height:40px;
+    transition:transform .3s ease;
 }
 
 .logo-link h1{
@@ -57,7 +74,11 @@ header{
     font-size:30px;
     margin:0;
 }
-/* ======================================================
+
+/*-----------End----------*/
+
+
+/* ===================================================
    NAVIGATION
 ====================================================== */
 
