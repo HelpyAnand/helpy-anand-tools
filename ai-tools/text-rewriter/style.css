@@ -1,0 +1,326 @@
+/* ==========================================
+   AI TEXT REWRITER
+   Helpy Anand Tools
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero{
+    background:#eef4ff;
+    padding:35px 20px;
+    text-align:center;
+}
+
+.hero .container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero h2{
+    font-size:36px;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.hero p{
+    font-size:17px;
+    color:#555;
+}
+
+
+/* ==========================================
+   TOOL SECTION
+========================================== */
+
+.tool-section{
+    padding:35px 20px 50px;
+}
+
+.tool-container{
+    width:90%;
+    max-width:850px;
+    margin:auto;
+
+    background:#fff;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,.12);
+}
+
+
+/* ==========================================
+   TOOL TITLE
+========================================== */
+
+.tool-container h1{
+    text-align:center;
+
+    font-size:30px;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+}
+
+.tool-description{
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:25px;
+
+    line-height:1.6;
+}
+
+
+/* ==========================================
+   TEXT BOX
+========================================== */
+
+.text-box{
+    margin-bottom:20px;
+}
+
+.text-box label{
+    display:block;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+    color:#333;
+}
+
+textarea{
+    width:100%;
+
+    min-height:220px;
+
+    padding:15px;
+
+    border:2px solid #dbe2ea;
+
+    border-radius:10px;
+
+    resize:vertical;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+textarea:focus{
+    border-color:#2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37,99,235,.10);
+}
+
+textarea::placeholder{
+    color:#999;
+}
+
+
+/* ==========================================
+   CHARACTER COUNT
+========================================== */
+
+.character-count{
+    text-align:right;
+
+    margin-top:6px;
+
+    font-size:13px;
+
+    color:#777;
+}
+
+
+/* ==========================================
+   BUTTON GROUP
+========================================== */
+
+.button-group{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin:20px 0;
+}
+
+.button-group button{
+    min-width:170px;
+
+    height:44px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.button-group button:hover{
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+}
+
+#clearBtn{
+    background:#6b7280;
+}
+
+#clearBtn:hover{
+    background:#4b5563;
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.status-message{
+    min-height:24px;
+
+    margin:10px 0;
+
+    text-align:center;
+
+    font-weight:bold;
+}
+
+
+/* ==========================================
+   OUTPUT
+========================================== */
+
+.output-box{
+    margin-top:25px;
+}
+
+.output-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:10px;
+}
+
+.output-header label{
+    margin:0;
+}
+
+#copyBtn{
+    border:none;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    padding:7px 13px;
+
+    border-radius:6px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#copyBtn:hover{
+    background:#1d4ed8;
+}
+
+#copyBtn:disabled{
+    background:#9ca3af;
+
+    cursor:not-allowed;
+
+    opacity:.8;
+}
+
+#outputText{
+    background:#f8fafc;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .tool-section{
+        padding:25px 15px 40px;
+    }
+
+    .tool-container{
+        width:100%;
+
+        padding:20px;
+    }
+
+    .tool-container h1{
+        font-size:26px;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+
+    .button-group button{
+        width:100%;
+    }
+
+    textarea{
+        min-height:200px;
+    }
+
+}
