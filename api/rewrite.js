@@ -59,7 +59,14 @@ ${text}
 
         }
 
-        const rewrittenText = data?.output_text;
+        const rewrittenText =
+    data?.steps
+        ?.filter(step => step.type === "model_output")
+        ?.flatMap(step => step.content || [])
+        ?.filter(content => content.type === "text")
+        ?.map(content => content.text)
+        ?.join("\n")
+        ?.trim();
 
         if (!rewrittenText) {
 
