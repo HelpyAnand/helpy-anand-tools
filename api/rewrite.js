@@ -56,13 +56,15 @@ ${text}
 
         if (!response.ok) {
 
-            console.error("Gemini API Error:", data);
+    console.error("Gemini API Error:", data);
 
-            return res.status(response.status).json({
-                error: "AI service error."
-            });
+    return res.status(response.status).json({
+        error:
+            data?.error?.message ||
+            "AI service error."
+    });
 
-        }
+}
 
         const rewrittenText =
             data?.candidates?.[0]?.content?.parts?.[0]?.text;
