@@ -29,7 +29,7 @@ ${text}
 `;
 
         const response = await fetch(
-            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent",
+            "https://generativelanguage.googleapis.com/v1beta/interactions",
             {
                 method: "POST",
 
@@ -39,15 +39,8 @@ ${text}
                 },
 
                 body: JSON.stringify({
-                    contents: [
-                        {
-                            parts: [
-                                {
-                                    text: prompt
-                                }
-                            ]
-                        }
-                    ]
+                    model: "gemini-3.5-flash-lite",
+                    input: prompt
                 })
             }
         );
@@ -56,18 +49,17 @@ ${text}
 
         if (!response.ok) {
 
-    console.error("Gemini API Error:", data);
+            console.error("Gemini API Error:", data);
 
-    return res.status(response.status).json({
-        error:
-            data?.error?.message ||
-            "AI service error."
-    });
+            return res.status(response.status).json({
+                error:
+                    data?.error?.message ||
+                    "AI service error."
+            });
 
-}
+        }
 
-        const rewrittenText =
-            data?.candidates?.[0]?.content?.parts?.[0]?.text;
+        const rewrittenText = data?.output_text;
 
         if (!rewrittenText) {
 
@@ -90,5 +82,4 @@ ${text}
         });
 
     }
-
 }
