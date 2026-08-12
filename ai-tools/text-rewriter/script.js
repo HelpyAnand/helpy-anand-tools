@@ -35,13 +35,6 @@ const MAX_CHARACTERS = 10000;
 // Character Counter
 // ==========================================
 
-//inputText.addEventListener("input", function () {
-
-    //charCount.textContent =
-      //  inputText.value.length;
-
-//});
-
 inputText.addEventListener("input", function () {
 
     const currentLength = inputText.value.length;
@@ -65,7 +58,11 @@ inputText.addEventListener("input", function () {
 
         charCount.style.color = "";
 
-        if (!rewriteBtn.disabled) {
+        // Remove character-limit message
+        if (
+            statusMessage.textContent ===
+            "Maximum 10,000 characters allowed."
+        ) {
             statusMessage.textContent = "";
         }
 
@@ -73,7 +70,6 @@ inputText.addEventListener("input", function () {
     }
 
 });
-
 
 // ==========================================
 // Rewrite with AI
@@ -86,16 +82,18 @@ rewriteBtn.addEventListener(
         const text =
             inputText.value.trim();
 
-            if (text.length > MAX_CHARACTERS) {
 
-    statusMessage.textContent =
-        "Maximum 10,000 characters allowed.";
+        // Character limit check
+        if (text.length > MAX_CHARACTERS) {
 
-    statusMessage.style.color =
-        "#dc2626";
+            statusMessage.textContent =
+                "Maximum 10,000 characters allowed.";
 
-    return;
-}
+            statusMessage.style.color =
+                "#dc2626";
+
+            return;
+        }
 
 
         // Empty text check
@@ -208,16 +206,30 @@ rewriteBtn.addEventListener(
 
         } finally {
 
-            rewriteBtn.disabled = false;
-
             rewriteBtn.textContent =
                 "✨ Rewrite with AI";
+
+
+            // Keep button disabled if character limit
+            // is exceeded
+            if (
+                inputText.value.length >
+                MAX_CHARACTERS
+            ) {
+
+                rewriteBtn.disabled = true;
+
+            } else {
+
+                rewriteBtn.disabled = false;
+
+            }
 
         }
 
     }
 );
-
+    
 
 // ==========================================
 // Copy Rewritten Text
