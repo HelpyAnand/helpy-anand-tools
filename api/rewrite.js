@@ -10,6 +10,14 @@ export default async function handler(req, res) {
 
         const { text } = req.body;
 
+        const MAX_CHARACTERS = 10000;
+
+if (text && text.length > MAX_CHARACTERS) {
+    return res.status(400).json({
+        error: "Maximum 10,000 characters allowed."
+    });
+}
+
         if (!text || !text.trim()) {
             return res.status(400).json({
                 error: "Please enter some text."

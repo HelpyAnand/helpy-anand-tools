@@ -24,15 +24,53 @@ const charCount =
 const statusMessage =
     document.getElementById("statusMessage");
 
+// ==========================================
+// Character Limit
+// ==========================================
+
+const MAX_CHARACTERS = 10000;
+
 
 // ==========================================
 // Character Counter
 // ==========================================
 
+//inputText.addEventListener("input", function () {
+
+    //charCount.textContent =
+      //  inputText.value.length;
+
+//});
+
 inputText.addEventListener("input", function () {
 
+    const currentLength = inputText.value.length;
+
     charCount.textContent =
-        inputText.value.length;
+        currentLength + " / " + MAX_CHARACTERS;
+
+    if (currentLength > MAX_CHARACTERS) {
+
+        charCount.style.color = "#dc2626";
+
+        statusMessage.textContent =
+            "Maximum 10,000 characters allowed.";
+
+        statusMessage.style.color =
+            "#dc2626";
+
+        rewriteBtn.disabled = true;
+
+    } else {
+
+        charCount.style.color = "";
+
+        if (!rewriteBtn.disabled) {
+            statusMessage.textContent = "";
+        }
+
+        rewriteBtn.disabled = false;
+    }
 
 });
 
@@ -47,6 +85,17 @@ rewriteBtn.addEventListener(
 
         const text =
             inputText.value.trim();
+
+            if (text.length > MAX_CHARACTERS) {
+
+    statusMessage.textContent =
+        "Maximum 10,000 characters allowed.";
+
+    statusMessage.style.color =
+        "#dc2626";
+
+    return;
+}
 
 
         // Empty text check
