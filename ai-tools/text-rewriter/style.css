@@ -396,7 +396,7 @@ button:disabled {
     }
 
     .seo-content h2 {
-        font-size: 23px;
+        font-size: 16px;
     }
 
     .seo-content p,
@@ -424,20 +424,21 @@ button:disabled {
     text-align: center;
 }
 
+
 .faq-item {
     margin-bottom: 25px;
 }
 
 .faq-item h3 {
     margin-bottom: 8px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     color: #1f2937;
 }
 
 .faq-item p {
     margin-bottom: 0;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 1.7;
     color: #4b5563;
 }
@@ -454,15 +455,15 @@ button:disabled {
     }
 
     .faq-section h2 {
-        font-size: 22px;
-    }
-
-    .faq-item h3 {
         font-size: 17px;
     }
 
+    .faq-item h3 {
+        font-size: 14px;
+    }
+
     .faq-item p {
-        font-size: 15px;
+        font-size: 14px;
     }
 
 }
