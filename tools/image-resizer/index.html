@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Image Resizer - Resize Images Online Free | Helpy Anand Tools
+    </title>
+
+    <meta
+        name="description"
+        content="Resize images online for free. Easily change image width and height while maintaining aspect ratio with Helpy Anand Image Resizer.">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <link
+        rel="canonical"
+        href="https://helpy-anand-tools.vercel.app/tools/image-resizer/">
+
+
+    <!-- Open Graph -->
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:title"
+        content="Image Resizer - Resize Images Online Free | Helpy Anand Tools">
+
+    <meta
+        property="og:description"
+        content="Resize images online for free. Easily change image width and height while maintaining aspect ratio.">
+
+    <meta
+        property="og:url"
+        content="https://helpy-anand-tools.vercel.app/tools/image-resizer/">
+
+    <meta
+        property="og:image"
+        content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <meta
+        property="og:image:width"
+        content="1200">
+
+    <meta
+        property="og:image:height"
+        content="630">
+
+    <meta
+        property="og:image:alt"
+        content="Helpy Anand Tools Image Resizer">
+
+
+    <!-- Twitter Card -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="Image Resizer - Resize Images Online Free">
+
+    <meta
+        name="twitter:description"
+        content="Resize images online for free with Helpy Anand Image Resizer.">
+
+    <meta
+        name="twitter:image"
+        content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <meta
+        name="twitter:image:alt"
+        content="Helpy Anand Tools Image Resizer">
+
+
+    <!-- Structured Data -->
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Image Resizer",
+        "url": "https://helpy-anand-tools.vercel.app/tools/image-resizer/",
+        "description": "Free online Image Resizer that allows users to resize JPG, PNG and WebP images while maintaining aspect ratio.",
+        "applicationCategory": "PhotoApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "Requires JavaScript",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Helpy Anand Tools",
+            "url": "https://helpy-anand-tools.vercel.app/"
+        }
+    }
+    </script>
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="/common.css">
+
+
+
+        <!-- FAQ Schema -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is an Image Resizer?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "An Image Resizer is an online tool that allows you to change the width and height of an image quickly and easily."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I resize JPG, PNG and WebP images?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Helpy Anand Image Resizer supports JPG, PNG and WebP image formats."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is the Image Resizer free to use?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can resize images online for free using Helpy Anand Image Resizer."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I maintain the image aspect ratio?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Enable the Maintain Aspect Ratio option to keep the original proportions of your image while changing its dimensions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I download the resized image?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. After resizing the image, you can preview it and download the resized image to your device."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does the Image Resizer work on mobile devices?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The Image Resizer is designed to work on desktop, tablet and mobile devices."
+            }
+        }
+    ]
+}
+</script>
+
+</head>
+<body>
+    
+
+    <!-- Common Navbar -->
+
+    <div id="common-navbar"></div>
+
+
+    <main>
+
+        <!-- Hero -->
+
+        
+
+
+        <!-- Tool -->
+
+        <section class="tool-section">
+
+            <div class="tool-container">
+
+                <h1>
+                    Image Resizer
+                </h1>
+
+                <p class="tool-description">
+                    Resize JPG, PNG and WebP images while maintaining
+                    their quality and aspect ratio.
+                </p>
+
+
+                <!-- Upload Area -->
+
+                <div
+                    class="upload-area"
+                    id="dropArea">
+
+                    <div class="upload-icon">
+                        🖼️
+                    </div>
+
+                    <p>
+                        Drag & Drop Image Here
+                    </p>
+
+                    <span>
+                        or
+                    </span>
+
+                    <label
+                        for="imageInput"
+                        class="choose-btn">
+
+                        Choose Image
+
+                    </label>
+
+                    <input
+                        type="file"
+                        id="imageInput"
+                        accept="image/jpeg,image/png,image/webp">
+
+                    <p class="upload-info">
+                        JPG, PNG and WebP supported
+                    </p>
+
+                </div>
+
+
+                <!-- Preview -->
+
+                <div
+    class="preview-box"
+    id="previewBox">
+
+    <img
+        id="previewImage"
+        alt="Image Preview">
+
+    <p class="preview-info">
+    Dimensions:
+    <strong id="previewDimensions">—</strong>
+    &nbsp;&nbsp; | &nbsp;&nbsp;
+    File Size:
+    <strong id="previewFileSize">—</strong>
+</p>
+
+</div>
+
+
+                <!-- Image Information -->
+
+                
+
+                <!-- Resize Controls -->
+
+                <div class="resize-controls">
+
+                    <div class="control-group">
+
+                        <label for="width">
+                            Width (px)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="width"
+                            min="1"
+                            placeholder="Width">
+
+                    </div>
+
+
+                    <div class="control-group">
+
+                        <label for="height">
+                            Height (px)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="height"
+                            min="1"
+                            placeholder="Height">
+
+                    </div>
+
+                </div>
+
+
+                <!-- Aspect Ratio -->
+
+                <div class="aspect-ratio">
+
+                    <label>
+
+                        <input
+                            type="checkbox"
+                            id="aspectRatio"
+                            checked>
+
+                        Maintain Aspect Ratio
+
+                    </label>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="button-group">
+
+                    <button
+                        id="resizeBtn"
+                        disabled>
+
+                        🖼️ Resize Image
+
+                    </button>
+
+                    <button
+                        id="downloadBtn"
+                        disabled>
+
+                        ⬇️ Download
+
+                    </button>
+
+                    <button
+                        id="resetBtn">
+
+                        Reset
+
+                    </button>
+
+                </div>
+
+
+                <!-- Status -->
+
+                <p
+                    id="statusMessage"
+                    class="status-message">
+                </p>
+
+
+                <!-- Result -->
+
+                <div
+    class="result-box"
+    id="resultBox">
+
+    <h3>
+        Resized Image
+    </h3>
+
+    <img
+        id="resultImage"
+        alt="Resized Image Preview">
+
+    <p class="result-info">
+    Dimensions:
+    <strong id="newDimensions">—</strong>
+    &nbsp;&nbsp; | &nbsp;&nbsp;
+    File Size:
+    <strong id="resizedFileSize">—</strong>
+</p>
+
+</div>
+
+
+                <!-- Hidden Canvas -->
+
+                <canvas
+                    id="resizeCanvas">
+                </canvas>
+
+            </div>
+
+                </section>
+
+
+        <!-- FAQ Section -->
+
+        <section class="faq-section">
+
+            <div class="faq-container">
+
+                <h2>
+                    Frequently Asked Questions
+                </h2>
+
+                <div class="faq-item">
+
+                    <h3>
+                        What is an Image Resizer?
+                    </h3>
+
+                    <p>
+                        An Image Resizer is an online tool that allows you
+                        to change the width and height of an image quickly
+                        and easily.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <h3>
+                        Can I resize JPG, PNG and WebP images?
+                    </h3>
+
+                    <p>
+                        Yes. Helpy Anand Image Resizer supports JPG, PNG
+                        and WebP image formats.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <h3>
+                        Is the Image Resizer free to use?
+                    </h3>
+
+                    <p>
+                        Yes. You can resize images online for free using
+                        Helpy Anand Image Resizer.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <h3>
+                        Can I maintain the image aspect ratio?
+                    </h3>
+
+                    <p>
+                        Yes. Enable the Maintain Aspect Ratio option to
+                        keep the original proportions of your image while
+                        changing its dimensions.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <h3>
+                        Can I download the resized image?
+                    </h3>
+
+                    <p>
+                        Yes. After resizing the image, you can preview it
+                        and download the resized image to your device.
+                    </p>
+
+                </div>
+
+
+                <div class="faq-item">
+
+                    <h3>
+                        Does the Image Resizer work on mobile devices?
+                    </h3>
+
+                    <p>
+                        Yes. The Image Resizer is designed to work on
+                        desktop, tablet and mobile devices.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+        <!-- SEO Content -->
+
+        <section class="seo-content">
+
+            <div class="seo-container">
+
+                <h2>
+                    Free Online Image Resizer
+                </h2>
+
+                <p>
+                    Resize images online quickly and easily with the
+                    Helpy Anand Image Resizer. You can resize JPG, PNG
+                    and WebP images by entering your preferred width and
+                    height.
+                </p>
+
+                <p>
+                    Our free image resizer helps you change image
+                    dimensions while maintaining the aspect ratio.
+                    Simply choose an image, set the required dimensions
+                    and click the Resize Image button.
+                </p>
+
+                <h3>
+                    Resize JPG, PNG and WebP Images Online
+                </h3>
+
+                <p>
+                    This online image resizer supports common image
+                    formats including JPG, PNG and WebP. You can preview
+                    the selected image, check its dimensions and file
+                    size, resize it and download the resized image.
+                </p>
+
+                <h3>
+                    Maintain Image Aspect Ratio
+                </h3>
+
+                <p>
+                    The Maintain Aspect Ratio option helps keep your
+                    image proportions correct when changing its width
+                    and height. This can help prevent images from
+                    appearing stretched or distorted.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+   <!---------------Footer-------------------->
+<footer>
+
+     © 2026 Helpy Anand Tools | Version 1.0
+    </p>
+
+</footer>
+
+
+    <!-- Common JavaScript -->
+
+    <script src="/js/common.js"></script>
+
+    <!-- Tool JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
