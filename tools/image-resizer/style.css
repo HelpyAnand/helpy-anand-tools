@@ -371,7 +371,7 @@
 ========================================== */
 
 .seo-content {
-    padding: 45px 20px;
+    padding: 25px 20px;
 }
 
 .seo-container {
@@ -381,21 +381,23 @@
 }
 
 .seo-container h2 {
-    margin-bottom: 18px;
-    font-size: 28px;
+    margin-bottom: 12px;
+    font-size: 24px;
 }
 
 .seo-container h3 {
-    margin-top: 28px;
-    margin-bottom: 10px;
-    font-size: 21px;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 19px;
 }
 
 .seo-container p {
-    margin: 0 0 16px;
+    margin: 0 0 10px;
     color: #555;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.6;
 }
+
 
 
 /* ==========================================
@@ -417,17 +419,19 @@
     }
 
     .seo-container p {
-        font-size: 14px;
-        line-height: 1.7;
+    margin: 0 0 16px;
+    color: #555;
+    line-height: 1.7;
+}
     }
 
-}
+
 /* ==========================================
    FAQ SECTION
 ========================================== */
 
 .faq-section {
-    padding: 45px 20px;
+    padding: 0px 20px;
 }
 
 .faq-container {
@@ -494,28 +498,6 @@
 
 }
 
-/* ==========================================
-   FOOTER
-========================================== */
-
-/*footer {
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-    padding: 30px 20px;
-    text-align: center;
-    margin-top: 20px;
-}*/
-
-
-footer{
-margin-top:20px;
-background:#222;
-padding: 10px;
-text-align:center;
-color:white;
-}
-
-
 .footer-links {
     display: flex;
     justify-content: center;
@@ -560,4 +542,92 @@ footer .copyright {
         font-size: 13px;
     }
 
+}
+
+
+
+
+/* Image Resizer page footer only */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 10px 12px;
+    margin-top: 30px;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-bottom: 12px;
+}
+
+footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+footer .copyright {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+@media (max-width: 600px) {
+    footer {
+        padding: 18px 12px;
+        margin-top: 20px;
+    }
+}
+
+
+/* Balanced FAQ to SEO gap */
+.faq-item:last-child {
+    margin-bottom: 10px;
+}
+
+.seo-content {
+    padding-top: 25px;
+}
+
+.seo-container h2 {
+    margin-top: 0;
+}
+
+@media (max-width: 600px) {
+    .faq-section {
+        padding-bottom: 15px;
+    }
+
+    .seo-content {
+        padding-top: 25px;
+    }
+}
+
+/* Smaller SEO text */
+
+.seo-container h3 {
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.seo-container p {
+    font-size: 16px;
+    line-height: 1.55;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+@media (max-width: 600px) {
+    .seo-container h3 {
+        font-size: 16px;
+    }
+
+    .seo-container p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
 }
