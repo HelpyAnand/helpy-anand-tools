@@ -346,7 +346,7 @@ font-size:24px;
 
 .faq-section h2{
     text-align:center;
-    font-size:30px;
+    font-size:25px;
     margin-bottom:25px;
     color:#2563eb;
 }
@@ -369,4 +369,53 @@ font-size:24px;
     font-size:14px;
     line-height:1.6;
     color:#444;
+}
+
+@media (max-width: 600px) {
+    .tool-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-panel {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    #imageInput {
+        display: block;
+        margin: 12px auto 0;
+    }
+
+    .controls {
+        width: 100%;
+        max-width: 320px;
+        margin: 25px auto 0;
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+        margin-top: 22px;
+    }
+
+    .button-group button {
+        display: block;
+        width: 100%;
+        min-height: 44px;
+        margin: 0;
+        padding: 12px 16px;
+        line-height: 1.2;
+    }
 }
