@@ -36,3 +36,43 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 });
+
+
+// ==========================================
+// COMMON FOOTER
+// ==========================================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const footerContainer =
+        document.getElementById("common-footer");
+
+    if (!footerContainer) return;
+
+    fetch("/components/footer.html")
+        .then(response => {
+
+            if (!response.ok) {
+                throw new Error(
+                    "Footer could not be loaded."
+                );
+            }
+
+            return response.text();
+
+        })
+        .then(data => {
+
+            footerContainer.innerHTML = data;
+
+        })
+        .catch(error => {
+
+            console.error(
+                "Footer Error:",
+                error
+            );
+
+        });
+
+});

@@ -649,3 +649,85 @@ border-top:1px solid #e5e7eb;
     padding:14px;
     font-size:17px;
 }
+
+
+
+/* ==========================================
+   COMMON SITE FOOTER
+========================================== */
+
+.site-footer {
+    margin-top: 40px;
+    padding: 28px 20px 18px;
+    background: #222;
+    color: #fff;
+    text-align: center;
+}
+
+.site-footer .footer-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.site-footer .footer-brand h3 {
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+.site-footer .footer-brand p {
+    max-width: 550px;
+    margin: 0 auto 18px;
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.site-footer .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-bottom: 18px;
+}
+
+.site-footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.site-footer .footer-links a:hover {
+    color: #ffd54f;
+}
+
+.site-footer .footer-bottom {
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+
+.site-footer .footer-bottom p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+/* Mobile footer */
+@media (max-width: 600px) {
+    .site-footer {
+        margin-top: 25px;
+        padding: 24px 14px 16px;
+    }
+
+    .site-footer .footer-brand h3 {
+        font-size: 19px;
+    }
+
+    .site-footer .footer-links {
+        gap: 10px 14px;
+    }
+
+    .site-footer .footer-links a {
+        font-size: 13px;
+    }
+}
