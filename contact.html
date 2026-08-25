@@ -7,7 +7,9 @@
 
 <title>Contact Us | Helpy Anand Tools</title>
 
-<meta name="description" content="Contact Helpy Anand Tools">
+<meta
+    name="description"
+    content="Contact Helpy Anand Tools for questions, feedback, suggestions, tool issues and support related to our free AI and online tools.">
 
 <link rel="icon" href="favicon.ico">
 
@@ -52,99 +54,138 @@
 
 <body>
 
-<header>
+    <!-- Common Navbar -->
 
-<div class="container">
+    <div id="common-navbar"></div>
 
-<div class="logo">
-    <a href="index.html" class="logo-link" title="Go to Home">
-        <img src="favicon-32x32.png" class="logo-icon" alt="Helpy Anand Tools Logo">
-        <h1>Helpy Anand Tools</h1>
-    </a>
-</div>
 
-<nav>
+    <main>
 
-<a href="index.html">Home</a>
-<a href="ai-tools.html">AI Tools</a>
-<a href="online-tools.html">Online Tools</a>
-<a href="about.html">About</a>
-<a href="contact.html" class="active">Contact Us</a>
+        <!-- Hero -->
 
-</nav>
+        <section class="hero">
 
-</div>
+            <div class="container">
 
-</header>
+                <h2>
+                    Contact Us
+                </h2>
 
-<section class="hero">
+                <p>
+                    Have any questions or suggestions?
+                    We'd love to hear from you.
+                </p>
 
-<div class="container">
+            </div>
 
-<h2>Contact Us</h2>
+        </section>
 
-<p>
-Have any questions or suggestions? We'd love to hear from you.
-</p>
 
-</div>
+        <!-- Contact Information -->
 
-</section>
+        <section class="tools">
 
-<section class="tools">
+            <div class="container">
 
-<div class="container">
+                <div class="contact-card">
 
-<div class="contact-card">
+                    <h3>
+                        📧 Email
+                    </h3>
 
-<h3>📧 Email</h3>
-<p>support@helpyanandtools.com</p>
+                    <p>
+                        helpyanand@gmail.com
+                    </p>
 
-<hr>
 
-<h3>🕒 Response Time</h3>
-<p>Within 24 Hours</p>
+                    <hr>
 
-<hr>
 
-<h3>🌐 Website</h3>
-<p>
-https://helpy-anand-tools.vercel.app
-</p>
+                    <h3>
+                        🕒 Response Time
+                    </h3>
 
-</div>
+                    <p>
+                        Within 24 Hours
+                    </p>
 
-</section>
 
+                    <hr>
+
+
+                    <h3>
+                        🌐 Website
+                    </h3>
+
+                    <p>
+                        https://helpy-anand-tools.vercel.app
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+<!-- Contact Form -->
 <section class="contact-form-section">
+    <div class="container">
+        <h2 class="section-title">
+            Send Us a Message
+        </h2>
 
-<div class="container">
+        <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+            
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="54f3b510-989e-47f9-9f80-ba6d961b547c">
 
-<h2 class="section-title">Send Us a Message</h2>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                required>
 
-<form class="contact-form">
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your Email"
+                required>
 
-<input type="text" placeholder="Your Name" required>
+            <input
+                type="text"
+                id="subject"
+                name="subject"
+                placeholder="Subject"
+                required>
 
-<input type="email" placeholder="Your Email" required>
+            <textarea
+                id="message"
+                name="message"
+                placeholder="Write your message here..."
+                rows="6"
+                required></textarea>
 
-<input type="text" placeholder="Subject" required>
-
-<textarea placeholder="Write your message here..." rows="6" required></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-</div>
-
+            <button type="submit">
+                Send Message
+            </button>
+        </form>
+    </div>
 </section>
 
-<footer>
+     </main>
 
-<p>© 2026 Helpy Anand Tools | Version 1.0</p>
 
-</footer>
+    <!-- Common Footer -->
+
+    <div id="common-footer"></div>
+
+
+    <!-- Common JavaScript -->
+
+    <script src="/js/common.js"></script>
 
 </body>
+
 </html>

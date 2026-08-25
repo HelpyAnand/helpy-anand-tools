@@ -76,3 +76,60 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 });
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contactForm");
+
+    if (contactForm) {
+        const statusDiv = document.createElement("div");
+        statusDiv.className = "form-status";
+        contactForm.appendChild(statusDiv);
+
+        contactForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector("button[type='submit']");
+            const originalBtnText = submitBtn.innerText;
+
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(contactForm);
+
+            fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    showStatus("Thank you! Your message has been sent successfully.", "success");
+                    contactForm.reset();
+                } else {
+                    showStatus(json.message || "Something went wrong!", "error");
+                }
+            })
+            .catch((error) => {
+                showStatus("Something went wrong! Please try again.", "error");
+            })
+            .finally(() => {
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            });
+
+            function showStatus(text, type) {
+                statusDiv.innerText = text;
+                statusDiv.className = `form-status ${type}`;
+                statusDiv.style.display = "block";
+                
+                setTimeout(() => {
+                    statusDiv.style.display = "none";
+                }, 5000);
+            }
+        });
+    }
+});

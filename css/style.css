@@ -556,101 +556,144 @@ font-size:17px;
     height:auto;
     min-height:150px;
 }
-/* ===========================
-   CONTACT PAGE
-=========================== */
+/* ======================================================
+   CONTACT PAGE & INFO CARD
+====================================================== */
 
-.contact-card{
-
-background:#fff;
-
-max-width:700px;
-
-margin:0 auto;
-
-padding:40px;
-
-border-radius:12px;
-
-box-shadow:0 5px 18px rgba(0,0,0,.08);
-
-text-align:center;
-
+.contact-card {
+    background: #ffffff;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease;
 }
 
-.contact-card h3{
-
-margin-top:20px;
-
-margin-bottom:10px;
-
-font-size:24px;
-
-color:#2563eb;
-
+.contact-card h3 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
-.contact-card p{
-
-font-size:18px;
-
-color:#555;
-
-line-height:1.7;
-
+.contact-card p, 
+.contact-card p a {
+    font-size: 17px;
+    color: #4b5563;
+    line-height: 1.6;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s ease;
 }
 
-.contact-card hr{
-
-margin:25px 0;
-
-border:none;
-
-border-top:1px solid #e5e7eb;
-
+.contact-card p a:hover {
+    color: #2563eb;
+    text-decoration: underline;
 }
 
+.contact-card hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
 
-/* ===========================
+/* ======================================================
    CONTACT FORM
-=========================== */
+====================================================== */
 
-.contact-form-section{
-    padding:60px 0;
+.contact-form-section {
+    padding: 40px 0 60px;
 }
 
-.contact-form{
-    max-width:700px;
-    margin:0 auto;
-    background:#fff;
-    padding:35px;
-    border-radius:12px;
-    box-shadow:0 5px 18px rgba(0,0,0,.08);
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
 .contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:14px;
-    margin-bottom:18px;
-    border:1px solid #ddd;
-    border-radius:8px;
-    font-size:16px;
-    outline:none;
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    background-color: #f9fafb;
+    transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus{
-    border-color:#2563eb;
+.contact-form textarea:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
-.contact-form button{
-    width:100%;
-    padding:14px;
-    font-size:17px;
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.contact-form button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
 
+.contact-form button:active {
+    transform: translateY(0);
+}
+/* Status Alert Message */
+.form-status {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.form-status.error {
+    display: block;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .contact-card, .contact-form {
+        padding: 25px 20px;
+    }
+}
 
 /* ==========================================
    COMMON SITE FOOTER
