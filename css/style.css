@@ -774,3 +774,30 @@ font-size:17px;
         font-size: 13px;
     }
 }
+
+
+/* FAQ मुख्य शीर्षक (Heading) को छोटा और सुंदर करने के लिए */
+.content-box .section-title {
+    font-size: 28px; /* यहाँ से आप मुख्य हेडिंग का आकार और छोटा या बड़ा कर सकते हैं */
+    color: #2563eb;  /* आपके थीम का ब्लू कलर */
+    margin-bottom: 0px; /* पहले सवाल के स्पेस को मैनेज करने के लिए */
+}
+
+/* FAQ के सवालों का फॉन्ट ठीक करने के लिए */
+.faq-item {
+    margin-bottom: 20px;
+}
+
+/* 🎯 केवल पहले सवाल और मुख्य हेडिंग के बीच स्पेस देने के लिए */
+.faq-item:first-of-type {
+    margin-top: 30px; /* यहाँ से आप हेडिंग और पहले सवाल के बीच की दूरी कम या ज्यादा कर सकते हैं */
+}
+
+.faq-question {
+    font-size: 18px; /* यहाँ से आप फॉन्ट को और छोटा या बड़ा कर सकते हैं */
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    text-align: left;
+    font-weight: 600;
+}
