@@ -1,372 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Primary SEO -->
+    <title>Image to PDF Converter - Convert JPG & PNG to PDF Free | Helpy Anand Tools</title>
+    <meta name="description" content="Convert multiple JPG, PNG and WebP images into one PDF online for free. Fast, secure and easy Image to PDF Converter by Helpy Anand Tools.">
+    <meta name="keywords" content="Image to PDF, JPG to PDF, PNG to PDF, WebP to PDF, Convert Images to PDF, Free PDF Converter">
+    <meta name="author" content="Helpy Anand">
+    <meta name="robots" content="index, follow">
 
-<!-- Primary SEO -->
-<title>Image to PDF Converter - Convert JPG & PNG to PDF Free | Helpy Anand Tools</title>
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/image-to-pdf/">
+    <link rel="stylesheet" href="style.css">
 
-<meta name="description"
-content="Convert multiple JPG, PNG and WebP images into one PDF online for free. Fast, secure and easy Image to PDF Converter by Helpy Anand Tools.">
+    <!-- External Library for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<meta name="keywords"
-content="Image to PDF, JPG to PDF, PNG to PDF, WebP to PDF, Convert Images to PDF, Free PDF Converter">
-
-<link rel="stylesheet" href="style.css">
-
-<meta name="author" content="Helpy Anand">
-
-<meta name="robots" content="index, follow">
-
-<link rel="canonical"
-href="https://helpy-anand-tools.vercel.app/tools/image-to-pdf/">
-
-<!-- FAQ Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+    <!-- WebApplication Schema for AdSense Approval -->
+    <script type="application/ld+json">
     {
-      "@type": "Question",
-      "name": "Can I convert multiple images into one PDF?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You can select multiple JPG, PNG or WebP images and combine them into a single PDF file."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which image formats are supported?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The Image to PDF Converter supports JPG, PNG and WebP images."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I choose A4 or Letter PDF size?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You can select either A4 or Letter as the PDF page size."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I choose Portrait or Landscape orientation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You can choose Portrait or Landscape orientation before creating the PDF."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I change the order of images?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. You can arrange the selected images in the required order before converting them into a PDF."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is this Image to PDF Converter free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The Helpy Anand Image to PDF Converter is available online for free."
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Image to PDF Converter",
+      "url": "https://helpy-anand-tools.vercel.app/tools/image-to-pdf/",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript and HTML5 support",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
     }
-  ]
-}
-</script>
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I convert multiple images into one PDF?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can select multiple JPG, PNG or WebP images and combine them into a single PDF file."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which image formats are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Image to PDF Converter supports JPG, PNG and WebP images."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I choose A4 or Letter PDF size?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can select either A4 or Letter as the PDF page size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I choose Portrait or Landscape orientation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can choose Portrait or Landscape orientation before creating the PDF."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All processing happens entirely within your browser. Your images are never uploaded to any server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Image to PDF Converter free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The Helpy Anand Image to PDF Converter is available online completely free with no registration."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
 
 <header>
-
-<div class="container">
-
-<div class="logo">
-<a href="../../index.html" class="logo-link">
-<img src="../../favicon-32x32.png"
-class="logo-icon"
-alt="Helpy Anand Tools Logo">
-
-<h1>Helpy Anand Tools</h1>
-</a>
-</div>
-
-<nav>
-
-<a href="../../index.html">Home</a>
-<a href="../../online-tools.html">Online Tools</a>
-
-</nav>
-
-</div>
-
+    <div class="container">
+        <div class="logo">
+            <a href="../../index.html" class="logo-link">
+                <img src="../../favicon-32x32.png" class="logo-icon" alt="Helpy Anand Tools Logo">
+                <h1>Helpy Anand Tools</h1>
+            </a>
+        </div>
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../../online-tools.html">Online Tools</a>
+        </nav>
+    </div>
 </header>
 
-<!--------Hero Section------------>
 <main>
-
-<section class="hero">
-
-<div class="container">
-
-<h1>🖼️ Image to PDF Converter</h1>
-
-<p>
-Convert Multiple JPG, PNG and WebP Images into One PDF for Free.
-</p>
-
-</div>
-
-</section>
-
-<!------------Tool Area---------->
-<section class="tool-section">
-
-<div class="container">
-
-<div class="tool-box">
-
-<h3>Select Images</h3>
-
-<p>
-Choose one or multiple JPG, PNG or WebP images to merge into a single PDF.
-</p>
-
-<div id="dropArea" class="drop-area">
-
-    <input
-        type="file"
-        id="imageInput"
-        accept="image/*"
-        multiple
-        hidden>
-
-    <div class="drop-content">
-
-        <div class="upload-icon">📁</div>
-
-        <h3>Drag & Drop Images Here</h3>
-
-        <p>or Click Anywhere to Choose Images</p>
-
-    </div>
-
-</div>
-
-<div id="previewContainer">
-
-</div>
-
-    <div class="pdf-settings">
-
-    <div class="setting-group">
-
-        <label for="pageSize">
-            PDF Page Size
-        </label>
-
-        <select id="pageSize">
-            <option value="a4">A4</option>
-            <option value="letter">Letter</option>
-        </select>
-
-    </div>
-    <div class="setting-group">
-
-        <label for="orientation">
-            PDF Orientation
-        </label>
-
-        <select id="orientation">
-            <option value="p">Portrait</option>
-            <option value="l">Landscape</option>
-        </select>
-
-    </div>
-
-</div>
-
-<div class="pdf-settings">
-
-   
-
-</div>
-
-<div id="pdfPreviewInfo" class="pdf-preview-info">
-    Preview: A4 Portrait
-</div>
-
-<div class="button-group">
-
-<button id="convertBtn">
-Convert to PDF
-</button>
-
-<button id="downloadBtn" disabled>
-Download PDF
-</button>
-
-<button id="resetBtn">
-Reset
-</button>
-
-</div>
-
-<p id="statusMessage">
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ==========================================
-     SEO CONTENT
-========================================== -->
-
-<section class="seo-content">
-
-    <h2>How to Convert Images to PDF?</h2>
-
-    <p>
-        Convert your JPG, PNG or WebP images into a single PDF file
-        quickly and easily with the Helpy Anand Image to PDF Converter.
-    </p>
-
-    <ol>
-        <li>Select one or multiple images from your device.</li>
-        <li>Choose the required PDF page size, such as A4 or Letter.</li>
-        <li>Select Portrait or Landscape orientation.</li>
-        <li>Arrange your images in the required order.</li>
-        <li>Click <strong>Convert to PDF</strong> to create your PDF.</li>
-        <li>Click <strong>Download PDF</strong> to save the generated file.</li>
-    </ol>
-
-
-    <h2>Why Use Our Image to PDF Converter?</h2>
-
-    <p>
-        Helpy Anand Image to PDF Converter is a simple online tool for
-        combining multiple images into one PDF document.
-    </p>
-
-    <ul>
-        <li>Free online Image to PDF converter</li>
-        <li>Supports JPG, PNG and WebP images</li>
-        <li>Convert multiple images into one PDF</li>
-        <li>Supports A4 and Letter page sizes</li>
-        <li>Supports Portrait and Landscape orientation</li>
-        <li>Arrange images before creating the PDF</li>
-    </ul>
-
-</section>
-
-<!-- ==========================================
-     FAQ SECTION
-========================================== -->
-
-<section class="faq-section">
-
-    <h2>Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-
-        <h3>Can I convert multiple images into one PDF?</h3>
-
-        <p>
-            Yes. You can select multiple JPG, PNG or WebP images
-            and combine them into a single PDF file.
-        </p>
-
-    </div>
-
-    <div class="faq-item">
-
-        <h3>Which image formats are supported?</h3>
-
-        <p>
-            The Image to PDF Converter supports JPG, PNG and WebP images.
-        </p>
-
-    </div>
-
-    <div class="faq-item">
-
-        <h3>Can I choose A4 or Letter PDF size?</h3>
-
-        <p>
-            Yes. You can select either A4 or Letter as the PDF page size.
-        </p>
-
-    </div>
-
-    <div class="faq-item">
-
-        <h3>Can I choose Portrait or Landscape orientation?</h3>
-
-        <p>
-            Yes. You can choose Portrait or Landscape orientation
-            before creating the PDF.
-        </p>
-
-    </div>
-
-    <div class="faq-item">
-
-        <h3>Can I change the order of images?</h3>
-
-        <p>
-            Yes. You can arrange the selected images in the required
-            order before converting them into a PDF.
-        </p>
-
-    </div>
-
-    <div class="faq-item">
-
-        <h3>Is this Image to PDF Converter free?</h3>
-
-        <p>
-            Yes. The Helpy Anand Image to PDF Converter is available
-            online for free.
-        </p>
-
-    </div>
-
-</section>
-
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>🖼️ Image to PDF Converter</h1>
+            <p>Convert Multiple JPG, PNG and WebP Images into One PDF for Free.</p>
+        </div>
+    </section>
+
+    <!-- Tool Area -->
+    <section class="tool-section">
+        <div class="container">
+            <div class="tool-box">
+                <h3>Select Images</h3>
+                <p>Choose one or multiple JPG, PNG or WebP images to merge into a single PDF.</p>
+
+                <div id="dropArea" class="drop-area">
+                    <input type="file" id="imageInput" accept="image/jpeg, image/png, image/webp" multiple hidden>
+                    <div class="drop-content">
+                        <div class="upload-icon">📁</div>
+                        <h3>Drag & Drop Images Here</h3>
+                        <p>or Click Anywhere to Choose Images</p>
+                    </div>
+                </div>
+
+                <div id="previewContainer"></div>
+
+                <div class="pdf-settings">
+                    <div class="setting-group">
+                        <label for="pageSize">PDF Page Size</label>
+                        <select id="pageSize">
+                            <option value="a4">A4</option>
+                            <option value="letter">Letter</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="orientation">PDF Orientation</label>
+                        <select id="orientation">
+                            <option value="p">Portrait</option>
+                            <option value="l">Landscape</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="pdfPreviewInfo" class="pdf-preview-info">
+                    Preview: A4 Portrait
+                </div>
+
+                <div class="button-group">
+                    <button id="convertBtn">Convert to PDF</button>
+                    <button id="downloadBtn" disabled>Download PDF</button>
+                    <button id="resetBtn">Reset</button>
+                </div>
+
+                <p id="statusMessage"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Content Section -->
+    <section class="seo-content">
+        <div class="container">
+            <h2>How to Convert Images to PDF?</h2>
+            <p>Convert your JPG, PNG or WebP images into a single PDF file quickly and easily with the Helpy Anand Image to PDF Converter.</p>
+            <ol>
+                <li>Select one or multiple images from your device.</li>
+                <li>Choose the required PDF page size, such as A4 or Letter.</li>
+                <li>Select Portrait or Landscape orientation.</li>
+                <li>Click <strong>Convert to PDF</strong> to create your PDF.</li>
+                <li>Click <strong>Download PDF</strong> to save the generated file.</li>
+            </ol>
+
+            <h2>Why Use Our Image to PDF Converter?</h2>
+            <p>Helpy Anand Image to PDF Converter is a simple online tool for combining multiple images into one PDF document safely inside your web browser.</p>
+            <ul>
+                <li><strong>100% Privacy & Security:</strong> Your files remain on your device and are processed locally.</li>
+                <li><strong>Format Support:</strong> Works seamlessly with JPG, PNG, and WebP images.</li>
+                <li><strong>Batch Conversion:</strong> Convert multiple images into one single PDF in seconds.</li>
+                <li><strong>Custom Layouts:</strong> Choose page sizes (A4, Letter) and page orientations (Portrait, Landscape).</li>
+                <li><strong>Completely Free:</strong> No registration, watermarks, or subscription fees required.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Can I convert multiple images into one PDF?</h3>
+                <p>Yes. You can select multiple JPG, PNG or WebP images and combine them into a single PDF file.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Which image formats are supported?</h3>
+                <p>The Image to PDF Converter supports JPG, PNG and WebP images.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I choose A4 or Letter PDF size?</h3>
+                <p>Yes. You can select either A4 or Letter as the PDF page size.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I choose Portrait or Landscape orientation?</h3>
+                <p>Yes. You can choose Portrait or Landscape orientation before creating the PDF.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is my data safe during processing?</h3>
+                <p>Absolute security is guaranteed. All PDF generation is executed on the client side inside your web browser, ensuring your private photos are never transmitted to external servers.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is this Image to PDF Converter free?</h3>
+                <p>Yes. The Helpy Anand Image to PDF Converter is available online for free.</p>
+            </div>
+        </div>
+    </section>
 </main>
 
-<!---------------Footer-------------------->
 <footer>
-
-    © 2026 Helpy Anand Tools | Version 1.0
-    </p>
-
+    <div class="container">
+        <p>© 2026 Helpy Anand Tools | All rights reserved.</p>
+    </div>
 </footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script src="script.js"></script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
