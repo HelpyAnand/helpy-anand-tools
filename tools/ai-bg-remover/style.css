@@ -1,0 +1,694 @@
+/* =========================================================
+   AI BACKGROUND REMOVER
+   HELPY ANAND TOOLS
+========================================================= */
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   NAVIGATION HEADER
+========================================================= */
+
+.site-header {
+    width: 100%;
+    background: linear-gradient(135deg, #0d6efd, #2563eb);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Header container */
+
+.site-header .container {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.site-header .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+
+/* Logo image */
+
+.site-header .logo-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+
+/* Site title */
+
+.site-header .site-title {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+
+/* Logo hover */
+
+.site-header .logo-link:hover .logo-icon {
+    transform: scale(1.08) rotate(-5deg);
+}
+
+.site-header .logo-link:hover .site-title {
+    color: #ffd54f;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-left: auto;
+}
+
+
+/* Navigation links */
+
+.site-header nav a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+
+/* Navigation hover */
+
+.site-header nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffd54f;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MAIN TOOL SECTION
+========================================================= */
+
+.tool-section {
+    width: 100%;
+    padding: 45px 20px;
+}
+
+
+/* =========================================================
+   TOOL BOX
+========================================================= */
+
+.tool-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   TOOL TITLE
+========================================================= */
+
+.tool-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+
+/* Tool description */
+
+.tool-desc {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   UPLOAD AREA
+========================================================= */
+
+.upload-area {
+    border: 2px dashed #2563eb;
+    border-radius: 12px;
+    padding: 35px 20px;
+    text-align: center;
+    background: #f8fbff;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+
+/* Upload hover */
+
+.upload-area:hover {
+    background: #eef5ff;
+}
+
+
+/* Drag over */
+
+.upload-area.dragover {
+    background: #eef5ff;
+    border-color: #1d4ed8;
+}
+
+
+/* Upload text */
+
+.upload-area p {
+    margin-top: 10px;
+    color: #555;
+    font-size: 15px;
+}
+
+
+/* Small supported format text */
+
+.upload-area small {
+    display: block;
+    margin-top: 8px;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+#imageInput {
+    display: none;
+}
+
+
+/* =========================================================
+   SELECT IMAGE BUTTON
+========================================================= */
+
+.upload-btn {
+    display: inline-block;
+    border: none;
+    padding: 11px 22px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 7px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+}
+
+
+/* Upload button hover */
+
+.upload-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+========================================================= */
+
+.status-message {
+    min-height: 24px;
+    margin: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2563eb;
+}
+
+
+/* Error */
+
+.status-message.error {
+    color: #dc2626;
+}
+
+
+/* Success */
+
+.status-message.success {
+    color: #16a34a;
+}
+
+
+/* =========================================================
+   PREVIEW CONTAINER
+========================================================= */
+
+.preview-container {
+    display: none;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+
+/* JS adds .show */
+
+.preview-container.show {
+    display: flex;
+}
+
+
+/* =========================================================
+   PREVIEW BOX
+========================================================= */
+
+.preview-box {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    text-align: center;
+}
+
+
+/* Preview heading */
+
+.preview-box h3 {
+    margin-bottom: 12px;
+    font-size: 18px;
+    color: #222;
+}
+
+
+/* Preview image */
+
+.preview-box img {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+
+/* =========================================================
+   TRANSPARENT BACKGROUND
+========================================================= */
+
+#processedImg {
+    background-image:
+        linear-gradient(
+            45deg,
+            #d1d5db 25%,
+            transparent 25%
+        ),
+        linear-gradient(
+            -45deg,
+            #d1d5db 25%,
+            transparent 25%
+        ),
+        linear-gradient(
+            45deg,
+            transparent 75%,
+            #d1d5db 75%
+        ),
+        linear-gradient(
+            -45deg,
+            transparent 75%,
+            #d1d5db 75%
+        );
+
+    background-size: 20px 20px;
+
+    background-position:
+        0 0,
+        0 10px,
+        10px -10px,
+        -10px 0;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.buttons {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+
+/* JS adds .show */
+
+.buttons.show {
+    display: flex;
+}
+
+
+/* Buttons */
+
+.buttons button {
+    border: none;
+    padding: 11px 22px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #2563eb;
+    color: #ffffff;
+    transition: background 0.2s ease;
+}
+
+
+/* Button hover */
+
+.buttons button:hover {
+    background: #1d4ed8;
+}
+
+
+/* Reset button */
+
+.buttons .reset-btn {
+    background: #64748b;
+}
+
+
+/* Reset hover */
+
+.buttons .reset-btn:hover {
+    background: #475569;
+}
+
+
+/* =========================================================
+   SEO CONTENT
+========================================================= */
+
+.seo-content-section {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto 0;
+    line-height: 1.7;
+    text-align: left;
+}
+
+
+.seo-content-section article {
+    margin-bottom: 25px;
+}
+
+
+.seo-content-section h2 {
+    margin-bottom: 12px;
+    color: #222;
+    font-size: 24px;
+}
+
+
+.seo-content-section p {
+    color: #444;
+}
+
+
+.seo-content-section ul {
+    padding-left: 22px;
+    color: #444;
+}
+
+
+.seo-content-section li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    margin-top: 40px;
+    padding: 28px 20px 18px;
+    background: #222;
+    color: #ffffff;
+    text-align: center;
+}
+
+
+.footer-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.footer-brand h3 {
+    margin: 0 0 10px;
+    font-size: 21px;
+}
+
+
+.footer-brand p {
+    max-width: 550px;
+    margin: 0 auto 18px;
+    color: #d1d5db;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 18px;
+    margin-bottom: 18px;
+}
+
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.footer-links a:hover {
+    color: #ffd54f;
+}
+
+
+.footer-bottom {
+    padding-top: 15px;
+    border-top: 1px solid #444;
+}
+
+
+.footer-bottom p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Header */
+
+    .site-header .container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+
+    /* Logo */
+
+    .site-header .site-title {
+        font-size: 21px;
+    }
+
+
+    .site-header .logo-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+
+    /* Navigation */
+
+    .site-header nav {
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+
+    .site-header nav a {
+        padding: 7px 11px;
+        font-size: 14px;
+    }
+
+
+    /* Main */
+
+    .tool-section {
+        padding: 25px 12px;
+    }
+
+
+    /* Tool box */
+
+    .tool-box {
+        padding: 22px 15px;
+        border-radius: 10px;
+    }
+
+
+    /* Title */
+
+    .tool-title {
+        font-size: 25px;
+    }
+
+
+    /* Description */
+
+    .tool-desc {
+        font-size: 14px;
+    }
+
+
+    /* Upload */
+
+    .upload-area {
+        padding: 28px 15px;
+    }
+
+
+    /* Preview */
+
+    .preview-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    .preview-box {
+        width: 100%;
+        max-width: 400px;
+    }
+
+
+    /* Buttons */
+
+    .buttons {
+        flex-direction: column;
+    }
+
+
+    .buttons button {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+    /* SEO */
+
+    .seo-content-section {
+        margin-top: 30px;
+    }
+
+
+    .seo-content-section h2 {
+        font-size: 21px;
+    }
+
+
+    /* Footer */
+
+    .site-footer {
+        padding: 22px 15px 16px;
+    }
+
+}

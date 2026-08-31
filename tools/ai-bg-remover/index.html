@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Background Remover - Remove Image Background Online Free | Helpy Anand Tools</title>
+
+    <meta name="description" content="Remove image backgrounds online for free using AI. Automatically remove backgrounds from JPG, PNG and WebP images with Helpy Anand Tools.">
+    <meta name="author" content="Helpy Anand">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/ai-bg-remover/">
+
+    <!-- CDN Speed Optimization -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://staticimgly.com">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- Tool Specific CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Dynamic Navbar Placeholder -->
+    <div id="navbar-container"></div>
+
+    <!-- MAIN TOOL SECTION -->
+    <main class="tool-section">
+        <div class="tool-box">
+            <h1 class="tool-title">✨ AI Image Background Remover</h1>
+            <p class="tool-desc">Remove image backgrounds automatically using AI.</p>
+
+            <!-- Upload Area -->
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="imageInput" accept="image/png, image/jpeg, image/webp" style="display: none;">
+                
+                <label for="imageInput" class="upload-btn" id="selectImageBtn">
+                    📁 Select Image
+                </label>
+                
+                <p>or Drag &amp; Drop image here</p>
+                <small>JPG, PNG and WebP supported</small>
+            </div>
+
+            <!-- Status -->
+            <div id="statusText" class="status-message" aria-live="polite"></div>
+
+            <!-- Preview -->
+            <div id="previewContainer" class="preview-container">
+                <!-- Original -->
+                <div class="preview-box">
+                    <h3>Original Image</h3>
+                    <img id="originalImg" alt="Original uploaded image">
+                </div>
+
+                <!-- Result -->
+                <div class="preview-box">
+                    <h3>Background Removed</h3>
+                    <img id="processedImg" alt="Background removed image">
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="buttons" id="actionButtons">
+                <button type="button" id="downloadBtn">📥 Download PNG</button>
+                <button type="button" class="reset-btn" id="resetBtn">🔄 Reset</button>
+            </div>
+        </div>
+
+        <!-- SEO & Content Section -->
+        <section class="seo-content-section" style="margin-top: 40px; line-height: 1.7; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <article>
+                <h2>Free Online AI Background Remover</h2>
+                <p>Removing backgrounds from photos used to require complex skills in software like Photoshop. With <strong>Helpy Anand Tools AI Background Remover</strong>, you can erase backgrounds automatically in seconds directly inside your browser for free.</p>
+            </article>
+
+            <hr style="margin: 25px 0; border: 0; border-top: 1px solid #e2e8f0;">
+
+            <article>
+                <h2>Key Features of Our Tool</h2>
+                <ul>
+                    <li><strong>100% Free &amp; Unlimited:</strong> Process as many photos as you want with no watermarks.</li>
+                    <li><strong>Browser-Based Privacy:</strong> Processing happens locally using client-side AI. Your photos are never stored on external servers.</li>
+                    <li><strong>High-Quality PNG Output:</strong> Get precise edges for portrait cutouts, e-commerce products, and graphics.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <!-- Dynamic Footer Placeholder -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript Module Import -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
