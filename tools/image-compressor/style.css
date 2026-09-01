@@ -1,421 +1,700 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+/* =========================================================
+   IMAGE COMPRESSOR - HELPY ANAND TOOLS
+   CLEAN FINAL CSS
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-background:#f4f6f9;
-color:#333;
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* HEADER */
 
-header{
-background:#0d6efd;
-padding:15px 0;
+/* =========================================================
+   COMMON CONTAINER
+========================================================= */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
 
-display:flex;
-justify-content:space-between;
-align-items:center;
+/* =========================================================
+   HEADER / NAVBAR
+========================================================= */
+
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #0d6efd, #2563eb);
+    padding: 15px 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
 }
 
-/* ===========================
-   Logo Link
-=========================== */
-.logo-link{
-display:flex;
-align-items:center;
-gap:12px;
-text-decoration:none;
-color:#fff;
-cursor:pointer;
-transition:all .3s ease;
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.logo-link:hover{
-    color:#ffd54f;
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    text-decoration: none;
+    color: #ffffff;
 }
 
-.logo-link:hover .logo-icon{
-    transform:scale(1.08) rotate(-5deg);
-    transition:transform .3s ease;
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+
+    transition: transform 0.3s ease;
 }
 
-.logo-link:hover h1{
-    color:#ffd54f;
+.logo-link h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
-.logo-icon{
-width:40px;
-height:40px;
-transition:transform .3s ease;
+
+/* Logo Hover */
+
+.logo-link:hover h1 {
+    color: #ffd54f;
 }
 
-/*-------End------*/
-
-.site-title{
-font-size:30px;
-color:white;
-margin:0;
+.logo-link:hover .logo-icon {
+    transform: scale(1.08) rotate(-5deg);
 }
 
-nav a{
-color:white;
-text-decoration:none;
-padding:8px 16px;
-font-weight:bold;
-border-radius:6px;
-transition:.3s;
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 8px;
+    margin-left: auto;
 }
 
-nav a:hover{
-background:rgba(255,255,255,.15);
-color:#ffd54f;
-transform:translateY(-2px);
+nav a {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border-radius: 6px;
+
+    transition: all 0.25s ease;
 }
 
-/* TOOL */
-
-.compressor-container{
-
-width:90%;
-max-width:800px;
-
-margin:35px auto;
-
-background:white;
-
-padding:20px;
-
-border-radius:15px;
-
-box-shadow:0 5px 20px rgba(0,0,0,.12);
-
+nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffd54f;
+    transform: translateY(-2px);
 }
 
-.tool-title{
 
-text-align:center;
-font-size:36px;
-color:#2563eb;
-margin-bottom:30px;
+/* =========================================================
+   MAIN COMPRESSOR CONTAINER
+========================================================= */
 
+.compressor-container {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 40px auto;
+
+    padding: 30px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
 }
 
-.tool-area{
 
-display:flex;
-gap:20px;
-align-items:flex-start;
+/* =========================================================
+   TOOL TITLE
+========================================================= */
 
+.tool-title {
+    text-align: center;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    color: #222;
+
+    margin-bottom: 30px;
 }
+
+
+/* =========================================================
+   TOOL AREA
+========================================================= */
+
+.tool-area {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 25px;
+}
+
+
+/* =========================================================
+   LEFT & RIGHT PANEL
+========================================================= */
 
 .left-panel,
-.controls{
-
-flex:1;
-
-}
-
-.preview{
-
-height:250px;
-
-border:2px dashed #cfd8dc;
-
-border-radius:12px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:#f8fafc;
-
-margin-bottom:15px;
-
-overflow:hidden;
-
-}
-
-#placeholder{
-
-text-align:center;
-font-weight:bold;
-color:#666;
-line-height:1.8;
-
-}
-
-#previewImage{
-
-max-width:100%;
-max-height:100%;
-display:none;
-
-}
-
-input[type=file]{
-
-width:100%;
-
-}
-
-.controls label{
-
-display:block;
-font-size:20px;
-font-weight:bold;
-
-margin-bottom:12px;
-
-}
-
-input[type=range]{
-
-width:100%;
-margin:15px 0;
-
-}
-
-.info{
-
-background:#f8fafc;
-
-border:1px solid #ddd;
-
-padding:12px;
-
-border-radius:10px;
-
-margin:15px 0;
-
-}
-
-.info p{
-
-margin:10px 0;
-
-}
-
-.button-group{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    margin-top:25px;   /* पहले 15px था */
-}
-
-.button-group button{
-
-flex:1;
-
-height:42px;
-
-background:#2563eb;
-
-color:white;
-
-border:none;
-
-border-radius:8px;
-
-font-size:14px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.3s;
-
-}
-
-.button-group button:hover{
-
-background:#1d4ed8;
-
-transform:translateY(-2px);
-
-}
-
-.button-group button:disabled{
-
-background:#9ca3af;
- opacity:.8;
-cursor:not-allowed;
-
-}
-
-#statusMessage{
-
-margin-top:20px;
-
-text-align:center;
-
-font-weight:bold;
-
-color:green;
-
-min-height:24px;
-
-}
-
-/* FOOTER */
-
-footer{
-
-margin-top:20px;
-
-background:#222;
-
-padding:16px;
-
-text-align:center;
-
-color:white;
-
-}
-
-footer a{
-
-color:white;
-text-decoration:none;
-
-}
-
-footer a:hover{
-
-color:#ffd54f;
-
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.container{
-
-flex-direction:column;
-gap:15px;
-
-}
-
-.tool-area{
-
-flex-direction:column;
-
-}
-
-.button-group{
-
-flex-direction:column;
-
-}
-
-.tool-title{
-
-font-size:34px;
-
-}
-
-.site-title{
-
-font-size:24px;
-
-}
-
+.controls {
+    flex: 1;
+    min-width: 0;
 }
 
 
-/* ==========================
-   FAQ Section
-========================== */
+/* =========================================================
+   IMAGE PREVIEW
+========================================================= */
 
-.faq-section{
-    max-width:900px;
-    margin:50px auto;
-    padding:20px;
+.preview {
+    width: 100%;
+    height: 280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 2px dashed #2563eb;
+    border-radius: 12px;
+
+    background: #f8fbff;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                border-color 0.2s ease;
 }
 
-.faq-section h2{
-    text-align:center;
-    font-size:25px;
-    margin-bottom:25px;
-    color:#2563eb;
+.preview:hover {
+    background: #eef5ff;
+    border-color: #1d4ed8;
 }
 
-.faq-item{
-    background:#fff;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+/* Drag Over */
+
+.preview.dragover {
+    background: #eef5ff;
+    border-color: #1d4ed8;
 }
 
-.faq-item h3{
-    font-size:18px;
-    margin-bottom:10px;
-    color:#2563eb;
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+#placeholder {
+    text-align: center;
+
+    color: #555;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1.8;
+
+    pointer-events: none;
 }
 
-.faq-item p{
-    font-size:14px;
-    line-height:1.6;
-    color:#444;
+
+/* =========================================================
+   PREVIEW IMAGE
+========================================================= */
+
+#previewImage {
+    display: none;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
 }
 
-@media (max-width: 600px) {
-    .tool-area {
+
+/* =========================================================
+   FILE INPUT
+========================================================= */
+
+#imageInput {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.controls {
+    padding: 5px;
+}
+
+.controls > label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   QUALITY RANGE
+========================================================= */
+
+input[type="range"] {
+    width: 100%;
+
+    margin: 12px 0;
+
+    cursor: pointer;
+}
+
+
+/* Quality Text */
+
+.controls > p {
+    margin: 8px 0;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #555;
+}
+
+
+/* =========================================================
+   INFORMATION BOX
+========================================================= */
+
+.info {
+    margin: 18px 0;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+}
+
+.info p {
+    margin: 8px 0;
+
+    font-size: 14px;
+
+    color: #444;
+}
+
+.info span {
+    font-weight: 700;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   BUTTON GROUP
+========================================================= */
+
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button-group button {
+    flex: 1;
+
+    min-height: 42px;
+
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.button-group button:hover:not(:disabled) {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* Disabled Download Button */
+
+.button-group button:disabled {
+    background: #9ca3af;
+
+    opacity: 0.8;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+========================================================= */
+
+#statusMessage {
+    min-height: 24px;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #16a34a;
+}
+
+
+/* =========================================================
+   FAQ SECTION
+========================================================= */
+
+.faq-section {
+    width: 100%;
+    max-width: 900px;
+
+    margin: 45px auto 0;
+
+    padding: 0 5px;
+}
+
+.faq-section h2 {
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    font-size: 26px;
+
+    color: #2563eb;
+}
+
+
+/* FAQ ITEM */
+
+.faq-item {
+    margin-bottom: 18px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+}
+
+.faq-item h3 {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+    color: #2563eb;
+}
+
+.faq-item p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    margin-top: 45px;
+
+    padding: 18px 15px;
+
+    background: #222;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+footer p {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+footer a {
+    color: #ffffff;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffd54f;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
         flex-direction: column;
-        align-items: center;
+
+        gap: 12px;
     }
 
-    .left-panel {
+    nav {
         width: 100%;
-        display: flex;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 6px;
+
+        margin-left: 0;
+    }
+
+    nav a {
+        padding: 7px 12px;
+
+        font-size: 14px;
+    }
+
+    .logo-link h1 {
+        font-size: 24px;
+    }
+
+    .compressor-container {
+        width: 92%;
+
+        padding: 25px 20px;
+
+        margin: 30px auto;
+    }
+
+    .tool-title {
+        font-size: 28px;
+    }
+
+    .tool-area {
         flex-direction: column;
-        align-items: center;
+
+        gap: 25px;
+    }
+
+    .left-panel,
+    .controls {
+        width: 100%;
     }
 
     .preview {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
+        height: 260px;
     }
 
-    #imageInput {
-        display: block;
-        margin: 12px auto 0;
+    .faq-section {
+        width: 92%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
     }
 
-    .controls {
-        width: 100%;
-        max-width: 320px;
-        margin: 25px auto 0;
+    header {
+        padding: 14px 0;
+    }
+
+    .logo-link {
+        gap: 8px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .logo-link h1 {
+        font-size: 20px;
+    }
+
+    nav {
+        gap: 4px;
+    }
+
+    nav a {
+        padding: 6px 9px;
+
+        font-size: 13px;
+    }
+
+    .compressor-container {
+        width: 94%;
+
+        margin: 25px auto;
+
+        padding: 20px 15px;
+
+        border-radius: 10px;
+    }
+
+    .tool-title {
+        font-size: 25px;
+
+        margin-bottom: 25px;
+    }
+
+    .preview {
+        height: 240px;
+    }
+
+    #placeholder {
+        font-size: 15px;
     }
 
     .button-group {
-        display: flex;
         flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
+
         width: 100%;
-        margin-top: 22px;
+
+        gap: 10px;
     }
 
     .button-group button {
-        display: block;
         width: 100%;
+
         min-height: 44px;
-        margin: 0;
-        padding: 12px 16px;
-        line-height: 1.2;
+    }
+
+    .faq-section {
+        width: 94%;
+
+        margin-top: 35px;
+    }
+
+    .faq-section h2 {
+        font-size: 23px;
+    }
+
+    .faq-item {
+        padding: 16px;
+    }
+
+    .faq-item h3 {
+        font-size: 17px;
+    }
+
+    .faq-item p {
+        font-size: 14px;
+    }
+
+    footer {
+        margin-top: 35px;
     }
 }
