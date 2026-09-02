@@ -1,281 +1,463 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<!-- Primary SEO -->
-<title>Word Counter - Free Online Word Counter Tool | Helpy Anand Tools</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<meta name="description"
-content="Count words, characters, sentences and paragraphs instantly with our free online Word Counter. Perfect for students, writers, bloggers and SEO professionals.">
+    <!-- Primary SEO -->
+    <title>
+        Word Counter - Free Online Word Counter Tool | Helpy Anand Tools
+    </title>
 
-<meta name="keywords"
-content="Word Counter, Character Counter, Sentence Counter, Paragraph Counter, Free Word Counter Tool, Online Text Counter">
+    <meta
+        name="description"
+        content="Count words, characters, sentences and paragraphs instantly with our free online Word Counter. Perfect for students, writers, bloggers and SEO professionals.">
 
-<meta name="author" content="Helpy Anand">
+    <meta
+        name="keywords"
+        content="Word Counter, Character Counter, Sentence Counter, Paragraph Counter, Free Word Counter Tool, Online Text Counter">
 
-<meta name="robots" content="index, follow">
+    <meta
+        name="author"
+        content="Helpy Anand">
 
-<link rel="canonical"
-href="https://helpy-anand-tools.vercel.app/tools/word-counter/">
+    <meta
+        name="robots"
+        content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title"
-content="Word Counter - Helpy Anand Tools">
-<meta property="og:description"
-content="Free online tool to count words, characters, sentences and paragraphs instantly.">
-<meta property="og:url"
-content="https://helpy-anand-tools.vercel.app/tools/word-counter/">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title"
-content="Word Counter - Helpy Anand Tools">
-<meta name="twitter:description"
-content="Count words, characters, sentences and paragraphs online for free.">
-
-<!-- Theme -->
-<meta name="theme-color" content="#2563eb">
-
-<!-- Favicon -->
-<link rel="icon" href="../../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-<link rel="manifest" href="../../site.webmanifest">
-
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
-
-<!-- SoftwareApplication Schema -->
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"SoftwareApplication",
-  "name":"Word Counter",
-  "applicationCategory":"WebApplication",
-  "operatingSystem":"Any",
-  "url":"https://helpy-anand-tools.vercel.app/tools/word-counter/",
-  "description":"Free online tool to count words, characters, sentences and paragraphs instantly.",
-  "publisher":{
-    "@type":"Organization",
-    "name":"Helpy Anand Tools"
-  }
-}
-</script>
+    <!-- Canonical -->
+    <link
+        rel="canonical"
+        href="https://helpy-anand-tools.vercel.app/tools/word-counter/">
 
 
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
+    <!-- Open Graph -->
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:title"
+        content="Word Counter - Helpy Anand Tools">
+
+    <meta
+        property="og:description"
+        content="Free online tool to count words, characters, sentences and paragraphs instantly.">
+
+    <meta
+        property="og:url"
+        content="https://helpy-anand-tools.vercel.app/tools/word-counter/">
+
+    <meta
+        property="og:image"
+        content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <meta
+        property="og:image:secure_url"
+        content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <meta
+        property="og:image:width"
+        content="1200">
+
+    <meta
+        property="og:image:height"
+        content="630">
+
+    <meta
+        property="og:image:type"
+        content="image/png">
+
+    <meta
+        property="og:image:alt"
+        content="Helpy Anand Tools - Free AI & Online Tools">
+
+
+    <!-- Twitter -->
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="Word Counter - Helpy Anand Tools">
+
+    <meta
+        name="twitter:description"
+        content="Count words, characters, sentences and paragraphs online for free.">
+
+    <meta
+        name="twitter:image"
+        content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <meta
+        name="twitter:image:alt"
+        content="Helpy Anand Tools - Free AI & Online Tools">
+
+
+    <!-- Theme -->
+    <meta
+        name="theme-color"
+        content="#2563eb">
+
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        href="../../favicon.ico"
+        sizes="any">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="../../favicon-32x32.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="../../favicon-16x16.png">
+
+    <link
+        rel="apple-touch-icon"
+        href="../../apple-touch-icon.png">
+
+    <link
+        rel="manifest"
+        href="../../site.webmanifest">
+
+
+    <!-- Main Site CSS -->
+    <link
+        rel="stylesheet"
+        href="../../css/style.css">
+
+    <!-- Tool CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
     {
-      "@type":"Question",
-      "name":"What is Word Counter?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Word Counter is a free online tool that instantly counts words, characters, sentences and paragraphs."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"Is this Word Counter free?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Yes. This tool is completely free."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"Who can use this tool?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Students, writers, bloggers and SEO professionals can use this tool."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"Does it count characters and sentences?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Yes. It counts words, characters, sentences and paragraphs instantly."
-      }
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Word Counter",
+        "applicationCategory": "WebApplication",
+        "applicationSubCategory": "Writing Tool",
+        "operatingSystem": "Any",
+        "url": "https://helpy-anand-tools.vercel.app/tools/word-counter/",
+        "description": "Free online tool to count words, characters, sentences and paragraphs instantly.",
+        "isAccessibleForFree": true,
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "provider": {
+            "@type": "Organization",
+            "name": "Helpy Anand Tools",
+            "url": "https://helpy-anand-tools.vercel.app/"
+        }
     }
-  ]
-}
-</script>
+    </script>
 
-<meta property="og:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
-<meta property="og:image:secure_url" content="https://helpy-anand-tools.vercel.app/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Helpy Anand Tools - Free AI & Online Tools">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
-<meta name="twitter:image:alt" content="Helpy Anand Tools - Free AI & Online Tools">
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Word Counter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Word Counter is a free online tool that instantly counts words, characters, sentences and paragraphs in your text."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this Word Counter free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. This tool is completely free and can be used without registration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Who can use this tool?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Students, writers, bloggers, SEO professionals and content creators can use this tool for writing and editing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the tool count characters and sentences?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. It provides word, character, sentence and paragraph counts instantly."
+                }
+            }
+        ]
+    }
+    </script>
 
-<link rel="stylesheet" href="style.css">
 
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "xx37vnxnxr");
-</script>
+    <!-- Google Analytics -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-E7LEMEMG9W">
+    </script>
 
-<!--Canonical URL-->
-<link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/word-counter/">
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag("js", new Date());
+
+        gtag("config", "G-E7LEMEMG9W");
+
+    </script>
+
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+
+        (function(c,l,a,r,i,t,y){
+
+            c[a]=c[a]||function(){
+                (c[a].q=c[a].q||[]).push(arguments);
+            };
+
+            t=l.createElement(r);
+            t.async=1;
+            t.src="https://www.clarity.ms/tag/"+i;
+
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+
+        })(window, document, "clarity", "script", "xx37vnxnxr");
+
+    </script>
 
 </head>
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7LEMEMG9W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-E7LEMEMG9W');
-</script>
-
 <body>
 
-<header>
-    <div class="container">
 
-        <div class="logo">
-    <a href="../../index.html" class="logo-link" title="Go to Home">
-        <img src="../../favicon-32x32.png" class="logo-icon" alt="Helpy Anand Tools Logo">
-        <h1>Helpy Anand Tools</h1>
-    </a>
-</div>
+    <!-- COMMON NAVBAR -->
+    <div id="common-navbar"></div>
 
-    <nav>
-    <a href="../../index.html" title="Home">Home</a>
 
-    <a href="../../ai-tools.html" title="AI Tools">AI Tools</a>
+    <main>
 
-    <a href="../../about.html" title="About Us">About</a>
 
-    <a href="../../contact.html" title="Contact Us">Contact</a>
+        <!-- =========================
+             WORD COUNTER TOOL
+        ========================== -->
 
-    </nav>
+        <section class="tool-section">
 
-    </div>
-</header>
+            <div class="tool-box">
 
-<section class="tool-section">
+                <h1>📝 Word Counter</h1>
 
-    <div class="tool-box">
+                <p class="tool-desc">
+                    Count words, characters, sentences and paragraphs instantly.
+                </p>
 
-        <h2>📝 Word Counter</h2>
-        <p class="tool-desc">
-Count words, characters, sentences and paragraphs instantly.
-</p>
 
-        <textarea id="textInput"
-        placeholder="Type or paste your text here..."></textarea>
+                <!-- Text Input -->
+                <textarea
+                    id="textInput"
+                    placeholder="Type or paste your text here..."
+                    aria-label="Enter text to count words, characters, sentences and paragraphs"></textarea>
 
-        <div class="result-grid">
 
-            <div class="result-card">
-                <h3 id="words">0</h3>
-                <p>Words</p>
+                <!-- Results -->
+                <div class="result-grid">
+
+                    <div class="result-card">
+
+                        <h2 id="words">0</h2>
+
+                        <p>
+                            Words
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <h2 id="characters">0</h2>
+
+                        <p>
+                            Characters
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <h2 id="sentences">0</h2>
+
+                        <p>
+                            Sentences
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <h2 id="paragraphs">0</h2>
+
+                        <p>
+                            Paragraphs
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="buttons">
+
+                    <button
+                        id="copyBtn"
+                        type="button">
+                        Copy
+                    </button>
+
+                    <button
+                        id="clearBtn"
+                        type="button">
+                        Clear
+                    </button>
+
+                </div>
+
             </div>
 
-            <div class="result-card">
-                <h3 id="characters">0</h3>
-                <p>Characters</p>
+        </section>
+
+
+        <!-- =========================
+             PRIVACY INFORMATION
+        ========================== -->
+
+        <section class="tool-info-section">
+
+            <h2>
+                Privacy
+            </h2>
+
+            <p>
+                Your text is processed directly in your browser and is not uploaded to our server for word counting.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             FAQ SECTION
+        ========================== -->
+
+        <section class="faq-section">
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+
+            <div class="faq-item">
+
+                <h3>
+                    What is Word Counter?
+                </h3>
+
+                <p>
+                    Word Counter is a free online tool that instantly counts words, characters, sentences and paragraphs in your text.
+                </p>
+
             </div>
 
-            <div class="result-card">
-                <h3 id="sentences">0</h3>
-                <p>Sentences</p>
+
+            <div class="faq-item">
+
+                <h3>
+                    Is this Word Counter free?
+                </h3>
+
+                <p>
+                    Yes. This tool is completely free and can be used without registration.
+                </p>
+
             </div>
 
-            <div class="result-card">
-                <h3 id="paragraphs">0</h3>
-                <p>Paragraphs</p>
+
+            <div class="faq-item">
+
+                <h3>
+                    Who can use this tool?
+                </h3>
+
+                <p>
+                    Students, writers, bloggers, SEO professionals and content creators can use this tool for writing and editing.
+                </p>
+
             </div>
 
-        </div>
 
-        <div class="buttons">
+            <div class="faq-item">
 
-            <button id="copyBtn">Copy</button>
+                <h3>
+                    Does the tool count characters and sentences?
+                </h3>
 
-            <button id="clearBtn">Clear</button>
+                <p>
+                    Yes. It provides word, character, sentence and paragraph counts instantly.
+                </p>
 
-        </div>
+            </div>
 
-    </div>
+        </section>
 
-    <!-- FAQ Section -->
 
-<section class="faq-section">
+    </main>
 
-<h2>Frequently Asked Questions</h2>
 
-<div class="faq-item">
+    <!-- COMMON FOOTER -->
+    <div id="common-footer"></div>
 
-<h3>What is Word Counter?</h3>
 
-<p>
-Word Counter is a free online tool that instantly counts words, characters, sentences and paragraphs in your text.
-</p>
+    <!-- Common JavaScript -->
+    <script src="../../js/common.js"></script>
 
-</div>
+    <!-- Word Counter JavaScript -->
+    <script src="script.js"></script>
 
-<div class="faq-item">
-
-<h3>Is this Word Counter free?</h3>
-
-<p>
-Yes. This tool is completely free and can be used without registration.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>Who can use this tool?</h3>
-
-<p>
-Students, writers, bloggers, SEO professionals and content creators can use this tool for writing and editing.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>Does the tool count characters and sentences?</h3>
-
-<p>
-Yes. It provides word, character, sentence and paragraph counts instantly.
-</p>
-
-</div>
-
-</section>
-
-</section>
-
-<footer>
-
-<p>© 2026 Helpy Anand Tools | Version 1.0</p>
-
-</footer>
-
-<script src="script.js"></script>
 
 </body>
+
 </html>
+
