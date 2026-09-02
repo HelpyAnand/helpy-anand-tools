@@ -1,3 +1,4 @@
+
 // ==========================================
 // IMAGE RESIZER
 // Helpy Anand Tools
@@ -8,60 +9,30 @@
 // Elements
 // ==========================================
 
-const imageInput =
-    document.getElementById("imageInput");
+const imageInput = document.getElementById("imageInput");
+const dropArea = document.getElementById("dropArea");
 
-const dropArea =
-    document.getElementById("dropArea");
+const previewBox = document.getElementById("previewBox");
+const previewImage = document.getElementById("previewImage");
+const previewDimensions = document.getElementById("previewDimensions");
+const previewFileSize = document.getElementById("previewFileSize");
 
-const previewBox =
-    document.getElementById("previewBox");
+const widthInput = document.getElementById("width");
+const heightInput = document.getElementById("height");
+const aspectRatio = document.getElementById("aspectRatio");
 
-const previewImage =
-    document.getElementById("previewImage");
+const resizeBtn = document.getElementById("resizeBtn");
+const downloadBtn = document.getElementById("downloadBtn");
+const resetBtn = document.getElementById("resetBtn");
 
+const statusMessage = document.getElementById("statusMessage");
 
-const previewDimensions =
-    document.getElementById("previewDimensions");
+const resultBox = document.getElementById("resultBox");
+const resultImage = document.getElementById("resultImage");
+const newDimensions = document.getElementById("newDimensions");
+const resizedFileSize = document.getElementById("resizedFileSize");
 
-const previewFileSize =
-    document.getElementById("previewFileSize");
-
-const widthInput =
-    document.getElementById("width");
-
-const heightInput =
-    document.getElementById("height");
-
-const aspectRatio =
-    document.getElementById("aspectRatio");
-
-const resizeBtn =
-    document.getElementById("resizeBtn");
-
-const downloadBtn =
-    document.getElementById("downloadBtn");
-
-const resetBtn =
-    document.getElementById("resetBtn");
-
-const statusMessage =
-    document.getElementById("statusMessage");
-
-const resultBox =
-    document.getElementById("resultBox");
-
-const resultImage =
-    document.getElementById("resultImage");
-
-const newDimensions =
-    document.getElementById("newDimensions");
-
-const resizedFileSize =
-    document.getElementById("resizedFileSize");
-
-const resizeCanvas =
-    document.getElementById("resizeCanvas");
+const resizeCanvas = document.getElementById("resizeCanvas");
 
 
 // ==========================================
@@ -71,77 +42,62 @@ const resizeCanvas =
 let selectedFile = null;
 
 let originalWidth = 0;
-
 let originalHeight = 0;
 
 let resizedBlob = null;
+
+let previewObjectURL = null;
+let resultObjectURL = null;
 
 
 // ==========================================
 // File Selection
 // ==========================================
 
-imageInput.addEventListener(
-    "change",
-    function () {
+imageInput.addEventListener("change", function () {
 
-        const file = imageInput.files[0];
+    const file = imageInput.files[0];
 
-        if (file) {
-
-            loadImage(file);
-
-        }
-
+    if (file) {
+        loadImage(file);
     }
-);
+
+});
 
 
 // ==========================================
 // Drag & Drop
 // ==========================================
 
-dropArea.addEventListener(
-    "dragover",
-    function (event) {
+dropArea.addEventListener("dragover", function (event) {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        dropArea.classList.add("dragover");
+    dropArea.classList.add("dragover");
 
+});
+
+
+dropArea.addEventListener("dragleave", function () {
+
+    dropArea.classList.remove("dragover");
+
+});
+
+
+dropArea.addEventListener("drop", function (event) {
+
+    event.preventDefault();
+
+    dropArea.classList.remove("dragover");
+
+    const file = event.dataTransfer.files[0];
+
+    if (file) {
+        loadImage(file);
     }
-);
 
-
-dropArea.addEventListener(
-    "dragleave",
-    function () {
-
-        dropArea.classList.remove("dragover");
-
-    }
-);
-
-
-dropArea.addEventListener(
-    "drop",
-    function (event) {
-
-        event.preventDefault();
-
-        dropArea.classList.remove("dragover");
-
-        const file =
-            event.dataTransfer.files[0];
-
-        if (file) {
-
-            loadImage(file);
-
-        }
-
-    }
-);
+});
 
 
 // ==========================================
@@ -150,20 +106,7 @@ dropArea.addEventListener(
 
 function loadImage(file) {
 
-    // Check file type
-
-    if (!file.type.startsWith("image/")) {
-
-        showError(
-            "Please select a valid image file."
-        );
-
-        return;
-
-    }
-
-
-    // Supported formats
+    // Supported image formats
 
     const supportedTypes = [
         "image/jpeg",
@@ -183,16 +126,29 @@ function loadImage(file) {
     }
 
 
+    // Clean previous preview URL
+
+    if (previewObjectURL) {
+
+        URL.revokeObjectURL(previewObjectURL);
+
+        previewObjectURL = null;
+
+    }
+
+
+    // Store selected file
+
     selectedFile = file;
 
 
-    // File size
+    // Create object URL
 
-   
-    // Create image
+    previewObjectURL =
+        URL.createObjectURL(file);
 
-    const image =
-        new Image();
+
+    const image = new Image();
 
 
     image.onload = function () {
@@ -204,19 +160,22 @@ function loadImage(file) {
             image.naturalHeight;
 
 
-        // Show dimensions
+        // Show original dimensions
 
-                previewDimensions.textContent =
+        previewDimensions.textContent =
             originalWidth +
             " × " +
             originalHeight +
             " px";
 
+
+        // Show original file size
+
         previewFileSize.textContent =
-        formatFileSize(file.size);
+            formatFileSize(file.size);
 
 
-        // Set inputs
+        // Set width and height
 
         widthInput.value =
             originalWidth;
@@ -225,10 +184,10 @@ function loadImage(file) {
             originalHeight;
 
 
-        // Preview
+        // Show preview
 
         previewImage.src =
-            image.src;
+            previewObjectURL;
 
         previewBox.style.display =
             "block";
@@ -240,20 +199,12 @@ function loadImage(file) {
             false;
 
 
-        // Reset old result
+        // Remove previous result
 
-        resultBox.style.display =
-            "none";
+        clearResult();
 
-        resultImage.src =
-            "";
 
-        downloadBtn.disabled =
-            true;
-
-        resizedBlob =
-            null;
-
+        // Status
 
         statusMessage.textContent =
             "Image loaded successfully.";
@@ -270,11 +221,13 @@ function loadImage(file) {
             "Unable to load this image."
         );
 
+        selectedFile = null;
+
     };
 
 
     image.src =
-        URL.createObjectURL(file);
+        previewObjectURL;
 
 }
 
@@ -283,465 +236,568 @@ function loadImage(file) {
 // Maintain Aspect Ratio
 // ==========================================
 
-widthInput.addEventListener(
-    "input",
-    function () {
+widthInput.addEventListener("input", function () {
 
-        if (!aspectRatio.checked) {
-
-            return;
-
-        }
-
-
-        if (
-            originalWidth <= 0 ||
-            originalHeight <= 0
-        ) {
-
-            return;
-
-        }
-
-
-        const width =
-            parseInt(widthInput.value);
-
-
-        if (!width || width <= 0) {
-
-            return;
-
-        }
-
-
-        const ratio =
-            originalHeight /
-            originalWidth;
-
-
-        heightInput.value =
-            Math.round(
-                width * ratio
-            );
-
+    if (!aspectRatio.checked) {
+        return;
     }
-);
 
 
-heightInput.addEventListener(
-    "input",
-    function () {
-
-        if (!aspectRatio.checked) {
-
-            return;
-
-        }
-
-
-        if (
-            originalWidth <= 0 ||
-            originalHeight <= 0
-        ) {
-
-            return;
-
-        }
-
-
-        const height =
-            parseInt(heightInput.value);
-
-
-        if (!height || height <= 0) {
-
-            return;
-
-        }
-
-
-        const ratio =
-            originalWidth /
-            originalHeight;
-
-
-        widthInput.value =
-            Math.round(
-                height * ratio
-            );
-
+    if (
+        originalWidth <= 0 ||
+        originalHeight <= 0
+    ) {
+        return;
     }
-);
+
+
+    const width =
+        parseInt(widthInput.value, 10);
+
+
+    if (!width || width <= 0) {
+        return;
+    }
+
+
+    const ratio =
+        originalHeight / originalWidth;
+
+
+    heightInput.value =
+        Math.round(width * ratio);
+
+});
+
+
+heightInput.addEventListener("input", function () {
+
+    if (!aspectRatio.checked) {
+        return;
+    }
+
+
+    if (
+        originalWidth <= 0 ||
+        originalHeight <= 0
+    ) {
+        return;
+    }
+
+
+    const height =
+        parseInt(heightInput.value, 10);
+
+
+    if (!height || height <= 0) {
+        return;
+    }
+
+
+    const ratio =
+        originalWidth / originalHeight;
+
+
+    widthInput.value =
+        Math.round(height * ratio);
+
+});
 
 
 // ==========================================
 // Resize Image
 // ==========================================
 
-resizeBtn.addEventListener(
-    "click",
-    function () {
+resizeBtn.addEventListener("click", function () {
 
-        if (!selectedFile) {
+    if (!selectedFile) {
 
-            showError(
-                "Please select an image first."
-            );
+        showError(
+            "Please select an image first."
+        );
 
-            return;
+        return;
 
-        }
+    }
 
 
-        const newWidth =
-            parseInt(widthInput.value);
+    const newWidth =
+        parseInt(widthInput.value, 10);
 
-        const newHeight =
-            parseInt(heightInput.value);
-
-
-        // Validate dimensions
-
-        if (
-            !newWidth ||
-            !newHeight ||
-            newWidth <= 0 ||
-            newHeight <= 0
-        ) {
-
-            showError(
-                "Please enter valid width and height."
-            );
-
-            return;
-
-        }
+    const newHeight =
+        parseInt(heightInput.value, 10);
 
 
-        resizeBtn.disabled =
-            true;
+    // Validate dimensions
 
-        resizeBtn.textContent =
-            "🖼️ Resizing...";
+    if (
+        !Number.isFinite(newWidth) ||
+        !Number.isFinite(newHeight) ||
+        newWidth <= 0 ||
+        newHeight <= 0
+    ) {
 
+        showError(
+            "Please enter valid width and height."
+        );
 
-        statusMessage.textContent =
-            "Resizing image...";
+        return;
 
-        statusMessage.style.color =
-            "#2563eb";
-
-
-        const image =
-            new Image();
-
-
-        image.onload = function () {
-
-            try {
-
-                resizeCanvas.width =
-                    newWidth;
-
-                resizeCanvas.height =
-                    newHeight;
+    }
 
 
-                const context =
-                    resizeCanvas.getContext(
-                        "2d"
-                    );
+    // Prevent extremely large canvas sizes
+
+    const maxDimension = 10000;
+
+    if (
+        newWidth > maxDimension ||
+        newHeight > maxDimension
+    ) {
+
+        showError(
+            "Maximum image dimension is 10,000 × 10,000 pixels."
+        );
+
+        return;
+
+    }
 
 
-                context.clearRect(
-                    0,
-                    0,
-                    newWidth,
-                    newHeight
+    resizeBtn.disabled =
+        true;
+
+    resizeBtn.textContent =
+        "🖼️ Resizing...";
+
+
+    downloadBtn.disabled =
+        true;
+
+
+    statusMessage.textContent =
+        "Resizing image...";
+
+    statusMessage.style.color =
+        "#2563eb";
+
+
+    const image =
+        new Image();
+
+
+    const imageURL =
+        URL.createObjectURL(selectedFile);
+
+
+    image.onload = function () {
+
+        try {
+
+            // Set canvas size
+
+            resizeCanvas.width =
+                newWidth;
+
+            resizeCanvas.height =
+                newHeight;
+
+
+            const context =
+                resizeCanvas.getContext("2d");
+
+
+            if (!context) {
+
+                throw new Error(
+                    "Canvas is not supported."
                 );
-
-
-                context.drawImage(
-                    image,
-                    0,
-                    0,
-                    newWidth,
-                    newHeight
-                );
-
-
-                // Keep original format
-
-                let outputType =
-                    selectedFile.type;
-
-
-                if (
-                    outputType !==
-                        "image/jpeg" &&
-                    outputType !==
-                        "image/png" &&
-                    outputType !==
-                        "image/webp"
-                ) {
-
-                    outputType =
-                        "image/png";
-
-                }
-
-
-                resizeCanvas.toBlob(
-                    function (blob) {
-
-                        if (!blob) {
-
-                            throw new Error(
-                                "Unable to resize image."
-                            );
-
-                        }
-
-
-                        resizedBlob =
-                            blob;
-
-                        resizedFileSize.textContent =
-                                formatFileSize(blob.size);
-
-
-                        const imageURL =
-                            URL.createObjectURL(
-                                blob
-                            );
-
-
-                        resultImage.src =
-                            imageURL;
-
-
-                        newDimensions.textContent =
-                            newWidth +
-                            " × " +
-                            newHeight;
-
-
-                        resultBox.style.display =
-                            "block";
-
-
-                        downloadBtn.disabled =
-                            false;
-
-
-                        statusMessage.textContent =
-                            "✓ Image resized successfully.";
-
-                        statusMessage.style.color =
-                            "#16a34a";
-
-
-                        resizeBtn.disabled =
-                            false;
-
-                        resizeBtn.textContent =
-                            "🖼️ Resize Image";
-
-
-                    },
-                    outputType,
-                    0.92
-                );
-
-
-            } catch (error) {
-
-                console.error(
-                    "Resize Error:",
-                    error
-                );
-
-
-                showError(
-                    "Unable to resize image."
-                );
-
-
-                resizeBtn.disabled =
-                    false;
-
-                resizeBtn.textContent =
-                    "🖼️ Resize Image";
 
             }
 
-        };
+
+            // Clear canvas
+
+            context.clearRect(
+                0,
+                0,
+                newWidth,
+                newHeight
+            );
 
 
-        image.onerror = function () {
+            // Draw resized image
+
+            context.drawImage(
+                image,
+                0,
+                0,
+                newWidth,
+                newHeight
+            );
+
+
+            // Keep original supported format
+
+            let outputType =
+                selectedFile.type;
+
+
+            if (
+                outputType !== "image/jpeg" &&
+                outputType !== "image/png" &&
+                outputType !== "image/webp"
+            ) {
+
+                outputType =
+                    "image/png";
+
+            }
+
+
+            // Create resized image blob
+
+            resizeCanvas.toBlob(
+                function (blob) {
+
+                    URL.revokeObjectURL(imageURL);
+
+
+                    if (!blob) {
+
+                        showError(
+                            "Unable to resize image."
+                        );
+
+                        resetResizeButton();
+
+                        return;
+
+                    }
+
+
+                    resizedBlob =
+                        blob;
+
+
+                    // Show resized file size
+
+                    resizedFileSize.textContent =
+                        formatFileSize(blob.size);
+
+
+                    // Clean old result URL
+
+                    if (resultObjectURL) {
+
+                        URL.revokeObjectURL(
+                            resultObjectURL
+                        );
+
+                    }
+
+
+                    // Create new result URL
+
+                    resultObjectURL =
+                        URL.createObjectURL(blob);
+
+
+                    resultImage.src =
+                        resultObjectURL;
+
+
+                    newDimensions.textContent =
+                        newWidth +
+                        " × " +
+                        newHeight +
+                        " px";
+
+
+                    resultBox.style.display =
+                        "block";
+
+
+                    downloadBtn.disabled =
+                        false;
+
+
+                    statusMessage.textContent =
+                        "✓ Image resized successfully.";
+
+                    statusMessage.style.color =
+                        "#16a34a";
+
+
+                    resetResizeButton();
+
+                },
+                outputType,
+                0.92
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Resize Error:",
+                error
+            );
+
+
+            URL.revokeObjectURL(imageURL);
+
 
             showError(
-                "Unable to process image."
+                "Unable to resize image."
             );
 
 
-            resizeBtn.disabled =
-                false;
+            resetResizeButton();
 
-            resizeBtn.textContent =
-                "🖼️ Resize Image";
+        }
 
-        };
+    };
 
 
-        image.src =
-            URL.createObjectURL(
-                selectedFile
-            );
+    image.onerror = function () {
 
-    }
-);
+        URL.revokeObjectURL(imageURL);
+
+
+        showError(
+            "Unable to process image."
+        );
+
+
+        resetResizeButton();
+
+    };
+
+
+    image.src =
+        imageURL;
+
+});
 
 
 // ==========================================
 // Download Image
 // ==========================================
 
-downloadBtn.addEventListener(
-    "click",
-    function () {
+downloadBtn.addEventListener("click", function () {
 
-        if (!resizedBlob) {
-
-            return;
-
-        }
-
-
-        const url =
-            URL.createObjectURL(
-                resizedBlob
-            );
-
-
-        const link =
-            document.createElement("a");
-
-
-        link.href =
-            url;
-
-
-        link.download =
-            "resized-image";
-
-
-        document.body.appendChild(
-            link
-        );
-
-
-        link.click();
-
-
-        document.body.removeChild(
-            link
-        );
-
-
-        URL.revokeObjectURL(
-            url
-        );
-
+    if (!resizedBlob) {
+        return;
     }
-);
+
+
+    const url =
+        URL.createObjectURL(resizedBlob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+
+    // Correct file extension
+
+    let extension = "png";
+
+
+    if (resizedBlob.type === "image/jpeg") {
+        extension = "jpg";
+    }
+
+    else if (resizedBlob.type === "image/webp") {
+        extension = "webp";
+    }
+
+
+    link.download =
+        "resized-image." + extension;
+
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+
+    setTimeout(function () {
+
+        URL.revokeObjectURL(url);
+
+    }, 100);
+
+});
 
 
 // ==========================================
 // Reset Tool
 // ==========================================
 
-resetBtn.addEventListener(
-    "click",
-    function () {
+resetBtn.addEventListener("click", function () {
 
-        imageInput.value =
-            "";
+    imageInput.value = "";
 
-        selectedFile =
-            null;
+    selectedFile = null;
 
-        originalWidth =
-            0;
+    originalWidth = 0;
+    originalHeight = 0;
 
-        originalHeight =
-            0;
-
-        resizedBlob =
-            null;
+    resizedBlob = null;
 
 
-        previewImage.src =
-            "";
+    // Clean object URLs
 
-        resultImage.src =
-            "";
+    if (previewObjectURL) {
 
+        URL.revokeObjectURL(
+            previewObjectURL
+        );
 
-        previewBox.style.display =
-            "none";
-
-        resultBox.style.display =
-            "none";
-               
-        previewDimensions.textContent =
-            "—";
-
-        previewFileSize.textContent =
-            "—";
-
-        newDimensions.textContent =
-            "—";
-        resizedFileSize.textContent =
-            "—";
-
-        widthInput.value =
-            "";
-
-        heightInput.value =
-            "";
-
-
-        resizeBtn.disabled =
-            true;
-
-        downloadBtn.disabled =
-            true;
-
-
-        resizeBtn.textContent =
-            "🖼️ Resize Image";
-
-
-        statusMessage.textContent =
-            "";
-
-        statusMessage.style.color =
-            "";
-
-
-        resizeCanvas.width =
-            0;
-
-        resizeCanvas.height =
-            0;
-
-
-        imageInput.focus();
+        previewObjectURL = null;
 
     }
-);
+
+
+    if (resultObjectURL) {
+
+        URL.revokeObjectURL(
+            resultObjectURL
+        );
+
+        resultObjectURL = null;
+
+    }
+
+
+    // Clear images
+
+    previewImage.src = "";
+
+    resultImage.src = "";
+
+
+    // Hide sections
+
+    previewBox.style.display =
+        "none";
+
+    resultBox.style.display =
+        "none";
+
+
+    // Reset information
+
+    previewDimensions.textContent =
+        "—";
+
+    previewFileSize.textContent =
+        "—";
+
+    newDimensions.textContent =
+        "—";
+
+    resizedFileSize.textContent =
+        "—";
+
+
+    // Reset inputs
+
+    widthInput.value = "";
+
+    heightInput.value = "";
+
+
+    // Reset buttons
+
+    resizeBtn.disabled =
+        true;
+
+    downloadBtn.disabled =
+        true;
+
+    resizeBtn.textContent =
+        "🖼️ Resize Image";
+
+
+    // Clear status
+
+    statusMessage.textContent =
+        "";
+
+    statusMessage.style.color =
+        "";
+
+
+    // Clear canvas
+
+    resizeCanvas.width = 0;
+
+    resizeCanvas.height = 0;
+
+
+    imageInput.focus();
+
+});
+
+
+// ==========================================
+// Clear Previous Result
+// ==========================================
+
+function clearResult() {
+
+    resizedBlob = null;
+
+
+    if (resultObjectURL) {
+
+        URL.revokeObjectURL(
+            resultObjectURL
+        );
+
+        resultObjectURL = null;
+
+    }
+
+
+    resultImage.src = "";
+
+    resultBox.style.display =
+        "none";
+
+    downloadBtn.disabled =
+        true;
+
+    newDimensions.textContent =
+        "—";
+
+    resizedFileSize.textContent =
+        "—";
+
+}
+
+
+// ==========================================
+// Reset Resize Button
+// ==========================================
+
+function resetResizeButton() {
+
+    resizeBtn.disabled =
+        false;
+
+    resizeBtn.textContent =
+        "🖼️ Resize Image";
+
+}
 
 
 // ==========================================
@@ -787,18 +843,26 @@ function formatFileSize(bytes) {
         );
 
 
+    const safeIndex =
+        Math.min(
+            index,
+            units.length - 1
+        );
+
+
     return (
         parseFloat(
             (
                 bytes /
                 Math.pow(
                     1024,
-                    index
+                    safeIndex
                 )
             ).toFixed(2)
         ) +
         " " +
-        units[index]
+        units[safeIndex]
     );
 
 }
+

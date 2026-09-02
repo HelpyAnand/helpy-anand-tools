@@ -1,3 +1,4 @@
+
 /* ==========================================
    IMAGE RESIZER
    Helpy Anand Tools
@@ -125,36 +126,10 @@
     object-fit: contain;
 }
 
-
-/* ==========================================
-   Image Information
-========================================== */
-
-.image-info {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.info-item {
-    flex: 1;
-    max-width: 300px;
-    padding: 15px;
-    background: #f8fafc;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.info-item span {
-    display: block;
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 6px;
-}
-
-.info-item strong {
-    font-size: 16px;
+.preview-info {
+    margin-top: 12px;
+    line-height: 1.6;
+    color: #555;
 }
 
 
@@ -293,8 +268,10 @@
     border-radius: 8px;
 }
 
-.result-box p {
+.result-info {
     margin-bottom: 0;
+    line-height: 1.6;
+    color: #555;
 }
 
 
@@ -304,6 +281,87 @@
 
 #resizeCanvas {
     display: none;
+}
+
+
+/* ==========================================
+   FAQ SECTION
+========================================== */
+
+.faq-section {
+    padding: 0 20px 15px;
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-container h2 {
+    text-align: center;
+    font-size: 28px;
+    margin: 0 0 30px;
+}
+
+.faq-item {
+    background: #ffffff;
+    padding: 20px 22px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.faq-item:last-child {
+    margin-bottom: 10px;
+}
+
+.faq-item h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    color: #222;
+}
+
+.faq-item p {
+    margin: 0;
+    color: #555;
+    line-height: 1.7;
+}
+
+
+/* ==========================================
+   SEO CONTENT
+========================================== */
+
+.seo-content {
+    padding: 25px 20px;
+}
+
+.seo-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.seo-container h2 {
+    margin: 0 0 12px;
+    font-size: 24px;
+}
+
+.seo-container h3 {
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.seo-container p {
+    margin: 0 0 16px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.55;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 
@@ -328,6 +386,7 @@
 
     .tool-description {
         font-size: 14px;
+        margin-bottom: 25px;
     }
 
     .upload-area {
@@ -342,13 +401,12 @@
         font-size: 16px;
     }
 
-    .image-info {
-        flex-direction: column;
-        gap: 10px;
+    .preview-box {
+        margin: 20px auto;
     }
 
-    .info-item {
-        max-width: none;
+    .preview-info {
+        font-size: 14px;
     }
 
     .resize-controls {
@@ -364,117 +422,8 @@
         width: 100%;
     }
 
-}
-
-/* ==========================================
-   SEO CONTENT
-========================================== */
-
-.seo-content {
-    padding: 25px 20px;
-}
-
-.seo-container {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.seo-container h2 {
-    margin-bottom: 12px;
-    font-size: 24px;
-}
-
-.seo-container h3 {
-    margin-top: 18px;
-    margin-bottom: 8px;
-    font-size: 19px;
-}
-
-.seo-container p {
-    margin: 0 0 10px;
-    color: #555;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-
-
-/* ==========================================
-   SEO CONTENT MOBILE
-========================================== */
-
-@media (max-width: 600px) {
-
-    .seo-content {
-        padding: 35px 15px;
-    }
-
-    .seo-container h2 {
-        font-size: 24px;
-    }
-
-    .seo-container h3 {
-        font-size: 19px;
-    }
-
-    .seo-container p {
-    margin: 0 0 16px;
-    color: #555;
-    line-height: 1.7;
-}
-    }
-
-
-/* ==========================================
-   FAQ SECTION
-========================================== */
-
-.faq-section {
-    padding: 0px 20px;
-}
-
-.faq-container {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.faq-container h2 {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-.faq-item {
-    background: #ffffff;
-    padding: 20px 22px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-}
-
-.faq-item h3 {
-    margin: 0 0 10px;
-    font-size: 18px;
-    color: #222;
-}
-
-.faq-item p {
-    margin: 0;
-    color: #555;
-    line-height: 1.7;
-}
-
-
-/* ==========================================
-   FAQ MOBILE
-========================================== */
-
-@media (max-width: 600px) {
-
     .faq-section {
-        padding: 35px 12px;
+        padding: 35px 12px 15px;
     }
 
     .faq-container h2 {
@@ -496,132 +445,14 @@
         line-height: 1.6;
     }
 
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 14px;
-}
-
-.footer-links a {
-    color: #2563eb;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-footer .copyright {
-    color: #777;
-    font-size: 13px;
-    margin: 0;
-}
-
-
-/* ==========================================
-   FOOTER MOBILE
-========================================== */
-
-@media (max-width: 600px) {
-
-    footer {
-        padding: 22px 15px;
-    }
-
-    .footer-links {
-        gap: 12px 18px;
-    }
-
-    .footer-links a {
-        font-size: 13px;
-    }
-
-}
-
-
-
-
-/* Image Resizer page footer only */
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 10px 12px;
-    margin-top: 30px;
-}
-
-footer .footer-links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 16px;
-    margin-bottom: 12px;
-}
-
-footer .footer-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-footer .copyright {
-    margin: 0;
-    color: #cbd5e1;
-    font-size: 13px;
-}
-
-@media (max-width: 600px) {
-    footer {
-        padding: 18px 12px;
-        margin-top: 20px;
-    }
-}
-
-
-/* Balanced FAQ to SEO gap */
-.faq-item:last-child {
-    margin-bottom: 10px;
-}
-
-.seo-content {
-    padding-top: 25px;
-}
-
-.seo-container h2 {
-    margin-top: 0;
-}
-
-@media (max-width: 600px) {
-    .faq-section {
-        padding-bottom: 15px;
-    }
-
     .seo-content {
-        padding-top: 25px;
+        padding: 25px 15px 35px;
     }
-}
 
-/* Smaller SEO text */
+    .seo-container h2 {
+        font-size: 24px;
+    }
 
-.seo-container h3 {
-    font-size: 16px;
-    line-height: 1.35;
-}
-
-.seo-container p {
-    font-size: 16px;
-    line-height: 1.55;
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-@media (max-width: 600px) {
     .seo-container h3 {
         font-size: 16px;
     }
@@ -629,5 +460,7 @@ footer .copyright {
     .seo-container p {
         font-size: 14px;
         line-height: 1.55;
+        text-align: left;
     }
+
 }
