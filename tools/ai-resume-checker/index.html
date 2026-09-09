@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        AI Resume & ATS Checker - Check Resume Score Online Free | Helpy Anand Tools
+    </title>
+
+    <meta
+        name="description"
+        content="Check your resume with our free AI Resume & ATS Checker. Analyze ATS compatibility, resume sections, keywords, formatting and job description match online.">
+
+    <meta
+        name="robots"
+        content="index, follow">
+
+    <link
+        rel="canonical"
+        href="https://helpy-anand-tools.vercel.app/tools/ai-resume-checker/">
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="../../favicon.ico">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="../../favicon-32x32.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="../../favicon-16x16.png">
+
+    <link
+        rel="apple-touch-icon"
+        href="../../apple-touch-icon.png">
+
+    <link
+        rel="manifest"
+        href="../../site.webmanifest">
+
+    <!-- Open Graph -->
+    <meta
+        property="og:title"
+        content="AI Resume & ATS Checker - Free Resume Checker">
+
+    <meta
+        property="og:description"
+        content="Check your resume for ATS compatibility, keywords, formatting and job description match for free.">
+
+    <meta
+        property="og:type"
+        content="website">
+
+    <meta
+        property="og:url"
+        content="https://helpy-anand-tools.vercel.app/tools/ai-resume-checker/">
+
+    <meta
+        property="og:image"
+        content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <!-- Twitter -->
+    <meta
+        name="twitter:card"
+        content="summary_large_image">
+
+    <meta
+        name="twitter:title"
+        content="AI Resume & ATS Checker - Free Resume Checker">
+
+    <meta
+        name="twitter:description"
+        content="Check your resume for ATS compatibility, keywords and job description match.">
+
+    <meta
+        name="twitter:image"
+        content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <!-- Google Analytics -->
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-E7LEMEMG9W">
+    </script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-E7LEMEMG9W');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){
+                (c[a].q=c[a].q||[]).push(arguments)
+            };
+
+            t=l.createElement(r);
+            t.async=1;
+            t.src="https://www.clarity.ms/tag/"+i;
+
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xx37vnxnxr");
+    </script>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         COMMON NAVBAR
+    ====================================================== -->
+
+    <div id="navbar-container"></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main>
+
+        <!-- Introduction -->
+
+        <section class="intro-section">
+
+            <h2>
+                AI Resume & ATS Checker
+            </h2>
+
+            <p>
+                Check your resume for ATS compatibility, important keywords,
+                resume sections, formatting issues and job description matching
+                with our free online Resume Checker.
+            </p>
+
+        </section>
+
+
+        <!-- Advertisement -->
+
+        <div class="ad-container">
+            <!-- Google AdSense Ad -->
+        </div>
+
+
+        <!-- =================================================
+             RESUME CHECKER TOOL
+        ================================================== -->
+
+        <section class="tool-section">
+
+            <div class="tool-box">
+
+                <h2>
+                    Check Your Resume
+                </h2>
+
+
+                <!-- Resume Upload -->
+
+                <div class="form-group">
+
+                    <label for="resumeFile">
+                        Upload Your Resume
+                    </label>
+
+                    <input
+                        type="file"
+                        id="resumeFile"
+                        accept=".pdf,.docx,.txt">
+
+                    <p class="help-text">
+                        Supported formats: PDF, DOCX and TXT
+                    </p>
+
+                </div>
+
+
+                <!-- Job Description -->
+
+                <div class="form-group">
+
+                    <label for="jobDescription">
+                        Job Description
+                    </label>
+
+                    <textarea
+                        id="jobDescription"
+                        placeholder="Paste the job description here for keyword and job match analysis..."></textarea>
+
+                    <p class="help-text">
+                        Optional: Add a job description to compare your resume
+                        with the job requirements.
+                    </p>
+
+                </div>
+
+
+                <!-- Analyze Button -->
+
+                <div class="button-group">
+
+                    <button
+                        type="button"
+                        id="checkResumeBtn">
+                        Check Resume
+                    </button>
+
+                    <button
+                        type="button"
+                        id="resetBtn">
+                        Reset
+                    </button>
+
+                </div>
+
+
+                <!-- Status -->
+
+                <div
+                    id="statusMessage"
+                    class="status-message"
+                    aria-live="polite">
+                </div>
+
+
+                <!-- =================================================
+                     RESULTS
+                ================================================== -->
+
+                <div
+                    id="results"
+                    class="results"
+                    hidden>
+
+
+                    <!-- ATS Score -->
+
+                    <div class="score-card">
+
+                        <h3>
+                            ATS Resume Score
+                        </h3>
+
+                        <div
+                            id="atsScore"
+                            class="ats-score">
+                            0
+                        </div>
+
+                        <p>
+                            Your overall resume compatibility score
+                        </p>
+
+                    </div>
+
+
+                    <!-- Score Breakdown -->
+
+                    <div class="score-breakdown">
+
+                        <h3>
+                            Score Breakdown
+                        </h3>
+
+                        <div class="score-row">
+                            <span>Keyword Match</span>
+                            <strong id="keywordScore">0%</strong>
+                        </div>
+
+                        <div class="score-row">
+                            <span>ATS Formatting</span>
+                            <strong id="formattingScore">0%</strong>
+                        </div>
+
+                        <div class="score-row">
+                            <span>Resume Content</span>
+                            <strong id="contentScore">0%</strong>
+                        </div>
+
+                        <div class="score-row">
+                            <span>Required Sections</span>
+                            <strong id="sectionScore">0%</strong>
+                        </div>
+
+                        <div class="score-row">
+                            <span>Readability</span>
+                            <strong id="readabilityScore">0%</strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Matched Keywords -->
+
+                    <div class="keyword-section">
+
+                        <h3>
+                            Matched Keywords
+                        </h3>
+
+                        <div id="matchedKeywords">
+                            No keywords analyzed yet.
+                        </div>
+
+                    </div>
+
+
+                    <!-- Missing Keywords -->
+
+                    <div class="keyword-section">
+
+                        <h3>
+                            Missing Keywords
+                        </h3>
+
+                        <div id="missingKeywords">
+                            No missing keywords analyzed yet.
+                        </div>
+
+                    </div>
+
+
+                    <!-- Resume Sections -->
+
+                    <div class="section-analysis">
+
+                        <h3>
+                            Resume Sections
+                        </h3>
+
+                        <ul>
+
+                            <li id="contactCheck">
+                                Contact Information
+                            </li>
+
+                            <li id="summaryCheck">
+                                Professional Summary
+                            </li>
+
+                            <li id="experienceCheck">
+                                Work Experience
+                            </li>
+
+                            <li id="educationCheck">
+                                Education
+                            </li>
+
+                            <li id="skillsCheck">
+                                Skills
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <!-- Suggestions -->
+
+                    <div class="suggestions">
+
+                        <h3>
+                            Improvement Suggestions
+                        </h3>
+
+                        <ul id="suggestionsList">
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Advertisement -->
+
+        <div class="ad-container">
+            <!-- Google AdSense Ad -->
+        </div>
+
+
+        <!-- =================================================
+             INFORMATION CONTENT
+        ================================================== -->
+
+        <section class="content-section">
+
+            <h2>
+                What Is an AI Resume & ATS Checker?
+            </h2>
+
+            <p>
+                An AI Resume & ATS Checker helps job seekers evaluate their
+                resume before applying for a job. It checks important resume
+                sections, keywords, formatting and compatibility with
+                Applicant Tracking Systems (ATS).
+            </p>
+
+            <p>
+                By comparing your resume with a job description, you can
+                identify missing skills and keywords that may be important
+                for the position.
+            </p>
+
+        </section>
+
+
+        <section class="content-section">
+
+            <h2>
+                How Does an ATS Resume Checker Work?
+            </h2>
+
+            <p>
+                Applicant Tracking Systems are commonly used by employers
+                to organize and filter job applications. A resume checker
+                analyzes the text and structure of your resume and identifies
+                areas that may need improvement.
+            </p>
+
+            <ol>
+
+                <li>
+                    Upload your resume.
+                </li>
+
+                <li>
+                    Add the job description.
+                </li>
+
+                <li>
+                    Analyze your resume.
+                </li>
+
+                <li>
+                    Review the ATS score.
+                </li>
+
+                <li>
+                    Improve your resume using the suggestions.
+                </li>
+
+            </ol>
+
+        </section>
+
+
+        <!-- Advertisement -->
+
+        <div class="ad-container">
+            <!-- Google AdSense Ad -->
+        </div>
+
+
+        <!-- =================================================
+             FAQ
+        ================================================== -->
+
+        <section class="faq-section">
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+
+            <div class="faq-item">
+
+                <h3>
+                    What is an ATS?
+                </h3>
+
+                <p>
+                    ATS stands for Applicant Tracking System. Companies use
+                    ATS software to organize and manage job applications.
+                </p>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Is this Resume Checker free?
+                </h3>
+
+                <p>
+                    Yes. The AI Resume & ATS Checker is designed as a free
+                    online tool for checking resume compatibility.
+                </p>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Which resume formats are supported?
+                </h3>
+
+                <p>
+                    The tool is designed to support PDF, DOCX and TXT resume
+                    files.
+                </p>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Can I check my resume against a job description?
+                </h3>
+
+                <p>
+                    Yes. Paste the job description into the Job Description
+                    box to compare important keywords and requirements.
+                </p>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Is my resume uploaded to a server?
+                </h3>
+
+                <p>
+                    Our goal is to process resume content directly in your
+                    browser whenever possible, helping minimize unnecessary
+                    data transmission.
+                </p>
+
+            </div>
+
+        </section>
+
+<!-- =================================================
+     RELATED TOOLS
+================================================== -->
+
+<section class="related-tools">
+
+    <h2>Related Tools</h2>
+
+    <div class="related-tools-grid">
+
+        <!-- Word Counter -->
+        <div class="related-tool">
+            <div class="related-tool-icon">📝</div>
+
+            <h3>Word Counter</h3>
+
+            <p>
+                Count words, characters and sentences easily.
+            </p>
+
+            <a href="../word-counter/" class="related-tool-btn">
+                Use Tool →
+            </a>
+        </div>
+
+
+        <!-- Image Compressor -->
+        <div class="related-tool">
+            <div class="related-tool-icon">🖼️</div>
+
+            <h3>Image Compressor</h3>
+
+            <p>
+                Compress images online without losing quality.
+            </p>
+
+            <a href="../image-compressor/" class="related-tool-btn">
+                Use Tool →
+            </a>
+        </div>
+
+
+        <!-- Password Generator -->
+        <div class="related-tool">
+            <div class="related-tool-icon">🔐</div>
+
+            <h3>Password Generator</h3>
+
+            <p>
+                Generate strong and secure passwords instantly.
+            </p>
+
+            <a href="../password-generator/" class="related-tool-btn">
+                Use Tool →
+            </a>
+        </div>
+
+
+        <!-- AI Prompt Generator -->
+        <div class="related-tool">
+            <div class="related-tool-icon">🤖</div>
+
+            <h3>AI Prompt Generator</h3>
+
+            <p>
+                Create powerful prompts for AI tools quickly.
+            </p>
+
+            <a href="../ai-prompt-generator/" class="related-tool-btn">
+                Use Tool →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+       
+
+    </main>
+
+
+    <!-- =====================================================
+         COMMON FOOTER
+    ====================================================== -->
+
+    <div id="footer-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.9.0/mammoth.browser.min.js"></script>
+    <!-- Main JavaScript -->
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,751 @@
+/* =========================================================
+   AI RESUME & ATS CHECKER
+   HELPY ANAND TOOLS
+========================================================= */
+
+/* ---------- Global ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ---------- Common Container ---------- */
+
+.container {
+    width: 92%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   COMMON NAVBAR
+========================================================= */
+
+.site-header {
+    width: 100%;
+    background: linear-gradient(135deg, #0d6efd, #2563eb);
+    padding: 18px 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.site-header > .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header .logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.site-header .logo-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.site-header .site-title {
+    margin: 0;
+    color: #fff;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-header nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.site-header nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffd54f;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro-section {
+    width: 92%;
+    max-width: 900px;
+    margin: 35px auto 25px;
+    text-align: center;
+}
+
+.intro-section h2 {
+    margin: 0 0 12px;
+    color: #1f2937;
+    font-size: 32px;
+}
+
+.intro-section p {
+    margin: 0 auto;
+    color: #555;
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   ADS
+========================================================= */
+
+.ad-container {
+    width: 92%;
+    max-width: 970px;
+    min-height: 90px;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   TOOL
+========================================================= */
+
+.tool-section {
+    width: 92%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.tool-box {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tool-box > h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222;
+}
+
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.form-group textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.help-text {
+    margin: 6px 0 0;
+    color: #666;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.button-group button {
+    border: none;
+    border-radius: 7px;
+    padding: 11px 22px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#checkResumeBtn {
+    background: #0d6efd;
+    color: #fff;
+}
+
+#checkResumeBtn:hover {
+    background: #0b5ed7;
+}
+
+#resetBtn {
+    background: #6c757d;
+    color: #fff;
+}
+
+#resetBtn:hover {
+    background: #5c636a;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-message {
+    margin-top: 15px;
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESULTS
+========================================================= */
+
+.results {
+    margin-top: 30px;
+}
+
+.score-card {
+    padding: 25px;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.score-card h3 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+.ats-score {
+    font-size: 52px;
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.score-card p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+
+/* =========================================================
+   SCORE BREAKDOWN
+========================================================= */
+
+.score-breakdown {
+    margin-top: 25px;
+}
+
+.score-breakdown h3 {
+    margin-bottom: 15px;
+}
+
+.score-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* =========================================================
+   KEYWORDS
+========================================================= */
+
+.keyword-section,
+.section-analysis,
+.suggestions {
+    margin-top: 25px;
+    padding: 20px;
+    background: #f8fafc;
+    border-radius: 9px;
+    border: 1px solid #e5e7eb;
+}
+
+.keyword-section h3,
+.section-analysis h3,
+.suggestions h3 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content-section {
+    width: 92%;
+    max-width: 900px;
+    margin: 45px auto;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.content-section h2 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+.content-section p,
+.content-section li {
+    color: #444;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section {
+    width: 92%;
+    max-width: 900px;
+    margin: 45px auto;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: #1f2937;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.faq-item h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   RELATED TOOLS
+========================================================= */
+
+.related-tools {
+    width: 92%;
+    max-width: 1000px;
+    margin: 45px auto;
+}
+
+.related-tools h2 {
+    text-align: center;
+    color: #1f2937;
+}
+
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.related-tool {
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    color: #222;
+    text-decoration: none;
+}
+
+.related-tool:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+#footer-container {
+    width: 100%;
+    margin-top: 50px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .site-header > .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .site-header nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .site-header .site-title {
+        font-size: 24px;
+    }
+
+    .tool-box,
+    .content-section {
+        padding: 22px;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .button-group button {
+        width: 100%;
+    }
+
+    .related-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .site-header > .container {
+        width: 94%;
+    }
+
+    .site-header .logo-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .site-header .site-title {
+        font-size: 21px;
+    }
+
+    .site-header nav {
+        gap: 4px;
+    }
+
+    .site-header nav a {
+        padding: 7px 9px;
+        font-size: 13px;
+    }
+
+    .tool-section,
+    .content-section,
+    .faq-section,
+    .related-tools {
+        width: 94%;
+    }
+
+    .related-tools-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Utility ---------- */
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Container - Padding aur Margin kam ki gayi hai */
+.site-footer {
+  background-color: #1a202c; /* Aapka dark color */
+  color: #a0aec0;
+  padding: 24px 20px 15px; /* Top/Bottom padding kam kar di */
+  margin-top: 30px; /* Related Tools ke niche gap kam kar diya */
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Title & Description Spacing */
+.footer-brand h3 {
+  color: #ffffff;
+  font-size: 1.3rem;
+  margin: 0 0 4px 0; /* Tight spacing */
+}
+
+.footer-brand p {
+  font-size: 0.85rem;
+  margin: 0 0 14px 0; /* Gap kam kar diya */
+  color: #cbd5e0;
+}
+
+/* Links Spacing */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px; /* Horizontal aur vertical gap tight kiya */
+}
+
+.footer-links a {
+  color: #cbd5e0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+/* Bottom Bar Line & Copyright */
+.footer-bottom {
+  border-top: 1px solid #2d3748;
+  padding-top: 10px;
+  font-size: 0.78rem;
+  color: #a0aec0;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+/* =================================================
+   RELATED TOOLS
+================================================= */
+
+.related-tools {
+    margin-top: 45px;
+    padding: 30px 0 10px;
+}
+
+.related-tools h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.related-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.related-tool {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 24px 18px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s ease;
+}
+
+.related-tool:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.related-tool-icon {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f6ff;
+    border-radius: 18px;
+    font-size: 34px;
+}
+
+.related-tool h3 {
+    margin: 8px 0 10px;
+    font-size: 19px;
+    color: #222;
+}
+
+.related-tool p {
+    min-height: 48px;
+    margin: 0 0 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.related-tool-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.related-tool-btn:hover {
+    background: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+
+/* =================================================
+   MOBILE
+================================================= */
+
+@media (max-width: 900px) {
+
+    .related-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .related-tools {
+        padding: 25px 10px 5px;
+    }
+
+    .related-tools h2 {
+        font-size: 24px;
+    }
+
+    .related-tools-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .related-tool {
+        padding: 20px 16px;
+    }
+
+}
+
+
+
+
+
+
+/* ==========================================
+   COMMON NAVBAR LOGO HOVER
+========================================== */
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logo-link:hover .logo-icon {
+    transform: scale(1.08) rotate(-5deg);
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover .site-title {
+    color: #ffd54f;
+}
+
+.logo-icon {
+    transition: transform 0.3s ease;
+}
+
+.site-title {
+    color: white;
+    transition: color 0.3s ease;
+}
