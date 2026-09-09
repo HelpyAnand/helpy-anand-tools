@@ -255,31 +255,20 @@ Open Tool
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<!-- ================= FOOTER ================= -->
 
-<div class="footer-links">
+<div id="footer-container"></div>
 
-<a href="about.html">About</a>
-
-<a href="contact.html">Contact Us</a>
-
-<a href="privacy-policy.html">Privacy Policy</a>
-
-<a href="terms-and-conditions.html">Terms & Conditions</a>
-
-<a href="disclaimer.html">Disclaimer</a>
-
-</div>
-
-<p class="copyright">
-
-© 2026 Helpy Anand Tools | Version 1.0
-
-</p>
-
-</footer>
-
-<script src="js/script.js"></script>
+<script>
+    fetch("components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch(error => {
+            console.error("Footer load error:", error);
+        });
+</script>
 
 </body>
 

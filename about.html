@@ -182,10 +182,9 @@
                         class="logo-icon"
                         alt="Helpy Anand Tools Logo">
 
-                    <span
-                        style="font-size: 24px; font-weight: bold; color: white;">
-                        Helpy Anand Tools
-                    </span>
+                    <h1 class="site-title">
+    Helpy Anand Tools
+</h1>
 
                 </a>
 
@@ -553,43 +552,20 @@
     </main>
 
 
-    <!-- Footer -->
-    <footer class="site-footer">
+   
+   <!-- Footer -->
+<div id="footer-container"></div>
 
-        <div class="footer-links">
-
-            <a href="index.html">
-                Home
-            </a>
-
-            <a href="about.html">
-                About Us
-            </a>
-
-            <a href="contact.html">
-                Contact Us
-            </a>
-
-            <a href="privacy-policy.html">
-                Privacy Policy
-            </a>
-
-            <a href="terms-and-conditions.html">
-                Terms & Conditions
-            </a>
-
-            <a href="disclaimer.html">
-                Disclaimer
-            </a>
-
-        </div>
-
-        <p class="copyright">
-            © 2026 Helpy Anand Tools. All rights reserved.
-        </p>
-
-    </footer>
-
+<script>
+    fetch("components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch(error => {
+            console.error("Footer load error:", error);
+        });
+</script>
 </body>
 
 </html>

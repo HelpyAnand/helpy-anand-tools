@@ -152,7 +152,7 @@ Available AI Tools
 
 <div class="ai-tools-grid">
 
-    <!-- AI Prompt Generator -->
+    <!--------------------- AI Prompt Generator ------------------>
 
     <div class="tool-card">
 
@@ -173,7 +173,7 @@ Available AI Tools
     </div>
 
 
-    <!-- AI Text Rewriter -->
+    <!--------------- AI Text Rewriter ----------------->
 
     <div class="tool-card">
 
@@ -194,7 +194,7 @@ Available AI Tools
     </div>
 
 
-<!-- AI Back Ground Remover -->
+<!-------------------- AI Back Ground Remover ------------------>
 
     <div class="tool-card">
 
@@ -213,38 +213,46 @@ Available AI Tools
         </a>
 
     </div>
+
+        <!-------------------- AI Resume Checker ------------------>
+
+    <div class="tool-card">
+
+        <div class="tool-icon">
+            📄
+        </div>
+
+        <h3>AI Resume Checker</h3>
+
+        <p>
+            Check your resume with an ATS score, keyword analysis,
+            formatting review and personalized improvement suggestions.
+        </p>
+
+        <a href="tools/ai-resume-checker/index.html" class="tool-btn">
+            Open Tool
+        </a>
+
     </div>
+    
 
 </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<div id="footer-container"></div>
 
-<div class="footer-links">
-
-<a href="about.html">About</a>
-
-<a href="contact.html">Contact Us</a>
-
-<a href="privacy-policy.html">Privacy Policy</a>
-
-<a href="terms-and-conditions.html">Terms & Conditions</a>
-
-<a href="disclaimer.html">Disclaimer</a>
-
-</div>
-
-<p class="copyright">
-
-© 2026 Helpy Anand Tools | Version 1.0
-
-</p>
-
-</footer>
-
-<script src="js/script.js"></script>
+<script>
+    fetch("components/footer.html")
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById("footer-container").innerHTML = data;
+        })
+        .catch(error => {
+            console.error("Footer load error:", error);
+        });
+</script>
 
 </body>
 
