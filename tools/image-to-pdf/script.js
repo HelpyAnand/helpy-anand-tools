@@ -296,6 +296,7 @@ convertBtn.addEventListener("click", async function () {
     pdfBlob = pdf.output("blob");
     downloadBtn.disabled = false;
     statusMessage.textContent = "PDF Created Successfully.";
+    statusMessage.style.color = "green";
 });
 
 downloadBtn.addEventListener("click", function () {

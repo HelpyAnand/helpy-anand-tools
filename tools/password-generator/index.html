@@ -1,302 +1,623 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
 <!-- Primary SEO -->
-<title>Password Generator - Free Strong Password Generator | Helpy Anand Tools</title>
+<title>
+    Password Generator - Free Strong Password Generator | Helpy Anand Tools
+</title>
 
-<meta name="description"
-content="Generate strong, secure and random passwords online for free. Create customizable passwords with uppercase, lowercase, numbers and special characters.">
+<meta
+    name="description"
+    content="Generate strong and random passwords online for free. Create customizable passwords using uppercase letters, lowercase letters, numbers and symbols.">
 
-<meta name="keywords"
-content="Password Generator, Strong Password Generator, Random Password Generator, Secure Password Tool, Free Password Generator">
+<meta
+    name="keywords"
+    content="Password Generator, Strong Password Generator, Random Password Generator, Secure Password Generator, Free Password Generator">
 
-<meta name="author" content="Helpy Anand">
+<meta
+    name="author"
+    content="Helpy Anand">
 
-<meta name="robots" content="index, follow">
+<meta
+    name="robots"
+    content="index, follow">
 
-<link rel="canonical"
-href="https://helpy-anand-tools.vercel.app/tools/password-generator/">
+<!-- Canonical -->
+<link
+    rel="canonical"
+    href="https://helpy-anand-tools.vercel.app/tools/password-generator/">
+
 
 <!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title"
-content="Password Generator - Helpy Anand Tools">
-<meta property="og:description"
-content="Generate strong, secure and random passwords online for free.">
-<meta property="og:url"
-content="https://helpy-anand-tools.vercel.app/tools/password-generator/">
+<meta
+    property="og:type"
+    content="website">
+
+<meta
+    property="og:title"
+    content="Password Generator - Helpy Anand Tools">
+
+<meta
+    property="og:description"
+    content="Generate strong and random passwords online for free with Helpy Anand Tools.">
+
+<meta
+    property="og:url"
+    content="https://helpy-anand-tools.vercel.app/tools/password-generator/">
+
+<meta
+    property="og:image"
+    content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+<meta
+    property="og:image:secure_url"
+    content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+<meta
+    property="og:image:width"
+    content="1200">
+
+<meta
+    property="og:image:height"
+    content="630">
+
+<meta
+    property="og:image:type"
+    content="image/png">
+
+<meta
+    property="og:image:alt"
+    content="Helpy Anand Tools - Free Online Tools">
+
 
 <!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title"
-content="Password Generator - Helpy Anand Tools">
-<meta name="twitter:description"
-content="Free online password generator for creating strong and secure passwords.">
+<meta
+    name="twitter:card"
+    content="summary_large_image">
+
+<meta
+    name="twitter:title"
+    content="Password Generator - Helpy Anand Tools">
+
+<meta
+    name="twitter:description"
+    content="Generate strong and random passwords online for free.">
+
+<meta
+    name="twitter:image"
+    content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+<meta
+    name="twitter:image:alt"
+    content="Helpy Anand Tools - Free Online Tools">
+
 
 <!-- Theme -->
-<meta name="theme-color" content="#2563eb">
+<meta
+    name="theme-color"
+    content="#2563eb">
+
 
 <!-- Favicon -->
-<link rel="icon" href="../../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-<link rel="manifest" href="../../site.webmanifest">
+<link
+    rel="icon"
+    href="../../favicon.ico"
+    sizes="any">
 
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
+<link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="../../favicon-32x32.png">
+
+<link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="../../favicon-16x16.png">
+
+<link
+    rel="apple-touch-icon"
+    href="../../apple-touch-icon.png">
+
+<link
+    rel="manifest"
+    href="../../site.webmanifest">
+
+
+<!-- Main Site CSS -->
+<link
+    rel="stylesheet"
+    href="../../css/style.css">
+
+<!-- Tool CSS -->
+<link
+    rel="stylesheet"
+    href="style.css">
+
 
 <!-- SoftwareApplication Schema -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"SoftwareApplication",
-  "name":"Password Generator",
-  "applicationCategory":"WebApplication",
-  "operatingSystem":"Any",
-  "url":"https://helpy-anand-tools.vercel.app/tools/password-generator/",
-  "description":"Generate strong, secure and random passwords online for free.",
-  "publisher":{
-    "@type":"Organization",
-    "name":"Helpy Anand Tools"
-  }
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Password Generator",
+    "applicationCategory": "SecurityApplication",
+    "applicationSubCategory": "Password Generator",
+    "operatingSystem": "Any",
+    "url": "https://helpy-anand-tools.vercel.app/tools/password-generator/",
+    "description": "Free online password generator for creating customizable random passwords.",
+    "isAccessibleForFree": true,
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "provider": {
+        "@type": "Organization",
+        "name": "Helpy Anand Tools",
+        "url": "https://helpy-anand-tools.vercel.app/"
+    }
 }
 </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E7LEMEMG9W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-E7LEMEMG9W');
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is a Password Generator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Password Generator is an online tool that creates random passwords using combinations of letters, numbers and special characters."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is this Password Generator free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Helpy Anand Password Generator is free to use and does not require registration."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I customize the password?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. You can choose the password length and select uppercase letters, lowercase letters, numbers and symbols."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why should I use a strong password?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Strong and unique passwords can make it more difficult for unauthorized users to guess or access online accounts."
+            }
+        }
+    ]
+}
 </script>
 
-<meta property="og:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
-<meta property="og:image:secure_url" content="https://helpy-anand-tools.vercel.app/og-image.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="Helpy Anand Tools - Free AI & Online Tools">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
-<meta name="twitter:image:alt" content="Helpy Anand Tools - Free AI & Online Tools">
+<!-- Google Analytics -->
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-E7LEMEMG9W">
+</script>
 
-<link rel="stylesheet" href="style.css">
+<script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-E7LEMEMG9W");
+
+</script>
+
 
 <!-- Microsoft Clarity -->
 <script type="text/javascript">
+
     (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+
+        c[a]=c[a]||function(){
+            (c[a].q=c[a].q||[]).push(arguments);
+        };
+
+        t=l.createElement(r);
+        t.async=1;
+        t.src="https://www.clarity.ms/tag/"+i;
+
+        y=l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t,y);
+
     })(window, document, "clarity", "script", "xx37vnxnxr");
+
 </script>
 
-<!--Canonical URL-->
-<link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/password-generator/">
 
 </head>
 
 <body>
 
-<header>
 
-    <div class="container">
+<!-- COMMON NAVBAR -->
+<div id="common-navbar"></div>
 
-        <div class="logo">
-    <a href="../../index.html" class="logo-link" title="Go to Home">
-        <img src="../../favicon-32x32.png" class="logo-icon" alt="Helpy Anand Tools Logo">
-        <h1>Helpy Anand Tools</h1>
-    </a>
+
+<main>
+
+
+    <!-- =========================
+         PASSWORD GENERATOR TOOL
+    ========================== -->
+
+    <section
+        class="tool-section"
+        aria-labelledby="password-generator-title">
+
+        <div class="tool-box">
+
+            <h1 id="password-generator-title">
+                🔐 Password Generator
+            </h1>
+
+            <p class="tool-desc">
+                Generate strong and random passwords instantly.
+                Customize password length and character types
+                according to your needs.
+            </p>
+
+
+            <!-- Generated Password -->
+
+            <label
+                for="password"
+                class="input-label">
+
+                Generated Password
+
+            </label>
+
+
+            <div class="password-box">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Your password will appear here"
+                    readonly
+                    aria-label="Generated password">
+
+
+                <button
+                    type="button"
+                    id="togglePassword"
+                    class="eye-btn"
+                    aria-label="Show password"
+                    title="Show or hide password">
+
+                    👁️
+
+                </button>
+
+            </div>
+
+
+            <!-- Password Length -->
+
+            <div class="length-box">
+
+                <label for="length">
+                    Password Length
+                </label>
+
+                <span
+                    id="lengthValue"
+                    aria-live="polite">
+
+                    12
+
+                </span>
+
+            </div>
+
+
+            <input
+                type="range"
+                id="length"
+                min="6"
+                max="32"
+                value="12"
+                aria-label="Password length">
+
+
+            <!-- Character Options -->
+
+            <fieldset class="options">
+
+                <legend>
+                    Password Character Options
+                </legend>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="uppercase"
+                        checked>
+
+                    Uppercase (A-Z)
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="lowercase"
+                        checked>
+
+                    Lowercase (a-z)
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="numbers"
+                        checked>
+
+                    Numbers (0-9)
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="symbols"
+                        checked>
+
+                    Symbols (!@#$)
+
+                </label>
+
+            </fieldset>
+
+
+            <!-- Password Strength -->
+
+            <div
+                class="strength"
+                aria-live="polite">
+
+                <div class="strength-label">
+
+                    Strength :
+                    <span id="strengthText">
+                        Strong
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="strength-bar"
+                    role="progressbar"
+                    aria-label="Password strength">
+
+                    <div id="strengthFill"></div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+
+           <div class="buttons">
+    <button id="generateBtn" type="button">Generate Password</button>
+    <button id="copyBtn" type="button">Copy</button>
+    <button id="resetBtn" type="button">Reset</button>
 </div>
 
-    <nav>
 
-    <a href="../../index.html" title="Home">Home</a>
+        </div>
 
-    <a href="../../ai-tools.html" title="AI Tools">AI Tools</a>
+    </section>
 
-    <a href="../../about.html" title="About Us">About</a>
 
-    <a href="../../contact.html" title="Contact Us">Contact</a>
+    <!-- =========================
+         HELPFUL INFORMATION
+    ========================== -->
 
-    </nav>
+    <section
+        class="tool-info-section"
+        aria-labelledby="about-password-generator">
 
-    </div>
+        <h2 id="about-password-generator">
+            What Is a Password Generator?
+        </h2>
 
-</header>
+        <p>
+            A password generator is an online tool that creates
+            random passwords using combinations of letters,
+            numbers and special characters.
+        </p>
 
-<section class="tool-section">
+        <p>
+            Using strong and unique passwords can help protect
+            online accounts from unauthorized access. This free
+            password generator lets you choose the password length
+            and the types of characters you want to include.
+        </p>
 
-<div class="tool-box">
 
-<h2>🔐 Password Generator</h2>
+        <h2>
+            How to Use This Password Generator
+        </h2>
 
-<p class="tool-desc">
+        <ol>
 
-Generate strong and secure passwords instantly.
+            <li>
+                Choose your preferred password length.
+            </li>
 
-</p>
+            <li>
+                Select uppercase letters, lowercase letters,
+                numbers or symbols.
+            </li>
 
+            <li>
+                Click the
+                <strong>Generate Password</strong>
+                button.
+            </li>
 
-<label class="input-label">Generated Password</label>
+            <li>
+                Click
+                <strong>Copy</strong>
+                to copy the generated password.
+            </li>
 
-<div class="password-box">
+        </ol>
 
-    <input
-    type="password"
-    id="password"
-    placeholder="Your password will appear here"
-    readonly>
+    </section>
 
-    <button
-    id="togglePassword"
-    class="eye-btn">
-    👁️
-    </button>
 
-</div>
+    <!-- =========================
+         PRIVACY INFORMATION
+    ========================== -->
 
-<div class="length-box">
+    <section
+        class="tool-info-section"
+        aria-labelledby="privacy-title">
 
-    <label>Password Length</label>
+        <h2 id="privacy-title">
+            Privacy
+        </h2>
 
-    <span id="lengthValue">12</span>
+        <p>
+            Password generation is performed directly in your
+            browser. Your generated password is not sent to our
+            server for generation.
+        </p>
 
-</div>
+    </section>
 
-<input
-type="range"
-id="length"
-min="6"
-max="32"
-value="12">
 
-<div class="options">
+    <!-- =========================
+         FAQ SECTION
+    ========================== -->
 
-<label>
-<input type="checkbox" id="uppercase" checked>
-Uppercase (A-Z)
-</label>
+    <section
+        class="faq-section"
+        aria-labelledby="faq-title">
 
-<label>
-<input type="checkbox" id="lowercase" checked>
-Lowercase (a-z)
-</label>
+        <h2 id="faq-title">
+            Frequently Asked Questions
+        </h2>
 
-<label>
-<input type="checkbox" id="numbers" checked>
-Numbers (0-9)
-</label>
 
-<label>
-<input type="checkbox" id="symbols" checked>
-Symbols (!@#$)
-</label>
+        <div class="faq-item">
 
-</div>
+            <h3>
+                What is a Password Generator?
+            </h3>
 
-<div class="strength">
+            <p>
+                A Password Generator is an online tool that creates
+                random passwords using combinations of letters,
+                numbers and special characters.
+            </p>
 
-    <div class="strength-label">
+        </div>
 
-        Strength :
-        <span id="strengthText">Strong</span>
 
-    </div>
+        <div class="faq-item">
 
-    <div class="strength-bar">
+            <h3>
+                Is this Password Generator free?
+            </h3>
 
-        <div id="strengthFill"></div>
+            <p>
+                Yes. You can generate passwords for free without
+                registration.
+            </p>
 
-    </div>
+        </div>
 
-</div>
 
-<div class="buttons">
+        <div class="faq-item">
 
-<button id="generateBtn">
+            <h3>
+                Can I customize the password?
+            </h3>
 
-Generate Password
+            <p>
+                Yes. You can choose the password length and select
+                uppercase letters, lowercase letters, numbers and
+                symbols.
+            </p>
 
-</button>
+        </div>
 
-<button id="copyBtn">
 
-Copy
+        <div class="faq-item">
 
-</button>
+            <h3>
+                Why should I use a strong password?
+            </h3>
 
-</div>
+            <p>
+                Strong and unique passwords can make it harder for
+                unauthorized users to guess or access your online
+                accounts.
+            </p>
 
-</div>
-<!-- FAQ Section -->
+        </div>
 
-<section class="faq-section">
+    </section>
 
-<h2>Frequently Asked Questions</h2>
 
-<div class="faq-item">
+</main>
 
-<h3>What is Password Generator?</h3>
 
-<p>
-Password Generator is a free online tool that creates strong, secure and random passwords instantly.
-</p>
+<!-- COMMON FOOTER -->
+<div id="common-footer"></div>
 
-</div>
 
-<div class="faq-item">
+<!-- Common JavaScript -->
+<script src="../../js/common.js"></script>
 
-<h3>Is this Password Generator free?</h3>
-
-<p>
-Yes. You can generate unlimited passwords for free without registration.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>Can I generate secure passwords?</h3>
-
-<p>
-Yes. The tool creates strong passwords using uppercase, lowercase letters, numbers and special characters.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>Why should I use a strong password?</h3>
-
-<p>
-Strong passwords help protect your online accounts from unauthorized access and improve overall security.
-</p>
-
-</div>
-
-</section>
-
-</section>
-
-<footer>
-
-<p>
-
-© 2026 Helpy Anand Tools | Version 1.0
-
-</p>
-
-</footer>
-
+<!-- Password Generator JavaScript -->
 <script src="script.js"></script>
 
 </body>

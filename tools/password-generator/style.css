@@ -1,328 +1,637 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* =========================================================
+PASSWORD GENERATOR
+Clean & Responsive Tool CSS
+Helpy Anand Tools
+========================================================= */
+
+/* =========================================================
+GLOBAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, sans-serif;
+background: #f4f6f9;
+color: #333;
+line-height: 1.6;
 }
 
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
-    color:#333;
+/* =========================================================
+TOOL SECTION
+========================================================= */
+
+.tool-section {
+width: 100%;
+padding: 40px 20px;
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+/* =========================================================
+TOOL BOX
+========================================================= */
+
+.tool-box {
+width: 100%;
+max-width: 700px;
+margin: 0 auto;
+padding: 30px;
+background: #fff;
+border-radius: 14px;
+box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-header{
-    background:#0d6efd;
-    padding:15px 0;
+/* =========================================================
+TOOL TITLE
+========================================================= */
+
+.tool-box h1 {
+margin-bottom: 10px;
+text-align: center;
+color: #2563eb;
+font-size: 30px;
+line-height: 1.3;
 }
 
-header .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+/* =========================================================
+TOOL DESCRIPTION
+========================================================= */
+
+.tool-desc {
+margin-bottom: 25px;
+text-align: center;
+color: #666;
+font-size: 16px;
+line-height: 1.6;
 }
 
-/* ===========================
-   Logo Link
-=========================== */
+/* =========================================================
+INPUT LABEL
+========================================================= */
 
-.logo-link{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-    color:#fff;
-    cursor:pointer;
-    transition:all .3s ease;
+.input-label {
+display: block;
+margin-bottom: 8px;
+font-size: 16px;
+font-weight: 700;
+color: #333;
 }
 
+/* =========================================================
+PASSWORD BOX
+========================================================= */
 
-.logo-link:hover{
-    color:#ffd54f;
+.password-box {
+display: flex;
+width: 100%;
+gap: 10px;
+margin-bottom: 22px;
 }
 
-.logo-link:hover .logo-icon{
-    transform:scale(1.08) rotate(-5deg);
-    transition:transform .3s ease;
+.password-box input {
+flex: 1;
+min-width: 0;
+height: 50px;
+padding: 0 15px;
+border: 1px solid #ccc;
+border-radius: 8px;
+outline: none;
+background: #fff;
+color: #333;
+font-size: 18px;
+transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.logo-link:hover h1{
-    color:#ffd54f;
+.password-box input:focus {
+border-color: #2563eb;
+box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
 }
 
-.logo-icon{
-width:40px;
-height:40px;
-transition:transform .3s ease;
-}
+/* =========================================================
+SHOW / HIDE PASSWORD BUTTON
+========================================================= */
 
-.logo-link:hover{
-    transform:scale(1.03);
-}
+.eye-btn {
+flex: 0 0 50px;
+width: 50px;
+height: 50px;
+padding: 0;
+border: none;
+border-radius: 8px;
+background: #0d6efd;
+color: #fff;
+cursor: pointer;
 
-.logo-link h1{
-    color:#fff;
-    font-size:30px;
-}
-/*---------End-----------*/
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    padding:8px 16px;
-    border-radius:6px;
-    font-weight:700;
-    transition:.3s;
-}
+display: flex;
+align-items: center;
+justify-content: center;
 
-nav a:hover{
-    background:rgba(255,255,255,.15);
-    color:#ffd54f;
-    transform:translateY(-2px);
-}
+font-size: 18px;
+transition: background 0.3s ease, transform 0.2s ease;
 
-.tool-section{
-    padding:20px;
-}
-
-.tool-box{
-    max-width:700px;
-    margin:auto;
-    background:#fff;
-    padding:18px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,.1);
-}
-
-.tool-box h2{
-    /*text-align:center;
-    margin-bottom:8px;*/
-
-     text-align:center;
-    font-size:28px;
-    margin-bottom:25px;
-    color:#2563eb;
 
 }
 
-.tool-desc{
-    text-align:center;
-    color:#666;
-    margin-bottom:15px;
+.eye-btn:hover {
+background: #084fc7;
+transform: translateY(-1px);
 }
 
-#password{
-    width:100%;
-    padding:14px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:18px;
-    margin-bottom:20px;
+.eye-btn:focus-visible {
+outline: 3px solid rgba(37, 99, 235, 0.3);
+outline-offset: 2px;
 }
 
-.length-box{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:10px;
-    font-weight:bold;
+/* =========================================================
+PASSWORD LENGTH
+========================================================= */
+
+.length-box {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+
+margin-bottom: 8px;
+
+font-size: 16px;
+font-weight: 700;
+
+
 }
 
-input[type="range"]{
-    width:100%;
-    margin-bottom:15px;
+#lengthValue {
+min-width: 40px;
+padding: 4px 10px;
+border-radius: 6px;
+background: #eef4ff;
+color: #2563eb;
+text-align: center;
 }
 
-.options{
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    margin-bottom:15px;
+/* =========================================================
+RANGE SLIDER
+========================================================= */
+
+input[type="range"] {
+display: block;
+width: 100%;
+margin: 0 0 25px;
+
+
+cursor: pointer;
+accent-color: #2563eb;
+
+
 }
 
-.options label{
-    cursor:pointer;
+/* =========================================================
+CHARACTER OPTIONS
+========================================================= */
+
+.options {
+width: 100%;
+margin: 0 0 22px;
+padding: 16px 18px;
+
+
+border: 1px solid #e1e5ea;
+border-radius: 10px;
+
+background: #fafbfc;
+
+
 }
 
-.strength{
-    background:#f8f9fa;
-    padding:12px;
-    border-radius:8px;
-    text-align:center;
-    margin-bottom:15px;
-    font-weight:bold;
+/* Fieldset caption */
+
+.options legend {
+padding: 0 8px;
+
+
+color: #2563eb;
+font-size: 15px;
+font-weight: 700;
+
+
 }
 
-#strengthText{
-    color:green;
+/* Option labels */
+
+.options label {
+display: flex;
+align-items: center;
+gap: 10px;
+
+
+margin-bottom: 10px;
+
+color: #444;
+font-size: 15px;
+cursor: pointer;
+
+
 }
 
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:10px;
+.options label:last-child {
+margin-bottom: 0;
 }
 
-button{
-    background:#0d6efd;
-    color:#fff;
-    border:none;
-    padding:12px 24px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:16px;
-    transition:.3s;
+/* Checkbox */
+
+.options input[type="checkbox"] {
+width: 17px;
+height: 17px;
+
+
+margin: 0;
+
+cursor: pointer;
+accent-color: #2563eb;
+
+
 }
 
-button:hover{
-    background:#084fc7;
-    transform:translateY(-2px);
+/* =========================================================
+PASSWORD STRENGTH
+========================================================= */
+
+.strength {
+width: 100%;
+margin-bottom: 22px;
+padding: 15px;
+
+
+border-radius: 10px;
+background: #f8f9fa;
+
+
 }
 
-footer{
-    margin-top:20px;
-    background:#222;
-    color:#fff;
-    text-align:center;
-    padding:20px;
+.strength-label {
+margin-bottom: 10px;
+
+
+text-align: center;
+
+color: #333;
+font-size: 15px;
+font-weight: 700;
+
+
 }
 
-@media(max-width:768px){
-
-header .container{
-    flex-direction:column;
-    gap:15px;
+#strengthText {
+font-weight: 700;
 }
 
-.logo-link h1{
-    font-size:24px;
+/* Strength bar background */
+
+.strength-bar {
+width: 100%;
+height: 10px;
+
+
+overflow: hidden;
+
+border-radius: 20px;
+background: #ddd;
+
+
 }
 
-.tool-box{
-    padding:22px;
+/* Strength fill */
+
+#strengthFill {
+width: 0%;
+height: 100%;
+
+
+border-radius: 20px;
+
+transition:
+    width 0.3s ease,
+    background 0.3s ease;
+
+
 }
 
-.buttons{
-    flex-direction:column;
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.buttons {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 12px;
+
+
+width: 100%;
+
+
 }
 
-button{
-    width:100%;
+.buttons button {
+min-width: 170px;
+
+
+padding: 12px 22px;
+
+border: none;
+border-radius: 8px;
+
+background: #0d6efd;
+color: #fff;
+
+font-size: 16px;
+font-weight: 600;
+
+cursor: pointer;
+
+transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+
+
 }
 
-}
-/* Password Box */
-
-.password-box{
-    display:flex;
-    gap:10px;
-    margin-bottom:12px;
+.buttons button:hover {
+background: #084fc7;
+transform: translateY(-2px);
 }
 
-.password-box input{
-    flex:1;
-    height:50px;
-    padding:0 15px;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:18px;
+.buttons button:focus-visible {
+outline: 3px solid rgba(37, 99, 235, 0.3);
+outline-offset: 2px;
+}
+
+/* =========================================================
+HELPFUL INFORMATION
+========================================================= */
+
+.tool-info-section {
+width: 100%;
+max-width: 900px;
+
+
+margin: 40px auto;
+padding: 25px 20px;
+
+background: #fff;
+
+border-radius: 12px;
+box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+
+}
+
+.tool-info-section h2 {
+margin-bottom: 12px;
+
+color: #2563eb;
+font-size: 25px;
+line-height: 1.4;
+
+
+}
+
+.tool-info-section p {
+margin-bottom: 18px;
+
+
+color: #444;
+font-size: 15px;
+line-height: 1.7;
+
+
+}
+
+.tool-info-section ol {
+padding-left: 22px;
+margin-bottom: 5px;
+}
+
+.tool-info-section li {
+margin-bottom: 10px;
+
+
+color: #444;
+font-size: 15px;
+line-height: 1.6;
+
+
+}
+
+/* =========================================================
+FAQ SECTION
+========================================================= */
+
+.faq-section {
+width: 100%;
+max-width: 900px;
+
+margin: 40px auto;
+padding: 20px;
+}
+
+.faq-section h2 {
+margin-bottom: 25px;
+
+
+text-align: center;
+
+color: #2563eb;
+font-size: 30px;
+line-height: 1.4;
+}
+
+/* FAQ item */
+
+.faq-item {
+margin-bottom: 18px;
+padding: 20px;
+
+
+background: #fff;
+
+border-radius: 10px;
+
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.07);
+
+
+}
+
+.faq-item h3 {
+margin-bottom: 9px;
+
+
+color: #2563eb;
+font-size: 18px;
+line-height: 1.4;
+
+
+}
+
+.faq-item p {
+color: #444;
+font-size: 15px;
+line-height: 1.7;
+}
+
+/* =========================================================
+TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+.tool-section {
+    padding: 30px 15px;
+}
+
+.tool-box {
+    padding: 25px 20px;
+}
+
+.tool-box h1 {
+    font-size: 27px;
+}
+
+.tool-info-section {
+    margin: 30px 15px;
+}
+
+.faq-section {
+    margin: 30px 15px;
+    padding: 10px;
+}
+
+.faq-section h2 {
+    font-size: 27px;
 }
 
 
-.eye-btn{
-    width:50px;
-    height:50px;       /* Textbox की Height के बराबर */
-    border:none;
-    border-radius:8px;
-    background:#0d6efd;
-    color:white;
-    cursor:pointer;
+}
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* =========================================================
+MOBILE
+========================================================= */
 
-    font-size:18px;
-    padding:0;
+@media (max-width: 480px) {
+
+
+.tool-section {
+    padding: 20px 12px;
+}
+
+.tool-box {
+    padding: 22px 15px;
+    border-radius: 10px;
+}
+
+.tool-box h1 {
+    font-size: 24px;
+}
+
+.tool-desc {
+    font-size: 15px;
 }
 
 
-.eye-btn:hover{
-    background:#084fc7;
+/* Password box */
+
+.password-box {
+    gap: 8px;
 }
 
-/* Strength Bar */
-
-.strength-label{
-    margin-bottom:10px;
-    font-weight:bold;
+.password-box input {
+    height: 48px;
+    padding: 0 12px;
+    font-size: 16px;
 }
 
-.strength-bar{
-    width:100%;
-    height:10px;
-    background:#ddd;
-    border-radius:20px;
-    overflow:hidden;
-}
-
-#strengthFill{
-    width:0%;
-    height:100%;
-    background:green;
-    transition:.3s;
-}
-.input-label{
-    display:block;
-    font-weight:bold;
-    margin-bottom:10px;
-    font-size:18px;
-}
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
-    color:#333;
-    min-height:100vh;
+.eye-btn {
+    flex-basis: 48px;
+    width: 48px;
+    height: 48px;
 }
 
 
-/* ==========================
-   FAQ Section
-========================== */
+/* Options */
 
-.faq-section{
-    max-width:900px;
-    margin:50px auto;
-    padding:20px;
+.options {
+    padding: 15px;
 }
 
-.faq-section h2{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:25px;
-    color:#2563eb;
+
+/* Buttons */
+
+.buttons {
+    flex-direction: column;
+    gap: 10px;
 }
 
-.faq-item{
-    background:#fff;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
+.buttons button {
+    width: 100%;
+    min-width: 0;
 }
 
-.faq-item h3{
-    font-size:18px;
-    margin-bottom:10px;
-    color:#2563eb;
+
+/* Information */
+
+.tool-info-section {
+    margin: 25px 12px;
+    padding: 20px 16px;
 }
 
-.faq-item p{
-    font-size:14px;
-    line-height:1.6;
-    color:#444;
+.tool-info-section h2 {
+    font-size: 22px;
+}
+
+
+/* FAQ */
+
+.faq-section {
+    margin: 25px 12px;
+    padding: 5px;
+}
+
+.faq-section h2 {
+    font-size: 24px;
+}
+
+.faq-item {
+    padding: 17px;
+}
+
+.faq-item h3 {
+    font-size: 17px;
+}
+
+.faq-item p {
+    font-size: 14px;
+}
+
+
+}
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+
+*,
+*::before,
+*::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+}
 }
