@@ -2,573 +2,459 @@
    RESET
 ====================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial,sans-serif;
-    background:#f4f6f9;
+html,
+body {
+    min-height: 100%;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
 
 /* ======================================================
    COMMON CONTAINER
 ====================================================== */
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 
 /* ======================================================
    HEADER
 ====================================================== */
 
-header{
-    background:linear-gradient(135deg,#0d6efd,#2563eb);
-    padding:18px 0;
-    margin-top:0;
-    box-shadow:0 3px 12px rgba(0,0,0,.12);
+.site-header {
+    background: linear-gradient(135deg, #0d6efd, #2563eb);
+    padding: 18px 0;
+    margin: 0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
 }
 
-header .container{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.site-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
 }
 
-header h1{
-    display:flex;
-    align-items:center;
-    color:#fff;
-    gap:10px;
-}
 
 /* ======================================================
    LOGO
 ====================================================== */
 
-.logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    min-height: 40px;
 }
 
-.logo-link{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    text-decoration:none;
-    color:inherit;
-    cursor:pointer;
+.logo-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    flex: 0 0 40px;
 }
 
-.logo-link:hover .logo-icon{
-    transform:rotate(-5deg) scale(1.08);
-    transition:0.3s;
+.site-title {
+    display: block;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
-.logo-link:hover h1{
-    color:#ffd54f;
-    transition:0.3s;
+.logo-link:hover .logo-icon {
+    transform: rotate(-5deg) scale(1.08);
+    transition: transform 0.3s ease;
 }
 
-.logo-icon{
-    width:40px;
-    height:40px;
+.logo-link:hover .site-title {
+    color: #ffd54f;
+    transition: color 0.3s ease;
 }
+
 
 /* ======================================================
    NAVIGATION
 ====================================================== */
 
-nav{
-    display:flex;
-    gap:12px;
-    align-items:center;
+.site-nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
 }
 
-nav a{
-    display:inline-block;
-    color:#fff;
-    text-decoration:none;
-    padding:8px 12px;
-    border-radius:6px;
-    transition:.3s;
-    font-weight:600;
+.site-nav a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    line-height: 1.4;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
-nav a:hover{
-    background:rgba(255,255,255,.18);
-    color:#ffd54f;
-    transform:translateY(-3px);
+.site-nav a:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffd54f;
+    transform: translateY(-3px);
 }
 
-nav a.active{
-    color:#ffd54f;
-    background:rgba(255,255,255,.15);
+.site-nav a[aria-current="page"] {
+    color: #ffd54f;
+    background: rgba(255, 255, 255, 0.15);
 }
+
 
 /* ======================================================
    HERO SECTION
 ====================================================== */
 
-.hero{
-    padding:50px 20px 25px;
-    text-align:center;
-    background:#fff;
+.hero {
+    padding: 50px 20px 25px;
+    text-align: center;
+    background: #ffffff;
 }
 
-.hero h2{
-    font-size:45px;
-    margin-bottom:15px;
+.hero h1,
+.hero h2 {
+    margin-bottom: 15px;
 }
 
-.hero p{
-    font-size:20px;
-    color:#666;
+.hero h1 {
+    font-size: 45px;
+    line-height: 1.2;
 }
+
+.hero h2 {
+    font-size: 45px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #666666;
+    line-height: 1.5;
+}
+
 
 /* ======================================================
    TOOLS SECTION
 ====================================================== */
 
-.tools{
-    padding:30px 0;
+.tools {
+    padding: 30px 0;
 }
 
-.section-title{
-    text-align:center;
-    margin-top:0px;
-    margin-bottom:20px;
-    font-size:35px;
+.section-title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 35px;
+    line-height: 1.25;
 }
+
+.section-intro {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto 40px;
+    color: #666666;
+    line-height: 1.7;
+    font-size: 17px;
+}
+
 
 /* ======================================================
    TOOL GRID
 ====================================================== */
 
-.tool-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.tool-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+    gap: 25px;
 }
+
 
 /* ======================================================
    TOOL CARD
 ====================================================== */
 
-.tool-card{
-    background:#fff;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+.tool-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-    min-height:240px;
+    min-height: 240px;
 
-    transition:.3s;
+    transition: transform 0.3s ease;
 }
 
-.tool-card:hover{
-    transform:translateY(-8px);
+.tool-card:hover {
+    transform: translateY(-8px);
 }
 
-.tool-card h3{
-    text-align:center;
-    margin-bottom:15px;
+.tool-card h3 {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.tool-card p{
-    text-align:center;
-    min-height:60px;
-    margin-bottom:25px;
-    color:#666;
-    line-height:1.5;
+.tool-card p {
+    text-align: center;
+    min-height: 60px;
+    margin-bottom: 25px;
+    color: #666666;
+    line-height: 1.6;
 }
 
-.tool-card a{
-    margin-top:auto;
+.tool-card a {
+    margin-top: auto;
 }
 
-.tool-card button{
-    width:140px;
+.tool-card button {
+    width: 140px;
 }
+
 
 /* ======================================================
    COMMON BUTTONS
 ====================================================== */
 
-button{
-    background:#0d6efd;
-    color:#fff;
-    border:none;
-    padding:12px 20px;
-    border-radius:6px;
-    cursor:pointer;
-    transition:.3s;
+button {
+    background: #0d6efd;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-button:hover{
-    background:#084fc7;
+button:hover {
+    background: #084fc7;
 }
+
 
 /* ======================================================
-   LEGAL PAGES
+   AI TOOLS
 ====================================================== */
 
-.page-content{
-    width:90%;
-    max-width:900px;
-    margin:25px auto;
-    padding-bottom:40px;
+.tool-icon {
+    font-size: 75px;
+    margin-bottom: 20px;
+    line-height: 1;
 }
 
-.content-box{
-    max-width:850px;
-    margin:30px auto;
-    background:#fff;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 5px 20px rgba(0,0,0,.10);
+.tool-btn {
+    display: inline-block;
+    margin-top: auto;
+    background: #0d6efd;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-.content-box h1{
-    text-align:center;
-    color:#2563eb;
-    margin-bottom:25px;
+.tool-btn:hover {
+    background: #084fc7;
+    transform: translateY(-3px);
 }
 
-.content-box h2{
-    margin-top:20px;
-    margin-bottom:8px;
-    color:#333;
-}
-
-.content-box p{
-    color:#555;
-    line-height:1.6;
-    margin-bottom:12px;
-}
-
-/* ======================================================
-   FOOTER
-====================================================== */
-
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 20px 16px;
-    margin-top: 30px;
-}
-
-
-.footer-links {
-    display: flex;
+.ai-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 350px)
+    );
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px 16px;
+    gap: 25px;
+}
+
+.ai-tools-grid .tool-card {
+    width: 100%;
+}
+
+
+/* ======================================================
+   LEGAL / CONTENT PAGES
+====================================================== */
+
+.page-content {
+    width: 90%;
+    max-width: 900px;
+    margin: 25px auto;
+    padding-bottom: 40px;
+}
+
+.content-box {
+    max-width: 850px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+}
+
+.content-box h1 {
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 25px;
+}
+
+.content-box h2 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+.content-box p {
+    color: #555555;
+    line-height: 1.6;
     margin-bottom: 12px;
 }
 
-.footer-links a {
-    display: inline-block;
-    margin: 0;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    color: #ffd54f;
-    transform: translateY(-2px);
-}
-
-.copyright {
-    margin: 0;
-    color: #cbd5e1;
-    font-size: 13px;
-}
-
-@media (max-width: 600px) {
-    footer {
-        padding: 18px 12px;
-        margin-top: 20px;
-    }
-
-    .footer-links {
-        gap: 9px 14px;
-    }
-}
 
 /* ======================================================
-   RESPONSIVE
+   WHY CHOOSE
 ====================================================== */
 
-@media(max-width:768px){
+.why-choose {
+    padding: 70px 0;
+    background: #ffffff;
+}
 
-    header .container{
-        flex-direction:column;
-    }
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+    );
+    gap: 25px;
+}
 
-    nav{
-        margin-top:15px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
+.why-card {
+    background: #f8fafc;
+    padding: 30px 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
 
-    nav a{
-        display:block;
-        margin:5px 0;
-    }
+.why-card:hover {
+    transform: translateY(-6px);
+}
 
-    .hero h2{
-        font-size:34px;
-        margin-bottom:15px;
-    }
-    .hero p {
+.why-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.why-card h3 {
+    margin-bottom: 12px;
+    color: #2563eb;
+}
+
+.why-card p {
+    color: #555555;
+    line-height: 1.6;
+}
+
+
+/* ======================================================
+   FAQ
+====================================================== */
+
+.faq-section {
+    margin-top: 40px;
+}
+
+.content-box .section-title {
+    font-size: 28px;
+    color: #2563eb;
     margin-bottom: 0;
 }
 
+.faq-item {
+    margin-bottom: 20px;
 }
 
-/* ===== AI TOOLS PAGE ===== */
-
-.tool-icon{
-    font-size:75px;
-    margin-bottom:20px;
-    line-height:1;
+.faq-item:first-of-type {
+    margin-top: 30px;
 }
 
-.tool-btn{
-    display:inline-block;
-    margin-top:auto;
-    background:#0d6efd;
-    color:#fff;
-    text-decoration:none;
-    padding:12px 24px;
-    border-radius:8px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.tool-btn:hover{
-    background:#084fc7;
-    transform:translateY(-3px);
-}
-
-.tool-card{
-    text-align:center;
-}
-
-.tool-card p{
-    line-height:1.6;
-}
-
-/* ===== AI TOOLS PAGE ===== */
-
-.ai-tools-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(280px,350px));
-    justify-content:center;
-    gap:25px;
-}
-
-.ai-tools-grid .tool-card{
-    width:100%;
+.faq-question {
+    font-size: 18px;
+    color: #333333;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    text-align: left;
+    font-weight: 600;
 }
 
 
-
-html,
-body{
-    min-height:100%;
-}
-
-body{
-    display:flex;
-    flex-direction:column;
-}
-
-main{
-    flex:1;
-}
-
-/* 404 Page Buttons */
-
-.button-group{
-display:flex;
-justify-content:center;
-gap:15px;
-margin-top:25px;
-flex-wrap:wrap;
-}
-
-.btn{
-display:inline-block;
-padding:12px 24px;
-background:#2563eb;
-color:#fff;
-text-decoration:none;
-border-radius:8px;
-font-weight:600;
-transition:0.3s;
-}
-
-.btn:hover{
-background:#1d4ed8;
-transform:translateY(-2px);
-}
-
-.btn:active{
-transform:translateY(0);
-}
-
-/* for page 404 */
-
-.tool-section{
-min-height:70vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:60px 20px;
-}
-
-.tool-box{
-max-width:700px;
-width:100%;
-text-align:center;
-}
-
-/* tool box heading big*/
-
-.tool-box h2{
-font-size:80px;
-color:#2563eb;
-margin-bottom:10px;
-}
-
-.tool-box h3{
-font-size:32px;
-margin-bottom:15px;
-}
-
-.tool-box p{
-font-size:18px;
-color:#555;
-line-height:1.6;
-margin-bottom:30px;
-}
-
-/* footer setting */
-
-body{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-}
-
-main{
-    flex:1;
-}
-
-
-.error-icon{
-    font-size:70px;
-    margin-right:10px;
-}
-
-.section-intro{
-text-align:center;
-max-width:760px;
-margin:0 auto 35px;
-color:#666;
-line-height:1.7;
-font-size:17px;
-}
-
-/* ===========================
-   WHY CHOOSE SECTION
-=========================== */
-
-.why-choose{
-    padding:70px 0;
-    background:#ffffff;
-}
-
-.section-intro{
-    text-align:center;
-    max-width:760px;
-    margin:0 auto 40px;
-    color:#666;
-    line-height:1.7;
-    font-size:17px;
-}
-
-.why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:25px;
-}
-
-.why-card{
-    background:#f8fafc;
-    padding:30px 25px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.why-card:hover{
-    transform:translateY(-6px);
-}
-
-.why-icon{
-    font-size:50px;
-    margin-bottom:15px;
-}
-
-.why-card h3{
-    margin-bottom:12px;
-    color:#2563eb;
-}
-
-.why-card p{
-    color:#555;
-    line-height:1.6;
-}
-
-.faq-section{
-    margin-top: 40px;
-    /*padding: px 0;*/
-}
-
-.contact-card{
-    height:auto;
-    min-height:150px;
-}
 /* ======================================================
-   CONTACT PAGE & INFO CARD
+   CONTACT PAGE
 ====================================================== */
+
+.contact-title {
+    margin-bottom: 15px;
+}
+
+
+/* Contact information card */
 
 .contact-card {
     background: #ffffff;
     max-width: 700px;
+    min-height: 150px;
+    height: auto;
     margin: 0 auto;
     padding: 35px 30px;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     text-align: center;
-    transition: transform 0.3s ease;
 }
 
 .contact-card h3 {
@@ -576,20 +462,22 @@ font-size:17px;
     margin-bottom: 8px;
     font-size: 22px;
     color: #2563eb;
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
+
+    line-height: 1.3;
 }
 
-.contact-card p, 
+.contact-card p,
 .contact-card p a {
     font-size: 17px;
     color: #4b5563;
     line-height: 1.6;
     text-decoration: none;
-    word-break: break-all;
-    transition: color 0.2s ease;
+    word-break: break-word;
 }
 
 .contact-card p a:hover {
@@ -602,6 +490,7 @@ font-size:17px;
     border: none;
     border-top: 1px solid #e5e7eb;
 }
+
 
 /* ======================================================
    CONTACT FORM
@@ -620,18 +509,36 @@ font-size:17px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
 }
 
+.contact-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: #333333;
+    font-weight: 600;
+}
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
     padding: 14px 16px;
     margin-bottom: 18px;
+
     border: 1.5px solid #d1d5db;
     border-radius: 8px;
+
     font-size: 15px;
     font-family: inherit;
     outline: none;
+
     background-color: #f9fafb;
-    transition: all 0.3s ease;
+
+    transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
 }
 
 .contact-form input:focus,
@@ -651,7 +558,11 @@ font-size:17px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .contact-form button:hover {
@@ -663,7 +574,10 @@ font-size:17px;
 .contact-form button:active {
     transform: translateY(0);
 }
-/* Status Alert Message */
+
+
+/* Form status */
+
 .form-status {
     margin-top: 15px;
     padding: 12px;
@@ -688,22 +602,73 @@ font-size:17px;
     border: 1px solid #fca5a5;
 }
 
-/* Mobile Responsive */
-@media (max-width: 600px) {
-    .contact-card, .contact-form {
-        padding: 25px 20px;
-    }
+.form-note {
+    margin-top: 16px;
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
 }
 
-/* ==========================================
+.form-note a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.form-note a:hover {
+    text-decoration: underline;
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer {
+    background: #222222;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 16px;
+    margin-top: 30px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    display: inline-block;
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffd54f;
+}
+
+.copyright {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13px;
+}
+
+
+/* ======================================================
    COMMON SITE FOOTER
-========================================== */
+====================================================== */
 
 .site-footer {
     margin-top: 40px;
     padding: 28px 20px 18px;
-    background: #222;
-    color: #fff;
+    background: #222222;
+    color: #ffffff;
     text-align: center;
 }
 
@@ -735,7 +700,7 @@ font-size:17px;
 }
 
 .site-footer .footer-links a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 14px;
 }
@@ -746,7 +711,7 @@ font-size:17px;
 
 .site-footer .footer-bottom {
     padding-top: 15px;
-    border-top: 1px solid #444;
+    border-top: 1px solid #444444;
 }
 
 .site-footer .footer-bottom p {
@@ -755,8 +720,134 @@ font-size:17px;
     font-size: 13px;
 }
 
-/* Mobile footer */
+
+/* ======================================================
+   404 PAGE
+====================================================== */
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.tool-section {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.tool-box {
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+}
+
+.tool-box h2 {
+    font-size: 80px;
+    color: #2563eb;
+    margin-bottom: 10px;
+}
+
+.tool-box h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.tool-box p {
+    font-size: 18px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.error-icon {
+    font-size: 70px;
+    margin-right: 10px;
+}
+
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 16px 0;
+    }
+
+    .site-header-container {
+        flex-direction: column;
+        min-height: 110px;
+    }
+
+    .site-title {
+        font-size: 25px;
+    }
+
+    .site-nav {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .site-nav a {
+        padding: 7px 9px;
+    }
+
+    .hero {
+        padding: 40px 20px 25px;
+    }
+
+    .hero h1,
+    .hero h2 {
+        font-size: 34px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        margin-bottom: 0;
+        font-size: 18px;
+    }
+}
+
+
 @media (max-width: 600px) {
+
+    .contact-card,
+    .contact-form {
+        padding: 25px 20px;
+    }
+
     .site-footer {
         margin-top: 25px;
         padding: 24px 14px 16px;
@@ -773,51 +864,21 @@ font-size:17px;
     .site-footer .footer-links a {
         font-size: 13px;
     }
+
+    footer {
+        padding: 18px 12px;
+        margin-top: 20px;
+    }
+
+    .footer-links {
+        gap: 9px 14px;
+    }
+
+    .tool-box h2 {
+        font-size: 60px;
+    }
+
+    .tool-box h3 {
+        font-size: 28px;
+    }
 }
-
-
-/* FAQ मुख्य शीर्षक (Heading) को छोटा और सुंदर करने के लिए */
-.content-box .section-title {
-    font-size: 28px; /* यहाँ से आप मुख्य हेडिंग का आकार और छोटा या बड़ा कर सकते हैं */
-    color: #2563eb;  /* आपके थीम का ब्लू कलर */
-    margin-bottom: 0px; /* पहले सवाल के स्पेस को मैनेज करने के लिए */
-}
-
-/* FAQ के सवालों का फॉन्ट ठीक करने के लिए */
-.faq-item {
-    margin-bottom: 20px;
-}
-
-/* 🎯 केवल पहले सवाल और मुख्य हेडिंग के बीच स्पेस देने के लिए */
-.faq-item:first-of-type {
-    margin-top: 30px; /* यहाँ से आप हेडिंग और पहले सवाल के बीच की दूरी कम या ज्यादा कर सकते हैं */
-}
-
-.faq-question {
-    font-size: 18px; /* यहाँ से आप फॉन्ट को और छोटा या बड़ा कर सकते हैं */
-    color: #333;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    text-align: left;
-    font-weight: 600;
-}
-.about-title {
-    margin-bottom: 15px;
-}
-
-.contact-title {
-    margin-bottom: 15px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
