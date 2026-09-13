@@ -9,7 +9,9 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Contact Us | Helpy Anand Tools</title>
+    <title>
+        Contact Us | Helpy Anand Tools
+    </title>
 
     <meta
         name="description"
@@ -23,21 +25,23 @@
         name="robots"
         content="index, follow">
 
+    <!-- Canonical URL -->
     <link
         rel="canonical"
         href="https://helpy-anand-tools.vercel.app/contact.html">
 
+    <!-- Favicon -->
     <link
         rel="icon"
-        href="/favicon.ico">
+        href="favicon.ico">
 
+    <!-- Main Stylesheet -->
     <link
         rel="stylesheet"
-        href="/css/style.css">
+        href="css/style.css">
 
 
     <!-- Open Graph -->
-
     <meta
         property="og:type"
         content="website">
@@ -84,7 +88,6 @@
 
 
     <!-- Twitter Card -->
-
     <meta
         name="twitter:card"
         content="summary_large_image">
@@ -107,7 +110,6 @@
 
 
     <!-- Google Analytics -->
-
     <script
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-E7LEMEMG9W">
@@ -127,8 +129,8 @@
 
 
     <!-- Microsoft Clarity -->
+    <script type="text/javascript">
 
-    <script>
         (function(c,l,a,r,i,t,y){
 
             c[a]=c[a]||function(){
@@ -143,12 +145,13 @@
             y.parentNode.insertBefore(t,y);
 
         })(window, document, "clarity", "script", "xx37vnxnxr");
+
     </script>
 
 
     <!-- Contact Page Structured Data -->
-
     <script type="application/ld+json">
+
     {
         "@context": "https://schema.org",
         "@type": "ContactPage",
@@ -166,6 +169,7 @@
             "url": "https://helpy-anand-tools.vercel.app/"
         }
     }
+
     </script>
 
 </head>
@@ -174,73 +178,15 @@
 <body>
 
 
-    <!-- ==================================================
-         STATIC NAVBAR
-         Loaded directly to prevent layout shift
-    =================================================== -->
+    <!-- Common Navbar -->
 
-    <header class="site-header">
-
-        <div class="container site-header-container">
-
-            <a
-                href="/"
-                class="logo-link"
-                aria-label="Helpy Anand Tools Home">
-
-                <img
-                    src="/favicon-4040_1.png"
-                    alt="Helpy Anand Tools Logo"
-                    class="logo-icon"
-                    width="40"
-                    height="40">
-
-                <span class="site-title">
-                    Helpy Anand Tools
-                </span>
-
-            </a>
-
-
-            <nav
-                class="site-nav"
-                aria-label="Main navigation">
-
-                <a href="/">
-                    Home
-                </a>
-
-                <a href="/ai-tools.html">
-                    AI Tools
-                </a>
-
-                <a href="/online-tools.html">
-                    Online Tools
-                </a>
-
-                <a href="/about.html">
-                    About
-                </a>
-
-                <a
-                    href="/contact.html"
-                    aria-current="page">
-                    Contact Us
-                </a>
-
-            </nav>
-
-        </div>
-
-    </header>
+    <div id="common-navbar"></div>
 
 
     <main>
 
 
-        <!-- ==================================================
-             HERO
-        =================================================== -->
+        <!-- Hero Section -->
 
         <section class="hero">
 
@@ -250,6 +196,7 @@
                     Contact Us
                 </h1>
 
+               
                 <p>
                     Have a question, suggestion, or issue with one of our
                     tools? We'd love to hear from you.
@@ -260,9 +207,7 @@
         </section>
 
 
-        <!-- ==================================================
-             CONTACT INFORMATION
-        =================================================== -->
+        <!-- Contact Information -->
 
         <section class="tools">
 
@@ -288,7 +233,8 @@
                     </h3>
 
                     <p>
-                        <a href="mailto:helpyanand@gmail.com">
+                        <a
+                            href="mailto:helpyanand@gmail.com">
                             helpyanand@gmail.com
                         </a>
                     </p>
@@ -302,8 +248,7 @@
                     </h3>
 
                     <p>
-                        We aim to respond to your genuine queries and
-                        feedback as soon as possible.
+                        We aim to respond to your genuine queries and feedback as soon as possible.
                     </p>
 
 
@@ -330,9 +275,7 @@
         </section>
 
 
-        <!-- ==================================================
-             CONTACT FORM
-        =================================================== -->
+        <!-- Contact Form -->
 
         <section class="contact-form-section">
 
@@ -356,11 +299,15 @@
                     method="POST">
 
 
+                    <!-- Web3Forms Access Key -->
+
                     <input
                         type="hidden"
                         name="access_key"
                         value="54f3b510-989e-47f9-9f80-ba6d961b547c">
 
+
+                    <!-- Form Subject Prefix -->
 
                     <input
                         type="hidden"
@@ -368,7 +315,8 @@
                         value="New Contact Message - Helpy Anand Tools">
 
 
-                    <label for="name">
+                    <label
+                        for="name">
                         Your Name
                     </label>
 
@@ -381,7 +329,8 @@
                         required>
 
 
-                    <label for="email">
+                    <label
+                        for="email">
                         Your Email
                     </label>
 
@@ -394,7 +343,8 @@
                         required>
 
 
-                    <label for="messageSubject">
+                    <label
+                        for="messageSubject">
                         Subject
                     </label>
 
@@ -407,7 +357,8 @@
                         required>
 
 
-                    <label for="message">
+                    <label
+                        for="message">
                         Message
                     </label>
 
@@ -419,9 +370,12 @@
                         required></textarea>
 
 
-                    <button type="submit">
+                    <button
+                        type="submit">
                         Send Message
+                        
                     </button>
+
 
 
                     <p class="form-note">
@@ -429,9 +383,11 @@
                         information you provide may be processed for the
                         purpose of responding to your message. For more
                         information, please read our
-                        <a href="/privacy-policy.html">
-                            Privacy Policy
-                        </a>.
+                    <a href="privacy-policy.html">
+
+                    </a>Privacy Policy
+                    </a>
+
                     </p>
 
                 </form>
@@ -441,15 +397,14 @@
         </section>
 
 
-        <!-- ==================================================
-             SUPPORT INFORMATION
-        =================================================== -->
+        <!-- Support Information -->
 
         <section class="content-box">
 
             <h2 class="section-title">
                 What Can You Contact Us About?
             </h2>
+
 
             <p>
                 You can contact us regarding questions about our tools,
@@ -471,9 +426,7 @@
     </main>
 
 
-    <!-- ==================================================
-         COMMON FOOTER
-    =================================================== -->
+    <!-- Common Footer -->
 
     <div id="common-footer"></div>
 
@@ -486,3 +439,4 @@
 </body>
 
 </html>
+
