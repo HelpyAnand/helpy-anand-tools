@@ -801,6 +801,13 @@ font-size:17px;
     text-align: left;
     font-weight: 600;
 }
+.about-title {
+    margin-bottom: 15px;
+}
+
+.contact-title {
+    margin-bottom: 15px;
+}
 
 
 
