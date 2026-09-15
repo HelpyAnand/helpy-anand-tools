@@ -1,5 +1,5 @@
 // Trusted Types policy
-const trustedTypesPolicy = window.trustedTypes
+window.helpyAnandTrustedPolicy = window.trustedTypes
     ? trustedTypes.createPolicy("helpyAnandPolicy", {
         createHTML: (html) => html,
         createScriptURL: (url) => url
@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
 
-            navbarContainer.innerHTML = trustedTypesPolicy
-    ? trustedTypesPolicy.createHTML(data)
+            navbarContainer.innerHTML = window.helpyAnandTrustedPolicy
+    ? window.helpyAnandTrustedPolicy.createHTML(data)
     : data;
 
         })
