@@ -1,10 +1,10 @@
 // Trusted Types policy
 const trustedTypesPolicy = window.trustedTypes
     ? trustedTypes.createPolicy("helpyAnandPolicy", {
-        createHTML: (html) => html
+        createHTML: (html) => html,
+        createScriptURL: (url) => url
     })
     : null;
-
 
 // ==========================================
 // COMMON NAVBAR
