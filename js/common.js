@@ -1,11 +1,3 @@
-// Trusted Types policy
-window.helpyAnandTrustedPolicy = window.trustedTypes
-    ? trustedTypes.createPolicy("helpyAnandPolicy", {
-        createHTML: (html) => html,
-        createScriptURL: (url) => url
-    })
-    : null;
-
 // ==========================================
 // COMMON NAVBAR
 // ==========================================
@@ -31,9 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
 
-            navbarContainer.innerHTML = window.helpyAnandTrustedPolicy
-    ? window.helpyAnandTrustedPolicy.createHTML(data)
-    : data;
+     navbarContainer.innerHTML = data;
 
         })
         .catch(error => {
@@ -73,10 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
 
-          footerContainer.innerHTML = window.helpyAnandTrustedPolicy
-    ? window.helpyAnandTrustedPolicy.createHTML(data)
-    : data;
-
+    footerContainer.innerHTML = data;
+    
         })
         .catch(error => {
 
