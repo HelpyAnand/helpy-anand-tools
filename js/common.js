@@ -73,8 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
 
-          footerContainer.innerHTML = trustedTypesPolicy
-    ? trustedTypesPolicy.createHTML(data)
+          footerContainer.innerHTML = window.helpyAnandTrustedPolicy
+    ? window.helpyAnandTrustedPolicy.createHTML(data)
     : data;
 
         })
