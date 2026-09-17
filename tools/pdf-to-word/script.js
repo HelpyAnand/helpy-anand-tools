@@ -10,6 +10,12 @@ const fileName = document.getElementById("fileName");
 const fileSize = document.getElementById("fileSize");
 const convertBtn = document.getElementById("convertBtn");
 
+// PDF.js Worker Configuration
+if (typeof pdfjsLib !== "undefined") {
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
+}
+
 const progressBox = document.getElementById("progressBox");
 const progressText = document.getElementById("progressText");
 const progressFill = document.getElementById("progressFill");
