@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Convert PDF to Word online for free. Easily convert PDF files into editable Word documents with our free PDF to Word converter.">
+
+    <meta name="keywords"
+          content="PDF to Word, PDF to DOCX, PDF converter, convert PDF to Word online, free PDF to Word converter">
+
+    <meta name="robots"
+          content="index, follow">
+
+    <title>PDF to Word Converter - Convert PDF to Word Online Free | Helpy Anand Tools</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="../../common.css">
+
+    <!-- Tool CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <section class="pdf-word-container">
+
+            <div class="converter-card">
+
+                <h1>PDF to Word Converter</h1>
+
+                <p class="converter-description">
+                    Convert your PDF files into editable Word documents
+                    quickly and easily. Free, simple and easy to use.
+                </p>
+
+
+                <!-- Upload Area -->
+                <label for="pdfFile" class="upload-area">
+
+                    <div class="upload-icon">
+                        📄
+                    </div>
+
+                    <h2>Select PDF File</h2>
+
+                    <p>
+                        Click here to choose a PDF file
+                    </p>
+
+                    <p>
+                        Supported format: PDF
+                    </p>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="pdfFile"
+                    accept=".pdf,application/pdf"
+                >
+
+
+                <!-- Selected File -->
+                <div class="file-info" id="fileInfo">
+
+                    <strong id="fileName">
+                        No file selected
+                    </strong>
+
+                    <span class="file-size" id="fileSize">
+                        -
+                    </span>
+
+                </div>
+
+
+                <!-- Convert Button -->
+                <button
+                    type="button"
+                    id="convertBtn"
+                    class="convert-btn">
+
+                    Convert to Word
+
+                </button>
+
+
+                <!-- Progress -->
+                <div
+                    class="progress-box"
+                    id="progressBox">
+
+                    <div
+                        class="progress-text"
+                        id="progressText">
+
+                        Preparing PDF...
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress-fill"
+                            id="progressFill">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Status Message -->
+                <div
+                    class="status-message"
+                    id="statusMessage">
+                </div>
+
+
+                <!-- Download Button -->
+                <button
+                    type="button"
+                    id="downloadBtn"
+                    class="download-btn">
+
+                    Download Word File
+
+                </button>
+
+            </div>
+
+
+            <!-- Features -->
+            <div class="features">
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🔄
+                    </div>
+
+                    <h3>Easy Conversion</h3>
+
+                    <p>
+                        Convert PDF files into Word documents
+                        with just a few clicks.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        ⚡
+                    </div>
+
+                    <h3>Fast Processing</h3>
+
+                    <p>
+                        Process your PDF files quickly
+                        directly in your browser.
+                    </p>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        🔒
+                    </div>
+
+                    <h3>Privacy Friendly</h3>
+
+                    <p>
+                        Your PDF is processed in your browser
+                        without uploading it to our server.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+
+    <!-- PDF.js -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs"
+        type="module">
+    </script>
+
+    <!-- DOCX Library -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/docx@9.5.1/build/index.umd.js">
+    </script>
+
+
+    <!-- Common JavaScript -->
+    <script src="../../js/common.js"></script>
+
+    <!-- Tool JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

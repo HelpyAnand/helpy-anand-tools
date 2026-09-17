@@ -1,0 +1,253 @@
+/* ================================
+   PDF TO WORD CONVERTER
+   ================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
+}
+
+/* Main Container */
+
+.pdf-word-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Converter Card */
+
+.converter-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.converter-card h1 {
+    margin: 0 0 12px;
+    font-size: 32px;
+}
+
+.converter-description {
+    margin: 0 auto 30px;
+    max-width: 650px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Upload Area */
+
+.upload-area {
+    border: 2px dashed #ef4d1c;
+    border-radius: 14px;
+    padding: 45px 20px;
+    cursor: pointer;
+    background: #fffaf7;
+    transition: 0.2s ease;
+}
+
+.upload-area:hover {
+    background: #fff3ed;
+}
+
+.upload-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.upload-area h2 {
+    margin: 0 0 8px;
+    font-size: 21px;
+}
+
+.upload-area p {
+    margin: 0;
+    color: #777;
+}
+
+/* File Input */
+
+#pdfFile {
+    display: none;
+}
+
+/* Selected File */
+
+.file-info {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f1f3f6;
+    text-align: left;
+}
+
+.file-info strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.file-size {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Convert Button */
+
+.convert-btn {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #ef4d1c;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.convert-btn:hover {
+    opacity: 0.9;
+}
+
+.convert-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Progress */
+
+.progress-box {
+    display: none;
+    margin-top: 25px;
+}
+
+.progress-text {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #ef4d1c;
+    transition: width 0.3s ease;
+}
+
+/* Status */
+
+.status-message {
+    display: none;
+    margin-top: 20px;
+    padding: 13px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.status-success {
+    background: #e8f7ee;
+    color: #176b3a;
+}
+
+.status-error {
+    background: #fdecec;
+    color: #a12626;
+}
+
+/* Download Button */
+
+.download-btn {
+    display: none;
+    margin-top: 20px;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 9px;
+    background: #198754;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    opacity: 0.9;
+}
+
+/* Features */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.feature {
+    background: #ffffff;
+    padding: 22px 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.feature h3 {
+    margin: 0 0 7px;
+    font-size: 17px;
+}
+
+.feature p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .pdf-word-container {
+        margin: 25px auto;
+        padding: 12px;
+    }
+
+    .converter-card {
+        padding: 25px 18px;
+    }
+
+    .converter-card h1 {
+        font-size: 27px;
+    }
+
+    .upload-area {
+        padding: 35px 15px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
