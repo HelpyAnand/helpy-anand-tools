@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        CloudConvert PDF to Word Test
+    </title>
+
+</head>
+
+<body>
+
+    <h2>CloudConvert PDF → Word Test</h2>
+
+    <input
+        type="file"
+        id="pdfFile"
+        accept="application/pdf"
+    >
+
+    <br><br>
+
+    <button id="convertBtn">
+        Convert PDF to Word
+    </button>
+
+    <p id="status"></p>
+
+
+<script>
+
+const pdfFile =
+    document.getElementById("pdfFile");
+
+const convertBtn =
+    document.getElementById("convertBtn");
+
+const statusText =
+    document.getElementById("status");
+
+
+convertBtn.addEventListener(
+    "click",
+    async function () {
+
+        try {
+
+            const file =
+                pdfFile.files[0];
+
+
+            if (!file) {
+
+                statusText.textContent =
+                    "Please select a PDF first.";
+
+                return;
+
+            }
+
+
+            if (
+                file.type !==
+                "application/pdf"
+            ) {
+
+                statusText.textContent =
+                    "Please select a PDF file.";
+
+                return;
+
+            }
+
+
+            statusText.textContent =
+                "Reading PDF...";
+
+
+            const base64 =
+                await fileToBase64(file);
+
+
+            statusText.textContent =
+                "Converting PDF → DOCX...";
+
+
+            const response =
+                await fetch(
+                    "/api/pdf-to-word",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+
+                            "Content-Type":
+                                "application/json"
+
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                fileBase64:
+                                    base64,
+
+                                fileName:
+                                    file.name
+
+                            })
+
+                    }
+                );
+
+
+            if (!response.ok) {
+
+                const errorText =
+                    await response.text();
+
+
+                console.error(
+                    "API ERROR:",
+                    errorText
+                );
+
+
+                throw new Error(
+                    "Conversion failed"
+                );
+
+            }
+
+
+            statusText.textContent =
+                "DOCX received. Downloading...";
+
+
+            const blob =
+                await response.blob();
+
+
+            const url =
+                URL.createObjectURL(blob);
+
+
+            const link =
+                document.createElement("a");
+
+
+            link.href = url;
+
+
+            link.download =
+                file.name.replace(
+                    /\.pdf$/i,
+                    ""
+                ) +
+                ".docx";
+
+
+            document.body.appendChild(
+                link
+            );
+
+
+            link.click();
+
+
+            link.remove();
+
+
+            URL.revokeObjectURL(
+                url
+            );
+
+
+            statusText.textContent =
+                "Conversion successful!";
+
+
+        } catch (error) {
+
+            console.error(
+                "TEST ERROR:",
+                error
+            );
+
+
+            statusText.textContent =
+                "Error: " +
+                error.message;
+
+        }
+
+    }
+);
+
+
+/* ---------------------------------
+   FILE → BASE64
+--------------------------------- */
+
+function fileToBase64(file) {
+
+    return new Promise(
+        function (resolve, reject) {
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function () {
+
+                    resolve(
+                        reader.result
+                    );
+
+                };
+
+
+            reader.onerror =
+                function () {
+
+                    reject(
+                        new Error(
+                            "Could not read PDF"
+                        )
+                    );
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>
