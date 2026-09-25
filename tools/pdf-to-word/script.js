@@ -1,230 +1,549 @@
 
-// ==========================================
-// PDF TO WORD CONVERTER
-// Step 5 - PDF Text Extraction
-// ==========================================
+"use strict";
 
-const pdfFile = document.getElementById("pdfFile");
-const fileInfo = document.getElementById("fileInfo");
-const fileName = document.getElementById("fileName");
-const fileSize = document.getElementById("fileSize");
-const convertBtn = document.getElementById("convertBtn");
-
-// PDF.js Worker Configuration
-if (typeof pdfjsLib !== "undefined") {
-    pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
-}
-
-const progressBox = document.getElementById("progressBox");
-const progressText = document.getElementById("progressText");
-const progressFill = document.getElementById("progressFill");
-
-const statusMessage = document.getElementById("statusMessage");
+/* =========================================
+   PDF TO WORD CONVERTER
+   HELPY ANAND TOOLS
+   CLOUDCONVERT API
+========================================= */
 
 
-// ==========================================
-// PDF FILE SELECTION
-// ==========================================
+/* =========================================
+   ELEMENTS
+========================================= */
 
-pdfFile.addEventListener("change", function () {
+const pdfFile =
+    document.getElementById("pdfFile");
 
-    const file = pdfFile.files[0];
+const uploadBox =
+    document.getElementById("uploadBox");
 
-    if (!file) {
+const convertBtn =
+    document.getElementById("convertBtn");
 
-        fileInfo.style.display = "none";
-        convertBtn.style.display = "none";
+const fileInfo =
+    document.getElementById("fileInfo");
 
-        return;
+const progressBox =
+    document.getElementById("progressBox");
+
+const progressText =
+    document.getElementById("progressText");
+
+const progressFill =
+    document.getElementById("progressFill");
+
+const statusMessage =
+    document.getElementById("statusMessage");
+
+
+let selectedFile = null;
+
+
+/* =========================================
+   FILE SELECT
+========================================= */
+
+pdfFile.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            pdfFile.files[0];
+
+        if (!file) {
+            resetConverter();
+            return;
+        }
+
+        handleSelectedFile(file);
     }
+);
 
 
-    // Check PDF type
-    if (file.type !== "application/pdf") {
+/* =========================================
+   HANDLE FILE
+========================================= */
 
-        alert("Please select a valid PDF file.");
+function handleSelectedFile(file) {
 
-        pdfFile.value = "";
-        fileInfo.style.display = "none";
-        convertBtn.style.display = "none";
+    statusMessage.textContent = "";
 
-        return;
-    }
+    if (
+        file.type !== "application/pdf" &&
+        !file.name.toLowerCase().endsWith(".pdf")
+    ) {
 
-
-    // File name
-    fileName.textContent = file.name;
-
-
-    // File size
-    const sizeInMB = (file.size / (1024 * 1024)).toFixed(2);
-
-    fileSize.textContent = sizeInMB + " MB";
-
-
-    // Show information
-    fileInfo.style.display = "block";
-
-    // Show convert button
-    convertBtn.style.display = "block";
-
-});
-
-
-// ==========================================
-// CONVERT BUTTON
-// ==========================================
-
-convertBtn.addEventListener("click", async function () {
-
-    const file = pdfFile.files[0];
-
-    if (!file) {
-
-        alert("Please select a PDF file first.");
-
-        return;
-    }
-
-
-    try {
+        selectedFile = null;
 
         convertBtn.disabled = true;
 
-        progressBox.style.display = "block";
+        fileInfo.textContent =
+            "Please select a valid PDF file.";
 
-        statusMessage.style.display = "none";
-
-        progressFill.style.width = "10%";
-
-        progressText.textContent = "Reading PDF...";
+        return;
+    }
 
 
-        // Read PDF file
-        const arrayBuffer = await file.arrayBuffer();
+    selectedFile = file;
 
 
-        progressFill.style.width = "25%";
+    const fileSize =
+        formatFileSize(file.size);
 
-        progressText.textContent = "Loading PDF...";
+
+    fileInfo.textContent =
+        file.name +
+        " • " +
+        fileSize;
 
 
-        // Check PDF.js
-        if (typeof pdfjsLib === "undefined") {
+    convertBtn.disabled = false;
 
-            throw new Error(
-                "PDF.js library could not be loaded."
-            );
 
+    statusMessage.textContent =
+        "PDF ready for conversion.";
+
+}
+
+
+/* =========================================
+   CONVERT BUTTON
+========================================= */
+
+convertBtn.addEventListener(
+    "click",
+    async function () {
+
+        if (!selectedFile) {
+
+            statusMessage.textContent =
+                "Please select a PDF first.";
+
+            return;
         }
 
 
-        // Load PDF
-        const pdf = await pdfjsLib.getDocument({
-            data: arrayBuffer
-        }).promise;
+        try {
 
+            setConvertingState();
 
-        let fullText = "";
-
-
-        // Process every page
-        for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
 
             progressText.textContent =
-                "Extracting page " +
-                pageNumber +
-                " of " +
-                pdf.numPages +
-                "...";
+                "Reading PDF...";
+
+            progressFill.style.width =
+                "15%";
 
 
-            const page = await pdf.getPage(pageNumber);
-
-
-            const textContent =
-                await page.getTextContent();
-
-
-            const pageText =
-                textContent.items
-                    .map(item => item.str)
-                    .join(" ");
-
-
-            fullText += pageText + "\n\n";
-
-
-            const progress =
-                25 +
-                Math.round(
-                    (pageNumber / pdf.numPages) * 65
+            const base64 =
+                await fileToBase64(
+                    selectedFile
                 );
 
 
+            progressText.textContent =
+                "Uploading PDF securely...";
+
             progressFill.style.width =
-                progress + "%";
-        }
+                "30%";
 
 
-        progressFill.style.width = "100%";
+            const response =
+                await fetch(
+                    "/api/pdf-to-word",
+                    {
+                        method: "POST",
 
-        progressText.textContent =
-            "Text extraction completed.";
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                fileBase64:
+                                    base64,
+
+                                fileName:
+                                    selectedFile.name
+
+                            })
+                    }
+                );
 
 
-        console.log(
-            "Extracted PDF Text:",
-            fullText
-        );
+            if (!response.ok) {
+
+                let errorMessage =
+                    "PDF conversion failed.";
+
+                try {
+
+                    const errorData =
+                        await response.json();
+
+                    if (
+                        errorData &&
+                        errorData.message
+                    ) {
+                        errorMessage =
+                            errorData.message;
+                    }
+
+                } catch (jsonError) {
+
+                    console.error(
+                        "Error response parsing failed:",
+                        jsonError
+                    );
+
+                }
 
 
-        // Check extracted text
-        if (!fullText.trim()) {
+                throw new Error(
+                    errorMessage
+                );
+            }
 
-            throw new Error(
-                "No selectable text was found in this PDF. It may be a scanned PDF."
+
+            progressText.textContent =
+                "Conversion completed. Preparing DOCX...";
+
+            progressFill.style.width =
+                "85%";
+
+
+            const blob =
+                await response.blob();
+
+
+            if (!blob || blob.size === 0) {
+
+                throw new Error(
+                    "The converted DOCX file is empty."
+                );
+            }
+
+
+            downloadDocx(
+                blob,
+                selectedFile.name
             );
 
+
+            progressFill.style.width =
+                "100%";
+
+
+            progressText.textContent =
+                "Conversion completed successfully!";
+
+
+            statusMessage.textContent =
+                "Your Word file has been downloaded successfully.";
+
+
+        } catch (error) {
+
+            console.error(
+                "PDF to Word Error:",
+                error
+            );
+
+
+            progressBox.hidden =
+                true;
+
+
+            statusMessage.textContent =
+                error.message ||
+                "Something went wrong during conversion.";
+
+
+        } finally {
+
+            convertBtn.disabled =
+                false;
+
         }
 
-
-        statusMessage.className =
-            "status-message status-success";
-
-        statusMessage.textContent =
-            "PDF text extracted successfully. Check the browser console for the extracted text.";
-
-        statusMessage.style.display = "block";
+    }
+);
 
 
-        convertBtn.disabled = false;
+/* =========================================
+   FILE TO BASE64
+========================================= */
+
+function fileToBase64(file) {
+
+    return new Promise(
+        function (resolve, reject) {
+
+            const reader =
+                new FileReader();
 
 
-    } catch (error) {
+            reader.onload =
+                function () {
 
-        console.error(
-            "PDF processing error:",
-            error
+                    resolve(
+                        reader.result
+                    );
+
+                };
+
+
+            reader.onerror =
+                function () {
+
+                    reject(
+                        new Error(
+                            "Could not read the PDF file."
+                        )
+                    );
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+        }
+    );
+
+}
+
+
+/* =========================================
+   DOWNLOAD DOCX
+========================================= */
+
+function downloadDocx(
+    blob,
+    originalFileName
+) {
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+
+    link.href =
+        url;
+
+
+    link.download =
+        originalFileName.replace(
+            /\.pdf$/i,
+            ""
+        ) +
+        ".docx";
+
+
+    document.body.appendChild(
+        link
+    );
+
+
+    link.click();
+
+
+    link.remove();
+
+
+    setTimeout(
+        function () {
+
+            URL.revokeObjectURL(
+                url
+            );
+
+        },
+        1000
+    );
+
+}
+
+
+/* =========================================
+   CONVERTING STATE
+========================================= */
+
+function setConvertingState() {
+
+    convertBtn.disabled =
+        true;
+
+
+    convertBtn.textContent =
+        "Converting PDF...";
+
+
+    progressBox.hidden =
+        false;
+
+
+    progressText.textContent =
+        "Preparing conversion...";
+
+
+    progressFill.style.width =
+        "5%";
+
+
+    statusMessage.textContent =
+        "";
+
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+function resetConverter() {
+
+    selectedFile =
+        null;
+
+
+    convertBtn.disabled =
+        true;
+
+
+    convertBtn.textContent =
+        "Convert PDF to Word";
+
+
+    fileInfo.textContent =
+        "No file selected";
+
+
+    progressBox.hidden =
+        true;
+
+
+    progressFill.style.width =
+        "0%";
+
+
+    progressText.textContent =
+        "Preparing conversion...";
+
+
+    statusMessage.textContent =
+        "";
+
+}
+
+
+/* =========================================
+   FILE SIZE
+========================================= */
+
+function formatFileSize(bytes) {
+
+    if (bytes === 0) {
+        return "0 Bytes";
+    }
+
+
+    const units = [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+    ];
+
+
+    const index =
+        Math.floor(
+            Math.log(bytes) /
+            Math.log(1024)
         );
 
 
-        progressBox.style.display = "none";
+    return (
+        parseFloat(
+            (
+                bytes /
+                Math.pow(
+                    1024,
+                    index
+                )
+            ).toFixed(2)
+        ) +
+        " " +
+        units[index]
+    );
+
+}
 
 
-        statusMessage.className =
-            "status-message status-error";
+/* =========================================
+   DRAG & DROP
+========================================= */
 
-        statusMessage.textContent =
-            error.message ||
-            "Unable to process this PDF.";
+uploadBox.addEventListener(
+    "dragover",
+    function (event) {
 
-        statusMessage.style.display = "block";
+        event.preventDefault();
 
-
-        convertBtn.disabled = false;
+        uploadBox.classList.add(
+            "drag-over"
+        );
 
     }
+);
 
-});
+
+uploadBox.addEventListener(
+    "dragleave",
+    function () {
+
+        uploadBox.classList.remove(
+            "drag-over"
+        );
+
+    }
+);
+
+
+uploadBox.addEventListener(
+    "drop",
+    function (event) {
+
+        event.preventDefault();
+
+
+        uploadBox.classList.remove(
+            "drag-over"
+        );
+
+
+        const file =
+            event.dataTransfer.files[0];
+
+
+        if (!file) {
+            return;
+        }
+
+
+        handleSelectedFile(file);
+
+    }
+);
+
+
+/* =========================================
+   INITIAL STATE
+========================================= */
+
+resetConverter();

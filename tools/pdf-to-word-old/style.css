@@ -1,0 +1,148 @@
+.converter-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.converter-container h2 {
+  color: #1a202c;
+  margin-bottom: 8px;
+}
+
+.converter-container p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.drop-zone {
+  border: 2px dashed #3182ce;
+  padding: 30px 20px;
+  border-radius: 8px;
+  background-color: #f7fafc;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drop-zone:hover {
+  background-color: #ebf8ff;
+}
+
+.drop-zone .icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.drop-zone #browseBtn {
+  color: #3182ce;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.file-name {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2b6cb0;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn:disabled {
+  background-color: #cbd5e0;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  background-color: #2b6cb0;
+}
+
+.status-msg {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #2d3748;
+}
+
+
+
+
+
+/* Selected File Box (Active hone par dikhega) */
+.file-info {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f1f3f6;
+    text-align: left;
+}
+
+.file-info.active {
+    display: block; /* File select hone par dikhane ke liye */
+}
+
+.file-info strong {
+    display: block;
+    margin-bottom: 5px;
+    word-break: break-all;
+}
+
+/* Status Messages */
+.status-message {
+    display: none;
+    margin-top: 20px;
+    padding: 13px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.status-message.active {
+    display: block;
+}
+
+.status-success {
+    background: #e8f7ee;
+    color: #176b3a;
+}
+
+.status-error {
+    background: #fdecec;
+    color: #a12626;
+}
+
+/* Download Button Styling */
+.download-btn {
+    display: none;
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #198754;
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.download-btn:hover {
+    opacity: 0.9;
+}

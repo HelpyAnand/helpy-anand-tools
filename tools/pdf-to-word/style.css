@@ -1,6 +1,8 @@
-/* ================================
+
+/* =========================================
    PDF TO WORD CONVERTER
-   ================================ */
+   HELPY ANAND TOOLS
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -13,241 +15,292 @@ body {
     color: #222;
 }
 
-/* Main Container */
 
-.pdf-word-container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.pdf-word-page {
+    min-height: calc(100vh - 120px);
+    padding: 50px 20px 70px;
 }
 
-/* Converter Card */
+.converter-container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+}
 
-.converter-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 35px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+/* =========================================
+   HEADER
+========================================= */
+
+.converter-header {
     text-align: center;
+    margin-bottom: 30px;
 }
 
-.converter-card h1 {
+.converter-header h1 {
     margin: 0 0 12px;
-    font-size: 32px;
+    font-size: 36px;
+    line-height: 1.2;
+    color: #222;
 }
 
-.converter-description {
-    margin: 0 auto 30px;
-    max-width: 650px;
-    color: #666;
+.converter-header p {
+    margin: 0 auto;
+    max-width: 620px;
+    font-size: 16px;
     line-height: 1.6;
+    color: #666;
 }
 
-/* Upload Area */
 
-.upload-area {
-    border: 2px dashed #ef4d1c;
-    border-radius: 14px;
-    padding: 45px 20px;
-    cursor: pointer;
-    background: #fffaf7;
+/* =========================================
+   UPLOAD BOX
+========================================= */
+
+.upload-box {
+    background: #fff;
+    border: 2px dashed #d7dce5;
+    border-radius: 16px;
+    padding: 45px 25px;
+    text-align: center;
     transition: 0.2s ease;
 }
 
-.upload-area:hover {
-    background: #fff3ed;
+.upload-box:hover {
+    border-color: #ef4d1c;
 }
+
+.upload-box.drag-over {
+    border-color: #ef4d1c;
+    background: #fff8f5;
+}
+
+
+/* =========================================
+   UPLOAD ICON
+========================================= */
 
 .upload-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff1eb;
+    border-radius: 50%;
+
+    font-size: 34px;
 }
 
-.upload-area h2 {
+.upload-box h2 {
     margin: 0 0 8px;
-    font-size: 21px;
+    font-size: 23px;
 }
 
-.upload-area p {
-    margin: 0;
+.upload-box p {
+    margin: 0 0 18px;
     color: #777;
 }
 
-/* File Input */
 
-#pdfFile {
-    display: none;
-}
+/* =========================================
+   CHOOSE BUTTON
+========================================= */
 
-/* Selected File */
+.choose-btn {
+    display: inline-block;
 
-.file-info {
-    display: none;
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #f1f3f6;
-    text-align: left;
-}
+    padding: 12px 24px;
 
-.file-info strong {
-    display: block;
-    margin-bottom: 5px;
-}
+    border-radius: 8px;
 
-.file-size {
-    color: #777;
-    font-size: 14px;
-}
-
-/* Convert Button */
-
-.convert-btn {
-    display: none;
-    width: 100%;
-    margin-top: 20px;
-    padding: 14px 20px;
-    border: none;
-    border-radius: 9px;
     background: #ef4d1c;
-    color: #ffffff;
-    font-size: 17px;
+    color: #fff;
+
+    font-size: 15px;
     font-weight: 600;
+
     cursor: pointer;
+
     transition: 0.2s ease;
 }
 
-.convert-btn:hover {
-    opacity: 0.9;
+.choose-btn:hover {
+    background: #d94114;
+}
+
+
+/* =========================================
+   FILE INFO
+========================================= */
+
+.file-info {
+    min-height: 20px;
+    margin-top: 18px !important;
+    margin-bottom: 0 !important;
+
+    font-size: 14px;
+    color: #555 !important;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   CONVERT BUTTON
+========================================= */
+
+.convert-btn {
+    width: 100%;
+    margin-top: 22px;
+
+    padding: 15px 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #ef4d1c;
+    color: #fff;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.convert-btn:hover:not(:disabled) {
+    background: #d94114;
 }
 
 .convert-btn:disabled {
-    opacity: 0.6;
+    background: #c9cdd4;
+    color: #fff;
     cursor: not-allowed;
 }
 
-/* Progress */
+
+/* =========================================
+   PROGRESS BOX
+========================================= */
 
 .progress-box {
-    display: none;
     margin-top: 25px;
+
+    padding: 20px;
+
+    background: #fff;
+
+    border: 1px solid #e1e5eb;
+    border-radius: 12px;
 }
 
 .progress-text {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+
+    font-size: 14px;
     color: #555;
+
+    text-align: center;
 }
 
-.progress-bar {
+.progress-track {
     width: 100%;
     height: 10px;
-    background: #e5e7eb;
-    border-radius: 10px;
+
     overflow: hidden;
+
+    background: #e8ebf0;
+    border-radius: 20px;
 }
 
 .progress-fill {
-    width: 0%;
+    width: 0;
     height: 100%;
+
     background: #ef4d1c;
+
+    border-radius: 20px;
+
     transition: width 0.3s ease;
 }
 
-/* Status */
+
+/* =========================================
+   STATUS MESSAGE
+========================================= */
 
 .status-message {
-    display: none;
-    margin-top: 20px;
-    padding: 13px 15px;
-    border-radius: 8px;
-    font-size: 14px;
+    min-height: 24px;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 15px;
     line-height: 1.5;
 }
 
-.status-success {
-    background: #e8f7ee;
-    color: #176b3a;
-}
 
-.status-error {
-    background: #fdecec;
-    color: #a12626;
-}
+/* =========================================
+   NOTE
+========================================= */
 
-/* Download Button */
+.converter-note {
+    margin-top: 28px;
 
-.download-btn {
-    display: none;
-    margin-top: 20px;
-    padding: 13px 25px;
-    border: none;
-    border-radius: 9px;
-    background: #198754;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-}
+    padding: 16px 18px;
 
-.download-btn:hover {
-    opacity: 0.9;
-}
+    background: #fff;
 
-/* Features */
+    border-left: 4px solid #ef4d1c;
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-top: 30px;
-}
+    border-radius: 6px;
 
-.feature {
-    background: #ffffff;
-    padding: 22px 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.feature-icon {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
-
-.feature h3 {
-    margin: 0 0 7px;
-    font-size: 17px;
-}
-
-.feature p {
-    margin: 0;
-    font-size: 14px;
     color: #666;
-    line-height: 1.5;
+
+    font-size: 14px;
+    line-height: 1.6;
 }
 
-/* Mobile */
 
-@media (max-width: 700px) {
+/* =========================================
+   MOBILE
+========================================= */
 
-    .pdf-word-container {
-        margin: 25px auto;
-        padding: 12px;
+@media (max-width: 600px) {
+
+    .pdf-word-page {
+        padding: 35px 15px 50px;
     }
 
-    .converter-card {
-        padding: 25px 18px;
+    .converter-header h1 {
+        font-size: 29px;
     }
 
-    .converter-card h1 {
-        font-size: 27px;
+    .converter-header p {
+        font-size: 15px;
     }
 
-    .upload-area {
-        padding: 35px 15px;
+    .upload-box {
+        padding: 35px 18px;
     }
 
-    .features {
-        grid-template-columns: 1fr;
+    .upload-box h2 {
+        font-size: 21px;
     }
+
+    .convert-btn {
+        font-size: 16px;
+    }
+
 }
+

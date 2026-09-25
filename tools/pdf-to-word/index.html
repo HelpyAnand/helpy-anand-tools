@@ -6,25 +6,24 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="Convert PDF to Word online for free. Easily convert PDF files into editable Word documents with our free PDF to Word converter.">
+    <title>
+        PDF to Word Converter - Convert PDF to Word Online Free | Helpy Anand Tools
+    </title>
 
-    <meta name="keywords"
-          content="PDF to Word, PDF to DOCX, PDF converter, convert PDF to Word online, free PDF to Word converter">
+    <meta
+        name="description"
+        content="Convert PDF to Word online with our free PDF to Word converter. Convert PDF files to editable DOCX documents while preserving the original layout."
+    >
 
-    <meta name="robots"
-          content="index, follow">
-
-    <title>PDF to Word Converter - Convert PDF to Word Online Free | Helpy Anand Tools</title>
-
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="../../common.css">
-
-    <!-- Tool CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -34,166 +33,123 @@
     <div id="navbar"></div>
 
 
-    <!-- Main Content -->
-    <main>
+    <main class="pdf-word-page">
 
-        <section class="pdf-word-container">
+        <section class="converter-container">
 
-            <div class="converter-card">
+            <div class="converter-header">
 
-                <h1>PDF to Word Converter</h1>
+                <h1>
+                    PDF to Word Converter
+                </h1>
 
-                <p class="converter-description">
-                    Convert your PDF files into editable Word documents
-                    quickly and easily. Free, simple and easy to use.
+                <p>
+                    Convert PDF to editable Word (DOCX) online
+                    while preserving the original layout.
                 </p>
 
+            </div>
 
-                <!-- Upload Area -->
-                <label for="pdfFile" class="upload-area">
 
-                    <div class="upload-icon">
-                        📄
-                    </div>
+            <!-- Upload Box -->
 
-                    <h2>Select PDF File</h2>
+            <div
+                class="upload-box"
+                id="uploadBox"
+            >
 
-                    <p>
-                        Click here to choose a PDF file
-                    </p>
+                <div class="upload-icon">
+                    📄
+                </div>
 
-                    <p>
-                        Supported format: PDF
-                    </p>
+                <h2>
+                    Select PDF File
+                </h2>
 
+                <p>
+                    Choose a PDF file from your device
+                </p>
+
+                <label
+                    for="pdfFile"
+                    class="choose-btn"
+                >
+                    Choose PDF
                 </label>
 
                 <input
                     type="file"
                     id="pdfFile"
-                    accept=".pdf,application/pdf"
+                    accept="application/pdf,.pdf"
+                    hidden
                 >
 
-
-                <!-- Selected File -->
-                <div class="file-info" id="fileInfo">
-
-                    <strong id="fileName">
-                        No file selected
-                    </strong>
-
-                    <span class="file-size" id="fileSize">
-                        -
-                    </span>
-
-                </div>
-
-
-                <!-- Convert Button -->
-                <button
-                    type="button"
-                    id="convertBtn"
-                    class="convert-btn">
-
-                    Convert to Word
-
-                </button>
-
-
-                <!-- Progress -->
-                <div
-                    class="progress-box"
-                    id="progressBox">
-
-                    <div
-                        class="progress-text"
-                        id="progressText">
-
-                        Preparing PDF...
-
-                    </div>
-
-                    <div class="progress-bar">
-
-                        <div
-                            class="progress-fill"
-                            id="progressFill">
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Status Message -->
-                <div
-                    class="status-message"
-                    id="statusMessage">
-                </div>
-
-
-                <!-- Download Button -->
-                <button
-                    type="button"
-                    id="downloadBtn"
-                    class="download-btn">
-
-                    Download Word File
-
-                </button>
+                <p
+                    class="file-info"
+                    id="fileInfo"
+                >
+                    No file selected
+                </p>
 
             </div>
 
 
-            <!-- Features -->
-            <div class="features">
+            <!-- Convert Button -->
 
-                <div class="feature">
+            <button
+                type="button"
+                id="convertBtn"
+                class="convert-btn"
+                disabled
+            >
+                Convert PDF to Word
+            </button>
 
-                    <div class="feature-icon">
-                        🔄
-                    </div>
 
-                    <h3>Easy Conversion</h3>
+            <!-- Progress -->
 
-                    <p>
-                        Convert PDF files into Word documents
-                        with just a few clicks.
-                    </p>
+            <div
+                class="progress-box"
+                id="progressBox"
+                hidden
+            >
+
+                <div
+                    class="progress-text"
+                    id="progressText"
+                >
+                    Preparing conversion...
+                </div>
+
+                <div class="progress-track">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill"
+                    ></div>
 
                 </div>
 
-
-                <div class="feature">
-
-                    <div class="feature-icon">
-                        ⚡
-                    </div>
-
-                    <h3>Fast Processing</h3>
-
-                    <p>
-                        Process your PDF files quickly
-                        directly in your browser.
-                    </p>
-
-                </div>
+            </div>
 
 
-                <div class="feature">
+            <!-- Result / Error -->
 
-                    <div class="feature-icon">
-                        🔒
-                    </div>
+            <div
+                class="status-message"
+                id="statusMessage"
+                aria-live="polite"
+            ></div>
 
-                    <h3>Privacy Friendly</h3>
 
-                    <p>
-                        Your PDF is processed in your browser
-                        without uploading it to our server.
-                    </p>
+            <div class="converter-note">
 
-                </div>
+                <strong>
+                    Note:
+                </strong>
+
+                Your PDF is converted into an editable
+                Microsoft Word (DOCX) file.
 
             </div>
 
@@ -206,24 +162,9 @@
     <div id="footer"></div>
 
 
-    <!-- PDF.js -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs"
-        type="module">
-    </script>
-
-    <!-- DOCX Library -->
-    <script
-        src="https://cdn.jsdelivr.net/npm/docx@9.5.1/build/index.umd.js">
-    </script>
-
-
-    <!-- Common JavaScript -->
-    <script src="../../js/common.js"></script>
-
-    <!-- Tool JavaScript -->
     <script src="script.js"></script>
 
 </body>
 
 </html>
+
