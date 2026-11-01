@@ -1,0 +1,338 @@
+
+/* =====================================
+   Helpy Anand AI Image Generator
+   Premium Responsive Design
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    line-height: 1.6;
+}
+
+/* Main Section */
+
+.tool-section {
+    padding: 45px 20px 30px;
+}
+
+.tool-box {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+
+.tool-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: #173b73;
+    margin-bottom: 10px;
+}
+
+.tool-desc {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 32px;
+}
+
+/* Prompt */
+
+.prompt-section {
+    margin-bottom: 25px;
+}
+
+.prompt-section label {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    color: #173b73;
+    margin-bottom: 10px;
+}
+
+#promptInput {
+    width: 100%;
+    min-height: 145px;
+    padding: 16px;
+    border: 1px solid #d5dce7;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+    background: #fbfcff;
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+#promptInput:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.prompt-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 8px;
+    color: #777;
+    font-size: 13px;
+}
+
+/* Verification */
+
+.verification-section {
+    margin: 25px 0;
+    padding: 18px;
+    background: #f7f9fc;
+    border: 1px solid #e5eaf2;
+    border-radius: 10px;
+}
+
+.verification-title {
+    color: #173b73;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.cf-turnstile {
+    min-height: 65px;
+}
+
+/* Generate Button */
+
+.generate-section {
+    text-align: center;
+    margin-top: 25px;
+}
+
+#generateBtn,
+#downloadBtn,
+#resetBtn {
+    border: none;
+    border-radius: 9px;
+    padding: 14px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, opacity 0.2s;
+}
+
+#generateBtn {
+    width: 100%;
+    max-width: 340px;
+    color: #fff;
+    background: linear-gradient(135deg, #2563eb, #1746b8);
+    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.22);
+}
+
+#generateBtn:hover:not(:disabled) {
+    background: linear-gradient(135deg, #1746b8, #12398f);
+    transform: translateY(-2px);
+}
+
+#generateBtn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Status */
+
+.status-message {
+    display: none;
+    margin: 22px 0;
+    padding: 13px 16px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.status-message.success {
+    display: block;
+    color: #176b35;
+    background: #e9f8ee;
+    border: 1px solid #bce6c9;
+}
+
+.status-message.error {
+    display: block;
+    color: #b42318;
+    background: #fff0ef;
+    border: 1px solid #f3c3bf;
+}
+
+.status-message.loading {
+    display: block;
+    color: #1746b8;
+    background: #eef4ff;
+    border: 1px solid #cbdcff;
+}
+
+/* Result */
+
+.result-section {
+    display: none;
+    margin-top: 35px;
+    padding-top: 28px;
+    border-top: 1px solid #e5eaf2;
+}
+
+.result-section h2 {
+    text-align: center;
+    color: #173b73;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.image-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    padding: 15px;
+    background: #f7f9fc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 12px;
+}
+
+#generatedImage {
+    display: block;
+    max-width: 100%;
+    max-height: 650px;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+#generatedImage[hidden] {
+    display: none;
+}
+
+.buttons {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+#downloadBtn {
+    color: #fff;
+    background: #198754;
+}
+
+#downloadBtn:hover {
+    background: #146c43;
+    transform: translateY(-2px);
+}
+
+#resetBtn {
+    color: #fff;
+    background: #64748b;
+}
+
+#resetBtn:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+/* SEO Content */
+
+.seo-content-section {
+    max-width: 900px;
+    margin: 30px auto 15px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.seo-content-section article + article {
+    margin-top: 25px;
+}
+
+.seo-content-section h2 {
+    color: #173b73;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.seo-content-section p,
+.seo-content-section li {
+    color: #555;
+    font-size: 15px;
+}
+
+.seo-content-section ol,
+.seo-content-section ul {
+    padding-left: 23px;
+}
+
+.seo-content-section li {
+    margin-bottom: 7px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 700px) {
+
+    .tool-section {
+        padding: 25px 12px;
+    }
+
+    .tool-box {
+        padding: 23px 16px;
+        border-radius: 12px;
+    }
+
+    .tool-title {
+        font-size: 26px;
+    }
+
+    .tool-desc {
+        font-size: 14px;
+    }
+
+    #promptInput {
+        min-height: 130px;
+        font-size: 14px;
+    }
+
+    .verification-section {
+        padding: 14px;
+    }
+
+    .seo-content-section {
+        margin: 20px 12px;
+        padding: 22px 17px;
+    }
+
+    .seo-content-section h2 {
+        font-size: 19px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    #downloadBtn,
+    #resetBtn {
+        width: 100%;
+    }
+
+}

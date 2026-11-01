@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free AI Image Generator Online | Helpy Anand Tools</title>
+
+    <meta name="description" content="Create AI images from text prompts online using Helpy Anand Tools. Describe your idea and generate images with AI for free.">
+
+    <meta name="author" content="Helpy Anand">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/ai-image-generator/">
+
+    <link rel="icon" href="../../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+
+    <meta name="theme-color" content="#2563eb">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Cloudflare Turnstile -->
+    <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer>
+    </script>
+
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Image Generator",
+        "url": "https://helpy-anand-tools.vercel.app/tools/ai-image-generator/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "All",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Dynamic Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Main Tool Section -->
+    <main class="tool-section">
+
+        <div class="tool-box">
+
+            <h1 class="tool-title">
+                AI Image Generator
+            </h1>
+
+            <p class="tool-desc">
+                Turn your imagination into images using AI.
+                Just describe what you want to create.
+            </p>
+
+            <!-- Prompt Section -->
+            <form id="imageGeneratorForm">
+
+                <div class="prompt-section">
+
+                    <label for="promptInput">
+                        Describe Your Image
+                    </label>
+
+                    <textarea
+                        id="promptInput"
+                        name="prompt"
+                        rows="5"
+                        maxlength="2048"
+                        placeholder="Example: A beautiful Indian village at sunrise, green fields, mountains, cinematic lighting, ultra realistic..."
+                        required></textarea>
+
+                    <div class="prompt-info">
+                        <small>Maximum 2,048 characters</small>
+                        <small id="charCount">0 / 2048</small>
+                    </div>
+
+                </div>
+
+                <!-- Cloudflare Turnstile -->
+                <div class="verification-section">
+
+                    <p class="verification-title">
+                        Security Verification
+                    </p>
+
+                    <div
+                        class="cf-turnstile"
+                        data-sitekey="0x4AAAAAAFvL0ynGT6pPx5Cs"
+                        data-theme="light">
+                    </div>
+
+                </div>
+
+                <!-- Generate Button -->
+                <div class="generate-section">
+
+                    <button
+                        type="submit"
+                        id="generateBtn">
+
+                        Generate Image
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- Status Message -->
+            <div
+                id="statusText"
+                class="status-message"
+                aria-live="polite">
+            </div>
+
+            <!-- Image Result -->
+            <section
+                id="resultSection"
+                class="result-section"
+                aria-label="Generated image result">
+
+                <h2>Your Generated Image</h2>
+
+                <div class="image-preview">
+
+                    <img
+                        id="generatedImage"
+                        alt="AI generated image"
+                        hidden>
+
+                </div>
+
+                <div class="buttons" id="actionButtons">
+
+                    <button
+                        type="button"
+                        id="downloadBtn">
+                        Download Image
+                    </button>
+
+                    <button
+                        type="button"
+                        id="resetBtn"
+                        class="reset-btn">
+                        Create Another Image
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- SEO Content -->
+        <section class="seo-content-section">
+
+            <article>
+
+                <h2>Free Online AI Image Generator</h2>
+
+                <p>
+                    Create unique images from your imagination with
+                    Helpy Anand Tools AI Image Generator. Simply enter
+                    a text description and let artificial intelligence
+                    turn your idea into an image.
+                </p>
+
+            </article>
+
+            <article>
+
+                <h2>How to Generate AI Images?</h2>
+
+                <ol>
+                    <li>Enter a description of the image you want.</li>
+                    <li>Complete the security verification.</li>
+                    <li>Click the Generate Image button.</li>
+                    <li>Preview and download your generated image.</li>
+                </ol>
+
+            </article>
+
+            <article>
+
+                <h2>Features of AI Image Generator</h2>
+
+                <ul>
+                    <li>Generate images from text prompts.</li>
+                    <li>Simple and easy-to-use interface.</li>
+                    <li>Image preview before downloading.</li>
+                    <li>Responsive design for mobile and desktop.</li>
+                </ul>
+
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-container"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+
+</body>
+</html>
