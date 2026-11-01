@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free PDF Compressor Online - Reduce PDF Size | Helpy Anand Tools</title>
+
+    <meta name="description" content="Compress PDF online free with Low, Medium and High options. Reduce PDF file size in your browser without uploading files or registration.">
+    <meta name="author" content="Helpy Anand Tools">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d6efd">
+
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/pdf-compressor/">
+
+    <!-- Favicon and Web Manifest -->
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Helpy Anand Tools">
+    <meta property="og:title" content="Free PDF Compressor Online - Reduce PDF Size | Helpy Anand Tools">
+    <meta property="og:description" content="Compress PDF online free with Low, Medium and High options. Reduce PDF file size in your browser without uploading files or registration.">
+    <meta property="og:url" content="https://helpy-anand-tools.vercel.app/tools/pdf-compressor/">
+    <meta property="og:image" content="https://helpy-anand-tools.vercel.app/tools/pdf-compressor/pdf-compressor-og.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="PDF Compressor - Free PDF Compressor Online">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free PDF Compressor Online - Reduce PDF Size | Helpy Anand Tools">
+    <meta name="twitter:description" content="Compress PDF online free with Low, Medium and High options. Reduce PDF file size in your browser without uploading files or registration.">
+    <meta name="twitter:image" content="https://helpy-anand-tools.vercel.app/tools/pdf-compressor/pdf-compressor-og.webp">
+
+    <!-- Google Analytics GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E7LEMEMG9W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-E7LEMEMG9W');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script>
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){
+                (c[a].q=c[a].q||[]).push(arguments)
+            };
+            t=l.createElement(r);
+            t.async=1;
+            t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xx37vnxnxr");
+    </script>
+
+    <!-- SoftwareApplication Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PDF Compressor",
+        "url": "https://helpy-anand-tools.vercel.app/tools/pdf-compressor/",
+        "description": "Free online PDF compressor that processes PDF pages in the browser and creates a new PDF using compressed page images. Selectable text and interactive PDF features may not be preserved.",
+        "featureList": [
+            "Low PDF compression",
+            "Medium PDF compression",
+            "High PDF compression",
+            "Browser-based PDF processing",
+            "Download compressed PDF"
+        ],
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Helpy Anand Tools",
+            "url": "https://helpy-anand-tools.vercel.app/"
+        }
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is PDF Compressor free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, this tool is free to use without registration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are my PDF files uploaded to a server?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. PDF processing takes place locally in your browser."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will the PDF quality change?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Image quality may change depending on the compression level. Text and interactive PDF features may not be preserved."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- COMMON NAVBAR -->
+    <div id="common-navbar"></div>
+
+    <main class="pdf-compressor-container">
+
+        <section class="pdf-hero">
+            <h1 class="pdf-tool-title">PDF Compressor</h1>
+            <p>Compress PDF files online for free without uploading them to a server.</p>
+        </section>
+
+        <section class="pdf-upload-section">
+
+            <input
+                type="file"
+                id="pdfInput"
+                accept="application/pdf,.pdf"
+                hidden
+            >
+
+            <label for="pdfInput" class="pdf-upload-box" id="pdfDropArea">
+                <span class="pdf-upload-icon">📄</span>
+                <h2>Select PDF File</h2>
+                <p>Click here or drag and drop your PDF file</p>
+                <span class="pdf-upload-note">PDF files only</span>
+            </label>
+
+            <p id="pdfFileName" class="pdf-file-name"></p>
+
+        </section>
+
+        <section class="pdf-settings-section">
+
+            <h2>Compression Settings</h2>
+
+            <label for="compressionLevel">Compression Level</label>
+
+            <select id="compressionLevel">
+                <option value="low">Low Compression - Better Quality</option>
+                <option value="medium" selected>Medium Compression - Recommended</option>
+                <option value="high">High Compression - Smaller File</option>
+            </select>
+
+            <p class="pdf-quality-note">
+                Higher compression may reduce image quality and remove selectable text.
+            </p>
+
+            <button id="compressBtn" type="button" disabled>
+                Compress PDF
+            </button>
+
+        </section>
+
+        <section class="pdf-results-section" id="pdfResults" hidden>
+
+            <h2>Compression Results</h2>
+
+            <div class="pdf-result-grid">
+
+                <div class="pdf-result-card">
+                    <h3>Original Size</h3>
+                    <p id="originalSize">-</p>
+                </div>
+
+                <div class="pdf-result-card">
+                    <h3>Compressed Size</h3>
+                    <p id="compressedSize">-</p>
+                </div>
+
+                <div class="pdf-result-card">
+                    <h3>Size Reduced</h3>
+                    <p id="savedPercent">-</p>
+                </div>
+
+            </div>
+
+            <button id="downloadBtn" type="button" disabled>
+                Download Compressed PDF
+            </button>
+
+        </section>
+
+        <p id="pdfStatus" role="status" aria-live="polite"></p>
+
+        <section class="pdf-info-section">
+            <h2>How to Compress PDF Online?</h2>
+            <ol>
+                <li>Select your PDF file.</li>
+                <li>Choose your compression level.</li>
+                <li>Click Compress PDF.</li>
+                <li>Download your compressed PDF.</li>
+            </ol>
+        </section>
+
+        <section class="pdf-info-section">
+            <h2>Free PDF Compressor Online - Reduce PDF File Size</h2>
+            <p>
+                Use our free PDF compressor online to reduce PDF file size directly in your browser.
+                Select a PDF file, choose Low, Medium or High compression, and create a smaller PDF
+                without registration or uploading your file to our server.
+            </p>
+
+            <h3>Choose the Right PDF Compression Level</h3>
+            <ul>
+                <li><strong>Low Compression:</strong> Choose this option when better image quality is important.</li>
+                <li><strong>Medium Compression:</strong> A balanced option for everyday PDF compression.</li>
+                <li><strong>High Compression:</strong> Choose this option when you want smaller output files and can accept reduced image quality.</li>
+            </ul>
+
+            <h3>How Does This PDF Size Reducer Work?</h3>
+            <p>
+                This tool processes PDF pages in your browser and creates a new PDF using compressed
+                page images. Your selected file is not uploaded to our server. Because pages are
+                converted into images, selectable text, links, forms and other interactive PDF
+                features may not be preserved.
+            </p>
+
+            <h3>Important PDF Compression Note</h3>
+            <p>
+                Compression results depend on the original PDF. Some files may not become smaller.
+                If the generated PDF is not smaller than the original, the download is disabled and
+                your original file remains unchanged.
+            </p>
+        </section>
+        <section class="pdf-info-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="pdf-faq-item">
+                <h3>Is PDF Compressor free?</h3>
+                <p>Yes, this tool is free to use without registration.</p>
+            </div>
+
+            <div class="pdf-faq-item">
+                <h3>Are my PDF files uploaded to a server?</h3>
+                <p>No. PDF processing takes place locally in your browser.</p>
+            </div>
+
+            <div class="pdf-faq-item">
+                <h3>Will the PDF quality change?</h3>
+                <p>Image quality may change depending on the compression level. Text and interactive PDF features may not be preserved.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- COMMON FOOTER -->
+    <div id="common-footer"></div>
+
+    <!-- COMMON JAVASCRIPT -->
+    <script src="../../js/common.js"></script>
+
+  <!-- PDF COMPRESSOR JAVASCRIPT -->
+<script type="module" src="script.js"></script>
+</body>
+</html>

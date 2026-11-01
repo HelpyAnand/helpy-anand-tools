@@ -1,0 +1,290 @@
+
+/* =====================================================
+   PDF COMPRESSOR - HELPY ANAND TOOLS
+===================================================== */
+
+.pdf-compressor-container {
+    width: 90%;
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    color: #333;
+}
+
+.pdf-hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pdf-tool-title {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.pdf-hero p {
+    color: #666;
+    font-size: 16px;
+}
+
+.pdf-upload-section {
+    margin-bottom: 30px;
+}
+
+.pdf-upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 230px;
+    padding: 25px;
+    border: 2px dashed #2563eb;
+    border-radius: 12px;
+    background: #f8fbff;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.pdf-upload-box:hover,
+.pdf-upload-box.drag-over {
+    background: #eef5ff;
+    border-color: #ef4d1c;
+}
+
+.pdf-upload-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.pdf-upload-box h2 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.pdf-upload-box p {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.pdf-upload-note {
+    font-size: 13px;
+    color: #777;
+}
+
+.pdf-file-name {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.pdf-settings-section,
+.pdf-results-section {
+    padding: 24px;
+    margin-bottom: 25px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.pdf-settings-section h2,
+.pdf-results-section h2,
+.pdf-info-section h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #222;
+}
+
+.pdf-settings-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+#compressionLevel {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 15px;
+}
+
+.pdf-quality-note {
+    margin: 12px 0 18px;
+    font-size: 13px;
+    color: #666;
+}
+
+.pdf-compressor-container button {
+    display: block;
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #ef4d1c;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pdf-compressor-container button:hover:not(:disabled) {
+    background: #d83d10;
+}
+
+.pdf-compressor-container button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.pdf-result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.pdf-result-card {
+    padding: 20px 12px;
+    background: #f4f6f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.pdf-result-card h3 {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.pdf-result-card p {
+    font-size: 21px;
+    font-weight: 700;
+    color: #123b73;
+    overflow-wrap: anywhere;
+}
+
+#pdfStatus {
+    margin: 15px 0;
+    font-size: 14px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+#pdfStatus.success {
+    color: #15803d;
+}
+
+#pdfStatus.error {
+    color: #dc2626;
+}
+
+#pdfStatus.info {
+    color: #2563eb;
+}
+
+.pdf-info-section {
+    margin-top: 30px;
+    padding: 22px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.pdf-info-section ol {
+    padding-left: 22px;
+}
+
+.pdf-info-section li {
+    margin-bottom: 10px;
+}
+
+.pdf-faq-item {
+    margin-bottom: 20px;
+}
+
+.pdf-faq-item h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.pdf-faq-item p {
+    color: #555;
+    line-height: 1.7;
+}
+
+@media (max-width: 650px) {
+    .pdf-compressor-container {
+        width: 94%;
+        margin: 20px auto;
+        padding: 18px;
+    }
+
+    .pdf-tool-title {
+        font-size: 26px;
+    }
+
+    .pdf-result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pdf-settings-section,
+    .pdf-results-section {
+        padding: 17px;
+    }
+
+    .pdf-upload-box {
+        min-height: 190px;
+        padding: 18px;
+    }
+}
+
+/* PDF Compressor Status Messages */
+
+#pdfStatus {
+    display: block;
+    margin: 12px 0;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+#pdfStatus:empty {
+    display: none;
+}
+
+#pdfStatus.error {
+    color: #b91c1c;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+}
+
+#pdfStatus.success {
+    color: #166534;
+    background: #dcfce7;
+    border: 1px solid #bbf7d0;
+}
+
+#pdfStatus.info {
+    color: #1e40af;
+    background: #dbeafe;
+    border: 1px solid #bfdbfe;
+}
+
+/* SEO Content - Justified Text for Desktop and Mobile */
+
+.pdf-info-section p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.pdf-info-section h3 {
+    margin-top: 1em;
+    margin-bottom: 8px;
+}
