@@ -431,22 +431,41 @@ transform:translateY(-2px);
 .btn:active{
 transform:translateY(0);
 }
+/* 404 Page Only */
 
-/* for page 404 */
-
-.tool-section{
-min-height:70vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:60px 20px;
+.error-page-section{
+    min-height:70vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
 }
 
-.tool-box{
-max-width:700px;
-width:100%;
-text-align:center;
+.error-page-box{
+    max-width:700px;
+    width:100%;
+    text-align:center;
 }
+
+.error-page-box h2{
+    font-size:80px;
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.error-page-box h3{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.error-page-box p{
+    font-size:18px;
+    color:#555;
+    line-height:1.6;
+    margin-bottom:30px;
+}
+
+
 
 /* tool box heading big*/
 
