@@ -35,84 +35,157 @@ outputPrompt.value = finalPrompt;
  
 });
 
-
-
 // ===== Prompt Templates =====
 
 const promptTemplates = {
 
 "Blog Writing": `
-Write a detailed blog article about "{topic}".
+Write a detailed, informative and engaging blog article about "{topic}".
 
 Tone: {tone}
-
 Language: {language}
-
-Length: {wordCount} words.
+Length: {wordCount}
 
 Include:
-
-• SEO Friendly Title
-
-• Introduction
-
-• H2 & H3 Headings
-
-• Bullet Points
-
-• Conclusion
-
-• FAQ
+- SEO-friendly title
+- Engaging introduction
+- Well-structured H2 and H3 headings
+- Detailed explanations
+- Relevant examples
+- Bullet points
+- Conclusion
+- Frequently Asked Questions (FAQ)
 `,
 
 "SEO Article": `
-Write a complete SEO optimized article about "{topic}".
+Write a fully SEO-optimized article about "{topic}".
 
 Tone: {tone}
-
 Language: {language}
-
-Length: {wordCount} words.
+Length: {wordCount}
 
 Include:
-
-• Meta Title
-
-• Meta Description
-
-• Focus Keyword
-
-• H1
-
-• H2
-
-• H3
-
-• Conclusion
+- SEO meta title
+- Meta description
+- Primary and secondary keywords
+- Search intent analysis
+- H1, H2 and H3 headings
+- Keyword optimization without keyword stuffing
+- Internal and external link suggestions
+- Conclusion
+- FAQs
 `,
 
 "YouTube Script": `
-Write an engaging YouTube video script about "{topic}".
+Create an engaging YouTube video script about "{topic}".
 
 Tone: {tone}
-
 Language: {language}
-
-Length: {wordCount} words.
+Length: {wordCount}
 
 Include:
+- Attention-grabbing opening hook
+- Video introduction
+- Main content divided into clear sections
+- Examples and storytelling
+- Audience engagement questions
+- Suggested visual scenes
+- Strong call to action
+- Closing
+`,
 
-• Hook
+"Facebook Post": `
+Create an engaging Facebook post about "{topic}".
 
-• Intro
+Tone: {tone}
+Language: {language}
+Length: {wordCount}
 
-• Main Content
+Include:
+- Attention-grabbing opening
+- Interesting and useful content
+- Short, readable paragraphs
+- Relevant emojis where appropriate
+- Engaging question for the audience
+- Suitable hashtags
+- Call to action
+`,
 
-• Call To Action
+"Instagram Caption": `
+Write a creative and engaging Instagram caption about "{topic}".
+
+Tone: {tone}
+Language: {language}
+Length: {wordCount}
+
+Include:
+- Catchy opening line
+- Short and engaging caption
+- Relevant emojis
+- Audience engagement question
+- Clear call to action
+- Relevant Instagram hashtags
+`,
+
+"Email": `
+Write a clear and professional email about "{topic}".
+
+Tone: {tone}
+Language: {language}
+Length: {wordCount}
+
+Include:
+- Appropriate email subject line
+- Professional greeting
+- Clear purpose of the email
+- Well-organized message body
+- Polite and relevant closing
+- Professional sign-off
+`,
+
+"Coding": `
+Act as an experienced software developer and programming mentor.
+
+Task: Help me with "{topic}".
+
+Tone: {tone}
+Language: {language}
+Length: {wordCount}
+
+Include:
+- Clear understanding of the requirement
+- Recommended technology and approach
+- Complete and properly structured code
+- Step-by-step implementation instructions
+- Explanation of important code sections
+- Error handling and best practices
+- Testing instructions
+- Common mistakes and solutions
+
+Make the solution beginner-friendly and practical.
+`,
+
+"Image Prompt": `
+Create a detailed and professional AI image-generation prompt about "{topic}".
+
+Tone: {tone}
+Language: {language}
+Length: {wordCount}
+
+Include:
+- Main subject and scene description
+- Visual style and artistic direction
+- Composition and camera angle
+- Lighting and shadows
+- Color palette
+- Background and environment
+- Texture and fine details
+- Image quality and resolution guidance
+- Negative prompt suggestions
+
+Make the final image prompt descriptive and visually specific.
 `
-
 };
-
 
 
 // ===== Platform Prefix =====
