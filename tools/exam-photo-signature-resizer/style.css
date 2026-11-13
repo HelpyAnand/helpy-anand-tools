@@ -1,0 +1,541 @@
+
+/* =========================================
+   Exam Photo & Signature Resizer
+   Helpy Anand Tools
+========================================= */
+
+.epsr-container {
+  width: min(1100px, 94%);
+  margin: 35px auto;
+  color: #263238;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.epsr-container * {
+  box-sizing: border-box;
+}
+
+/* Hidden Elements */
+.epsr-container [hidden] {
+  display: none !important;
+}
+
+/* Hero Section */
+.epsr-hero {
+  text-align: center;
+  padding: 45px 25px;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, #fff4ed, #fff);
+  border: 1px solid #ffe0d0;
+  border-radius: 16px;
+}
+
+.epsr-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: #ef4d1c;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.epsr-hero h1 {
+  margin: 15px 0 10px;
+  color: #172b4d;
+  font-size: clamp(25px, 4vw, 36px);
+  line-height: 1.3;
+}
+
+.epsr-hero > p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 16px;
+}
+
+.epsr-hero-points {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 25px;
+  margin-top: 22px;
+  color: #16834a;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Privacy Notice */
+.epsr-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 18px 20px;
+  margin-bottom: 25px;
+  background: #effaf4;
+  border: 1px solid #c9ead6;
+  border-radius: 12px;
+}
+
+.epsr-privacy-icon {
+  font-size: 27px;
+}
+
+.epsr-privacy strong {
+  color: #176b3c;
+  font-size: 16px;
+}
+
+.epsr-privacy p {
+  margin: 4px 0 0;
+  color: #456354;
+  font-size: 14px;
+}
+
+/* Main Tool Cards */
+.epsr-tool-card {
+  padding: 28px;
+  margin-bottom: 30px;
+  background: #fff;
+  border: 1px solid #e5e9ef;
+  border-radius: 15px;
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.05);
+}
+
+.epsr-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.epsr-heading-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  background: #fff0e9;
+  border-radius: 12px;
+  font-size: 27px;
+}
+
+.epsr-section-heading h2 {
+  margin: 0;
+  color: #172b4d;
+  font-size: 23px;
+}
+
+.epsr-section-heading p {
+  margin: 3px 0 0;
+  color: #687386;
+  font-size: 14px;
+}
+
+/* Upload Area */
+.epsr-upload-area {
+  padding: 35px 20px;
+  text-align: center;
+  background: #fafcff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 13px;
+  transition: 0.2s ease;
+}
+
+.epsr-upload-area:hover,
+.epsr-upload-area.epsr-drag-active {
+  background: #fff6f1;
+  border-color: #ef4d1c;
+}
+
+.epsr-upload-icon {
+  margin-bottom: 10px;
+  font-size: 42px;
+}
+
+.epsr-upload-content h3 {
+  margin: 5px 0;
+  color: #26384f;
+  font-size: 19px;
+}
+
+.epsr-upload-content p {
+  margin: 5px 0 18px;
+  color: #718096;
+  font-size: 14px;
+}
+
+.epsr-upload-content small {
+  display: block;
+  margin-top: 12px;
+  color: #718096;
+}
+
+/* Buttons */
+.epsr-primary-btn,
+.epsr-secondary-btn,
+.epsr-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 43px;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.epsr-primary-btn {
+  background: #ef4d1c;
+  color: #fff;
+}
+
+.epsr-primary-btn:hover {
+  background: #d83c10;
+  transform: translateY(-1px);
+}
+
+.epsr-secondary-btn {
+  background: #edf0f4;
+  color: #334155;
+}
+
+.epsr-secondary-btn:hover {
+  background: #dce2e9;
+}
+
+.epsr-download-btn {
+  width: 100%;
+  margin-top: 12px;
+  background: #16834a;
+  color: #fff;
+}
+
+.epsr-download-btn:hover {
+  background: #116638;
+}
+
+.epsr-container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Editor Layout */
+.epsr-editor {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.epsr-preview-box,
+.epsr-settings {
+  min-width: 0;
+  padding: 20px;
+  background: #f8fafc;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+}
+
+.epsr-preview-box h3,
+.epsr-settings h3 {
+  margin: 0 0 17px;
+  color: #26384f;
+  font-size: 18px;
+}
+
+/* Image Preview */
+.epsr-image-preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  background-image:
+    linear-gradient(45deg, #eee 25%, transparent 25%),
+    linear-gradient(-45deg, #eee 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #eee 75%),
+    linear-gradient(-45deg, transparent 75%, #eee 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0, 0 10px, 10px -10px, -10px 0;
+  border: 1px solid #dce2e9;
+  border-radius: 8px;
+}
+
+.epsr-image-preview img {
+  display: block;
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+}
+
+.epsr-signature-preview {
+  min-height: 180px;
+}
+
+.epsr-signature-preview img {
+  max-height: 150px;
+}
+
+.epsr-file-info {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* Settings Fields */
+.epsr-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.epsr-field {
+  min-width: 0;
+  margin-bottom: 17px;
+}
+
+.epsr-field label {
+  display: block;
+  margin-bottom: 7px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.epsr-field input,
+.epsr-field select {
+  display: block;
+  width: 100%;
+  min-height: 43px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  color: #263238;
+  font-size: 14px;
+}
+
+.epsr-field input:focus,
+.epsr-field select:focus {
+  outline: none;
+  border-color: #ef4d1c;
+  box-shadow: 0 0 0 3px rgba(239, 77, 28, 0.12);
+}
+
+.epsr-field small {
+  display: block;
+  margin-top: 5px;
+  color: #718096;
+  font-size: 12px;
+}
+
+/* Aspect Ratio Checkbox */
+.epsr-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 19px;
+  color: #475569;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.epsr-checkbox input {
+  width: 17px;
+  height: 17px;
+  accent-color: #ef4d1c;
+}
+
+/* Action Buttons */
+.epsr-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.epsr-button-group button {
+  flex: 1;
+}
+
+/* Status */
+.epsr-status {
+  margin-top: 12px;
+  color: #475569;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.epsr-status:empty {
+  display: none;
+}
+
+/* Result */
+.epsr-result {
+  margin-top: 22px;
+  padding: 18px;
+  background: #f0faf4;
+  border: 1px solid #ccebd8;
+  border-radius: 10px;
+}
+
+.epsr-result h3 {
+  margin: 0 0 12px;
+  color: #176b3c;
+}
+
+.epsr-result canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 350px;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #dce2e9;
+  border-radius: 5px;
+}
+
+.epsr-result p {
+  color: #456354;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+/* Instructions */
+.epsr-info-section {
+  padding: 25px;
+  margin-bottom: 25px;
+  background: #fff;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+}
+
+.epsr-info-section h2,
+.epsr-faq h2 {
+  margin: 0 0 18px;
+  color: #172b4d;
+  font-size: 22px;
+}
+
+.epsr-info-section ol {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.epsr-info-section li {
+  padding: 5px 0;
+  color: #475569;
+  font-size: 15px;
+}
+
+/* Important Note */
+.epsr-note {
+  padding: 18px 20px;
+  margin-bottom: 30px;
+  background: #fff9e9;
+  border-left: 4px solid #e9a400;
+  border-radius: 8px;
+  color: #72551b;
+  font-size: 14px;
+}
+
+/* FAQ */
+.epsr-faq {
+  padding: 25px;
+  margin-bottom: 35px;
+  background: #fff;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+}
+
+.epsr-faq details {
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e9ef;
+}
+
+.epsr-faq details:last-child {
+  border-bottom: none;
+}
+
+.epsr-faq summary {
+  color: #26384f;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.epsr-faq details p {
+  margin: 10px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .epsr-container {
+    width: 94%;
+    margin: 22px auto;
+  }
+
+  .epsr-hero {
+    padding: 32px 18px;
+  }
+
+  .epsr-hero-points {
+    gap: 8px 15px;
+    font-size: 12px;
+  }
+
+  .epsr-tool-card {
+    padding: 18px;
+  }
+
+  .epsr-editor {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .epsr-section-heading h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .epsr-field-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .epsr-button-group {
+    flex-direction: column;
+  }
+
+  .epsr-button-group button {
+    width: 100%;
+  }
+
+  .epsr-privacy {
+    padding: 14px;
+  }
+
+  .epsr-info-section,
+  .epsr-faq {
+    padding: 18px;
+  }
+
+  .epsr-image-preview {
+    min-height: 180px;
+  }
+}
