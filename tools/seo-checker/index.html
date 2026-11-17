@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advanced SEO Checker - Free Website SEO Audit | Helpy Anand Tools</title>
+
+    <meta name="description" content="Check your website SEO score for free. Analyze meta tags, headings, images, links, technical SEO and more with Helpy Anand SEO Checker.">
+
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/seo-checker/">
+
+    <meta property="og:title" content="Advanced SEO Checker - Helpy Anand Tools">
+    <meta property="og:description" content="Analyze your website SEO and discover ways to improve your search engine visibility.">
+    <meta property="og:type" content="website">
+
+    <meta name="theme-color" content="#101a35">
+
+    <link rel="stylesheet" href="/tools/seo-checker/style.css">
+
+    <script src="/js/common.js" defer></script>
+    <script src="/tools/seo-checker/script.js" defer></script>
+</head>
+
+<body>
+
+<div id="common-navbar"></div>
+
+<main class="seo-container">
+
+    <section class="seo-hero">
+
+        <div class="seo-icon">🔍</div>
+
+        <span class="seo-badge">FREE ADVANCED SEO AUDIT</span>
+
+        <h1>Advanced SEO Checker</h1>
+
+        <p>
+            Analyze your website SEO performance and discover
+            opportunities to improve your search engine rankings.
+        </p>
+
+        <div class="seo-search-box">
+
+            <label for="websiteUrl">Enter Your Website URL</label>
+
+            <div class="seo-input-group">
+
+                <input
+                    type="url"
+                    id="websiteUrl"
+                    placeholder="https://example.com"
+                    autocomplete="url"
+                    required
+                >
+
+                <button type="button" id="analyzeBtn">
+                    Analyze Website →
+                </button>
+
+            </div>
+
+            <small>Free website SEO analysis. No registration required.</small>
+
+        </div>
+
+    </section>
+
+    <section class="seo-features">
+
+        <div class="feature-card">
+            <span>📊</span>
+            <h3>SEO Score</h3>
+            <p>Check your overall SEO health.</p>
+        </div>
+
+        <div class="feature-card">
+            <span>🏷️</span>
+            <h3>Meta Analysis</h3>
+            <p>Analyze title and descriptions.</p>
+        </div>
+
+        <div class="feature-card">
+            <span>🖼️</span>
+            <h3>Image SEO</h3>
+            <p>Check image ALT attributes.</p>
+        </div>
+
+        <div class="feature-card">
+            <span>⚙️</span>
+            <h3>Technical SEO</h3>
+            <p>Inspect important SEO signals.</p>
+        </div>
+
+    </section>
+
+    <section class="seo-loading" id="loadingSection" hidden>
+
+        <div class="loading-spinner"></div>
+
+        <h2>Analyzing Your Website...</h2>
+
+        <p>Please wait while we check your SEO information.</p>
+
+    </section>
+
+    <section class="seo-results" id="resultsSection" hidden>
+
+        <div class="results-header">
+            <h2>SEO Audit Report</h2>
+            <p id="analyzedUrl"></p>
+        </div>
+
+        <div id="seoScore"></div>
+
+        <div id="seoReport"></div>
+
+    </section>
+
+    <section class="seo-guide">
+
+        <h2>Why Check Your Website SEO?</h2>
+
+        <p>
+            SEO helps search engines understand your website
+            and helps visitors discover your content.
+            Regular SEO audits can identify technical issues,
+            missing metadata and optimization opportunities.
+        </p>
+
+    </section>
+
+</main>
+
+<div id="common-footer"></div>
+
+</body>
+</html>
