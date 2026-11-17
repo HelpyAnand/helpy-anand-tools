@@ -390,3 +390,22 @@ body {
         transition-duration: 0.01ms !important;
     }
 }
+
+
+/* SEO Content and FAQ Spacing */
+
+.seo-guide h2 {
+    margin-bottom: 20px;
+}
+
+.seo-guide h3 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.seo-guide p {
+    margin-bottom: 5px;
+    line-height: 1.8;
+}
+
