@@ -133,3 +133,62 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+// ==========================================
+// ONLINE TOOLS MOBILE DROPDOWN
+// ==========================================
+
+document.addEventListener("click", function (event) {
+
+    const dropdown = document.querySelector(".nav-dropdown");
+
+    if (!dropdown) return;
+
+    const toggle = event.target.closest(".dropdown-toggle");
+
+    // Mobile: Toggle dropdown on click
+    if (toggle && dropdown.contains(toggle) &&
+        window.matchMedia("(max-width: 768px)").matches) {
+
+        event.preventDefault();
+
+        const isOpen = dropdown.classList.toggle("is-open");
+
+        toggle.setAttribute("aria-expanded", String(isOpen));
+
+        return;
+    }
+
+    // Close when clicking outside
+    if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove("is-open");
+
+        const toggleLink = dropdown.querySelector(".dropdown-toggle");
+
+        if (toggleLink) {
+            toggleLink.setAttribute("aria-expanded", "false");
+        }
+    }
+
+});
+
+// Close dropdown with Escape key
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        const dropdown = document.querySelector(".nav-dropdown");
+
+        if (dropdown) {
+            dropdown.classList.remove("is-open");
+
+            const toggle = dropdown.querySelector(".dropdown-toggle");
+
+            if (toggle) {
+                toggle.setAttribute("aria-expanded", "false");
+                toggle.focus();
+            }
+        }
+    }
+
+});
+

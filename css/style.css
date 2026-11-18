@@ -827,16 +827,125 @@ font-size:17px;
 .contact-title {
     margin-bottom: 15px;
 }
+/* ======================================================
+   PREMIUM ONLINE TOOLS DROPDOWN
+====================================================== */
 
+.nav-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
 
+.dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 7px;
+}
 
+.dropdown-arrow {
+    font-size: 13px;
+    transition: transform .3s ease;
+}
 
+.nav-dropdown:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
 
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 235px;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 12px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.18);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: all .25s ease;
+    z-index: 9999;
+}
 
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
+.dropdown-menu a {
+    display: block !important;
+    color: #12345A !important;
+    padding: 12px 14px !important;
+    margin: 0 !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all .25s ease;
+}
 
+.dropdown-menu a:hover {
+    color: #ef4d1c !important;
+    background: #fff1eb !important;
+    transform: translateX(5px) !important;
+}
 
+/* MOBILE DROPDOWN */
 
+@media(max-width:768px) {
 
+    .nav-dropdown {
+        display: inline-flex;
+    }
 
+    .dropdown-menu {
+        left: 50%;
+        transform: translate(-50%, 12px);
+    }
 
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+        transform: translate(-50%, 0);
+    }
+}
+
+/* MOBILE CLICK DROPDOWN */
+@media(max-width:768px) {
+    .nav-dropdown.is-open .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* HOME PAGE NAVBAR DROPDOWN FIX */
+
+#common-navbar {
+    position: relative;
+    z-index: 10000;
+}
+
+#common-navbar .site-header {
+    position: relative;
+    z-index: 10000;
+}
+
+#common-navbar .nav-dropdown {
+    position: relative;
+    z-index: 10001;
+}
+
+#common-navbar .dropdown-menu {
+    z-index: 10002;
+}
+
+#common-navbar + main {
+    position: relative;
+    z-index: 1;
+}
