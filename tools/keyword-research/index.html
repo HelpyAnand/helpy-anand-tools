@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Keyword Research Tool - Google & Bing Keyword Suggestions | Helpy Anand</title>
+    <meta name="description" content="Discover keyword ideas with our free keyword research tool. Get Google and Bing suggestions, long-tail keywords, question keywords, search intent, keyword clusters and CSV export.">
+    <meta name="keywords" content="free keyword research tool, keyword generator, Google keyword suggestions, Bing keyword suggestions, long tail keywords, keyword ideas, SEO keyword tool">
+    <meta name="author" content="Helpy Anand">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#101a35">
+
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/keyword-research/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Helpy Anand Tools">
+    <meta property="og:title" content="Free Advanced Keyword Research Tool - Helpy Anand">
+    <meta property="og:description" content="Find keyword ideas, long-tail keywords, questions and search intent using Google and Bing suggestions.">
+    <meta property="og:url" content="https://helpy-anand-tools.vercel.app/tools/keyword-research/">
+    <meta property="og:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
+    <meta property="og:image:alt" content="Helpy Anand Free Keyword Research Tool">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Keyword Research Tool - Helpy Anand">
+    <meta name="twitter:description" content="Discover keyword ideas, long-tail keywords and search intent for free.">
+    <meta name="twitter:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/tools/keyword-research/style.css">
+
+    <script src="/js/common.js" defer></script>
+    <script src="/tools/keyword-research/script.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free Keyword Research Tool",
+        "url": "https://helpy-anand-tools.vercel.app/tools/keyword-research/",
+        "description": "Free keyword research tool for discovering Google and Bing suggestions, long-tail keywords, question keywords and search intent.",
+        "applicationCategory": "SEOApplication",
+        "operatingSystem": "Any",
+        "browserRequirements": "Requires JavaScript and a modern web browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Helpy Anand Tools",
+            "url": "https://helpy-anand-tools.vercel.app/"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is this keyword research tool free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Helpy Anand Keyword Research Tool is free to use and does not require registration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Where do keyword suggestions come from?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool retrieves keyword suggestions from Google and Bing autocomplete services."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does this tool show search volume and CPC?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool does not invent search volume, CPC or keyword difficulty figures. It focuses on keyword suggestions and related research features."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I export keyword ideas?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can copy keyword ideas and export the available results as a CSV file."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+
+<body>
+
+<div id="common-navbar"></div>
+
+<main class="keyword-container">
+
+    <section class="keyword-hero">
+        <span class="keyword-badge">FREE ADVANCED SEO TOOL</span>
+        <h1>Free Keyword Research Tool</h1>
+        <p>Discover powerful keyword ideas, long-tail searches and content opportunities with Google and Bing suggestions.</p>
+
+        <div class="keyword-search-panel">
+            <label for="seedKeyword">Enter Your Seed Keyword</label>
+
+            <div class="keyword-search-row">
+                <input
+                    type="search"
+                    id="seedKeyword"
+                    maxlength="120"
+                    placeholder="e.g. digital marketing, online earning, SEO"
+                    autocomplete="off"
+                    required
+                >
+                <button type="button" id="researchBtn">Find Keywords</button>
+            </div>
+
+            <div class="keyword-filter-row">
+                <div>
+                    <label for="countrySelect">Target Country</label>
+                    <select id="countrySelect">
+                        <option value="IN" selected>India</option>
+                        <option value="US">United States</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                        <option value="PK">Pakistan</option>
+                        <option value="BD">Bangladesh</option>
+                        <option value="AE">United Arab Emirates</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="languageSelect">Language</label>
+                    <select id="languageSelect">
+                        <option value="en" selected>English</option>
+                        <option value="hi">Hindi</option>
+                        <option value="bn">Bengali</option>
+                        <option value="ur">Urdu</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+            </div>
+
+            <p class="keyword-note">Free keyword discovery. No registration required. No fabricated SEO metrics.</p>
+            <p id="keywordError" class="keyword-error" role="alert" hidden></p>
+        </div>
+    </section>
+
+    <section class="keyword-feature-grid" aria-label="Keyword research features">
+        <article class="keyword-feature-card">
+            <span>01</span>
+            <h2>Google & Bing Ideas</h2>
+            <p>Discover autocomplete suggestions from two search engines.</p>
+        </article>
+        <article class="keyword-feature-card">
+            <span>02</span>
+            <h2>Long-tail Keywords</h2>
+            <p>Explore more specific keyword opportunities.</p>
+        </article>
+        <article class="keyword-feature-card">
+            <span>03</span>
+            <h2>Question Keywords</h2>
+            <p>Find questions people may search around your topic.</p>
+        </article>
+        <article class="keyword-feature-card">
+            <span>04</span>
+            <h2>Search Intent</h2>
+            <p>Organize keyword ideas by likely search intent.</p>
+        </article>
+    </section>
+
+    <section class="keyword-loading" id="keywordLoading" hidden>
+        <div class="keyword-spinner"></div>
+        <h2>Researching Keywords...</h2>
+        <p>Collecting suggestions from Google and Bing. Please wait.</p>
+    </section>
+
+    <section class="keyword-results" id="keywordResults" hidden>
+        <div class="keyword-results-header">
+            <div>
+                <span class="keyword-section-label">RESEARCH REPORT</span>
+                <h2>Keyword Research Results</h2>
+                <p id="researchSummary"></p>
+            </div>
+            <div class="keyword-export-actions">
+                <button type="button" id="copyKeywordsBtn" class="keyword-secondary-btn">Copy Keywords</button>
+                <button type="button" id="exportCsvBtn" class="keyword-secondary-btn">Export CSV</button>
+            </div>
+        </div>
+
+        <div class="keyword-stats-grid">
+            <article class="keyword-stat-card">
+                <span>Total Suggestions</span>
+                <strong id="totalKeywords">0</strong>
+            </article>
+            <article class="keyword-stat-card">
+                <span>Google Results</span>
+                <strong id="googleStatus">—</strong>
+            </article>
+            <article class="keyword-stat-card">
+                <span>Bing Results</span>
+                <strong id="bingStatus">—</strong>
+            </article>
+        </div>
+
+        <div class="keyword-tabs" role="tablist" aria-label="Keyword result categories">
+            <button type="button" class="keyword-tab active" data-tab="all" aria-selected="true">All Keywords</button>
+            <button type="button" class="keyword-tab" data-tab="longtail" aria-selected="false">Long-tail</button>
+            <button type="button" class="keyword-tab" data-tab="questions" aria-selected="false">Questions</button>
+            <button type="button" class="keyword-tab" data-tab="related" aria-selected="false">Related Keywords</button>
+            <button type="button" class="keyword-tab" data-tab="alphabet" aria-selected="false">A–Z / 0–9</button>
+        </div>
+
+        <div class="keyword-table-wrap">
+            <table class="keyword-table">
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Search Intent</th>
+                        <th>Source</th>
+                        <th>Keyword Type</th>
+                    </tr>
+                </thead>
+                <tbody id="keywordTableBody"></tbody>
+            </table>
+        </div>
+
+        <p id="keywordEmptyState" class="keyword-empty" hidden>No keywords found in this category.</p>
+
+        <section class="keyword-clusters-section">
+            <div class="keyword-subsection-heading">
+                <div>
+                    <span class="keyword-section-label">CONTENT PLANNING</span>
+                    <h3>Keyword Clusters</h3>
+                </div>
+            </div>
+            <div id="keywordClusters" class="keyword-clusters-grid"></div>
+        </section>
+
+        <p class="keyword-disclaimer">Search suggestions are not search-volume measurements. Search intent is an automated estimate and may not match every query.</p>
+    </section>
+
+    <section class="keyword-guide">
+        <span class="keyword-section-label">KEYWORD RESEARCH GUIDE</span>
+        <h2>How to Find the Right Keywords</h2>
+        <p>Keyword research helps you understand the phrases people use when searching for information, products and services. Use keyword ideas to plan useful content and improve your website's search visibility.</p>
+
+        <h3>What Are Long-tail Keywords?</h3>
+        <p>Long-tail keywords are specific search phrases that usually contain more words. They can help you target focused topics and answer more specific search needs.</p>
+
+        <h3>What Are Question Keywords?</h3>
+        <p>Question keywords are searches that begin with words such as what, how, why, when and where. They can help you discover topics for guides, tutorials and FAQs.</p>
+
+        <h3>What Is Search Intent?</h3>
+        <p>Search intent describes the likely purpose behind a search. It is commonly grouped into informational, commercial, transactional and navigational categories.</p>
+
+        <h3>How to Use Keyword Clusters</h3>
+        <p>Keyword clustering groups related phrases together. These groups can help you plan website categories, articles and topic-focused content.</p>
+    </section>
+
+    <section class="keyword-guide keyword-faq">
+        <span class="keyword-section-label">COMMON QUESTIONS</span>
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Is this keyword research tool free?</h3>
+        <p>Yes. You can use this keyword research tool for free without registration.</p>
+
+        <h3>Where do keyword suggestions come from?</h3>
+        <p>Keyword suggestions are retrieved from Google and Bing autocomplete services when available.</p>
+
+        <h3>Does this tool provide search volume, CPC or keyword difficulty?</h3>
+        <p>No fabricated figures are shown. Reliable search volume, CPC and keyword difficulty require dedicated data sources.</p>
+
+        <h3>Can I use this tool for Hindi keywords?</h3>
+        <p>Yes. Select Hindi as the language and choose your target country before starting keyword research.</p>
+
+        <h3>Can I download keyword results?</h3>
+        <p>Yes. You can copy the available keyword list or export the research results as a CSV file.</p>
+    </section>
+
+</main>
+
+<div id="common-footer"></div>
+
+</body>
+</html>
