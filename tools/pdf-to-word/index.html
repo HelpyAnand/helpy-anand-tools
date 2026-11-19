@@ -20,17 +20,22 @@
         content="Convert PDF to Word online with our free PDF to Word converter. Convert PDF files to editable DOCX documents while preserving the original layout."
     >
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+ <link
+    rel="stylesheet"
+    href="../../css/style.css"
+>
+
+<link
+    rel="stylesheet"
+    href="style.css"
+>
 
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <div id="navbar"></div>
+<div id="common-navbar"></div>
 
 
     <main class="pdf-word-page">
@@ -159,11 +164,23 @@
 
 
     <!-- Footer -->
-    <div id="footer"></div>
+   <div id="common-footer"></div>
+<script src="../../js/common.js"></script>
+ <script type="module">
+    import * as pdfjsLib from "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs";
+    import * as docxLib from "https://cdn.jsdelivr.net/npm/docx@9.5.1/+esm";
 
+    window.pdfjsLib = pdfjsLib;
+    window.docx = docxLib;
 
-    <script src="script.js"></script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
 
+    console.log("PDF.js LOADED:", !!window.pdfjsLib);
+    console.log("DOCX LOADED:", !!window.docx);
+
+    await import("./script.js");
+</script>
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+
 export default async function handler(req, res) {
 
     try {
@@ -14,12 +15,8 @@ export default async function handler(req, res) {
         if (req.method !== "POST") {
 
             return res.status(405).json({
-
                 success: false,
-
-                message:
-                    "Only POST method is allowed"
-
+                message: "Only POST method is allowed"
             });
 
         }
@@ -36,12 +33,9 @@ export default async function handler(req, res) {
         if (!apiKey) {
 
             return res.status(500).json({
-
                 success: false,
-
                 message:
                     "CLOUDCONVERT_API_KEY is not configured"
-
             });
 
         }
@@ -51,7 +45,8 @@ export default async function handler(req, res) {
         // REQUEST BODY
         // ---------------------------------
 
-        const body = req.body || {};
+        const body =
+            req.body || {};
 
         const fileBase64 =
             body.fileBase64;
@@ -64,12 +59,9 @@ export default async function handler(req, res) {
         if (!fileBase64) {
 
             return res.status(400).json({
-
                 success: false,
-
                 message:
                     "PDF file data is missing"
-
             });
 
         }
@@ -98,8 +90,14 @@ export default async function handler(req, res) {
                 );
 
 
+        console.log(
+            "CLEAN BASE64 LENGTH:",
+            cleanBase64.length
+        );
+
+
         // ---------------------------------
-        // CREATE CLOUDCONVERT JOB
+        // CLOUDCONVERT JOB
         // ---------------------------------
 
         const jobPayload = {
@@ -160,7 +158,7 @@ export default async function handler(req, res) {
 
 
         // ---------------------------------
-        // CLOUDCONVERT SYNC JOB
+        // SYNCHRONOUS CLOUDCONVERT REQUEST
         // ---------------------------------
 
         const cloudResponse =
@@ -196,7 +194,7 @@ export default async function handler(req, res) {
 
 
         // ---------------------------------
-        // CHECK RESPONSE
+        // CLOUDCONVERT ERROR
         // ---------------------------------
 
         if (!cloudResponse.ok) {
@@ -229,7 +227,35 @@ export default async function handler(req, res) {
 
 
         // ---------------------------------
-        // FETCH OUTPUT FILE
+        // REDIRECT LOCATION
+        // ---------------------------------
+
+        const downloadUrl =
+            cloudResponse.url;
+
+
+        console.log(
+            "CLOUDCONVERT FINAL URL:",
+            downloadUrl
+        );
+
+
+        if (!downloadUrl) {
+
+            return res.status(500).json({
+
+                success: false,
+
+                message:
+                    "CloudConvert did not return a DOCX download URL"
+
+            });
+
+        }
+
+
+        // ---------------------------------
+        // DOWNLOAD DOCX
         // ---------------------------------
 
         console.log(
@@ -239,7 +265,7 @@ export default async function handler(req, res) {
 
         const docxResponse =
             await fetch(
-                cloudResponse.url
+                downloadUrl
             );
 
 
@@ -267,6 +293,10 @@ export default async function handler(req, res) {
         }
 
 
+        // ---------------------------------
+        // DOCX BUFFER
+        // ---------------------------------
+
         const docxBuffer =
             Buffer.from(
                 await docxResponse.arrayBuffer()
@@ -280,8 +310,25 @@ export default async function handler(req, res) {
         );
 
 
+        if (
+            !docxBuffer ||
+            docxBuffer.length === 0
+        ) {
+
+            return res.status(500).json({
+
+                success: false,
+
+                message:
+                    "Generated DOCX file is empty"
+
+            });
+
+        }
+
+
         // ---------------------------------
-        // OUTPUT HEADERS
+        // OUTPUT FILE NAME
         // ---------------------------------
 
         const outputFileName =
@@ -293,30 +340,25 @@ export default async function handler(req, res) {
             ".docx";
 
 
-        res.setHeader(
+        // ---------------------------------
+        // OUTPUT HEADERS
+        // ---------------------------------
 
+        res.setHeader(
             "Content-Type",
-
             "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-
         );
 
 
         res.setHeader(
-
             "Content-Disposition",
-
             `attachment; filename="${outputFileName}"`
-
         );
 
 
         res.setHeader(
-
             "Content-Length",
-
             docxBuffer.length
-
         );
 
 
@@ -360,3 +402,4 @@ export default async function handler(req, res) {
     }
 
 }
+

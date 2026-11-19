@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Meta Tag Generator - Helpy Anand Tools</title>
+
+    <meta name="description" content="Generate SEO-friendly meta tags, Open Graph tags and Twitter Cards for your website. Free online Meta Tag Generator by Helpy Anand.">
+
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Helpy Anand">
+
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/meta-tag-generator/">
+
+    <meta name="theme-color" content="#101a35">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+
+<div id="common-navbar"></div>
+
+<main class="meta-container">
+
+    <!-- HERO SECTION -->
+    <section class="meta-hero">
+
+        <div class="meta-hero-badge">
+            <span class="live-dot"></span>
+            FREE SEO TOOL
+        </div>
+
+        <h1>
+            Meta Tag <span>Generator</span>
+        </h1>
+
+        <p>
+            Generate SEO-friendly meta tags for your website in seconds.
+            Create professional HTML tags without coding knowledge.
+        </p>
+
+        <div class="meta-hero-icon">🏷️</div>
+
+        <div class="meta-hero-stats">
+            <div>
+                <strong>100%</strong>
+                <small>Free</small>
+            </div>
+            <div>
+                <strong>Instant</strong>
+                <small>Generation</small>
+            </div>
+            <div>
+                <strong>Easy</strong>
+                <small>To Use</small>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- MAIN GENERATOR -->
+    <section class="generator-section">
+
+        <div class="meta-section-heading">
+            <span>CREATE YOUR META TAGS</span>
+            <h2>Website Information</h2>
+            <p>Enter your website details to generate meta tags.</p>
+        </div>
+
+        <div class="meta-generator-grid">
+
+            <!-- INPUT FORM -->
+            <div class="meta-form-card">
+
+                <div class="meta-card-heading">
+                    <div class="meta-heading-icon">✏️</div>
+                    <div>
+                        <h3>Enter Website Details</h3>
+                        <p>Fill in the information below</p>
+                    </div>
+                </div>
+
+                <form id="metaForm">
+
+                    <div class="meta-field">
+                        <label for="siteTitle">Website Title <span>*</span></label>
+                        <input
+                            type="text"
+                            id="siteTitle"
+                            placeholder="Example: My Awesome Website"
+                            maxlength="70"
+                            required>
+                        <div class="field-footer">
+                            <small>Recommended: 50–60 characters</small>
+                            <small id="titleCount">0 / 70</small>
+                        </div>
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteDescription">Meta Description <span>*</span></label>
+                        <textarea
+                            id="siteDescription"
+                            rows="4"
+                            maxlength="200"
+                            placeholder="Write a short description of your website..."
+                            required></textarea>
+                        <div class="field-footer">
+                            <small>Recommended: 150–160 characters</small>
+                            <small id="descriptionCount">0 / 200</small>
+                        </div>
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteKeywords">Meta Keywords</label>
+                        <input
+                            type="text"
+                            id="siteKeywords"
+                            placeholder="SEO, Technology, Online Tools">
+                        <small class="field-help">Separate keywords using commas.</small>
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteAuthor">Author Name</label>
+                        <input
+                            type="text"
+                            id="siteAuthor"
+                            placeholder="Example: Your Name">
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteUrl">Website URL <span>*</span></label>
+                        <input
+                            type="url"
+                            id="siteUrl"
+                            placeholder="https://example.com/"
+                            required>
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteImage">Social Sharing Image URL</label>
+                        <input
+                            type="url"
+                            id="siteImage"
+                            placeholder="https://example.com/image.jpg">
+                        <small class="field-help">Recommended image size: 1200 × 630 pixels.</small>
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteLanguage">Website Language</label>
+                        <select id="siteLanguage">
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="en-US">English (US)</option>
+                            <option value="en-GB">English (UK)</option>
+                            <option value="hi-IN">Hindi (India)</option>
+                        </select>
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteRobots">Search Engine Indexing</label>
+                        <select id="siteRobots">
+                            <option value="index, follow">Index, Follow</option>
+                            <option value="noindex, follow">Noindex, Follow</option>
+                            <option value="index, nofollow">Index, Nofollow</option>
+                            <option value="noindex, nofollow">Noindex, Nofollow</option>
+                        </select>
+                    </div>
+
+                    <div class="meta-field">
+                        <label for="siteTheme">Browser Theme Color</label>
+                        <div class="color-field">
+                            <input type="color" id="siteTheme" value="#101a35">
+                            <span id="themeValue">#101a35</span>
+                        </div>
+                    </div>
+
+                    <div class="meta-form-actions">
+                        <button type="submit" class="generate-btn">
+                            Generate Meta Tags →
+                        </button>
+
+                        <button type="reset" class="reset-btn">
+                            Reset Form
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- OUTPUT AREA -->
+            <div class="meta-output-card">
+
+                <div class="meta-card-heading">
+                    <div class="meta-heading-icon output-icon">💻</div>
+                    <div>
+                        <h3>Generated Meta Tags</h3>
+                        <p>Your HTML code will appear here</p>
+                    </div>
+                </div>
+
+                <div id="emptyState" class="meta-empty-state">
+                    <div>🏷️</div>
+                    <h3>Ready to Generate?</h3>
+                    <p>
+                        Fill in your website information and click
+                        Generate Meta Tags.
+                    </p>
+                </div>
+
+                <div id="resultArea" hidden>
+
+                    <div class="output-status">
+                        <span class="status-dot"></span>
+                        Meta Tags Generated Successfully
+                    </div>
+
+                    <pre class="code-preview"><code id="generatedCode"></code></pre>
+
+                    <div class="output-actions">
+                        <button type="button" id="copyBtn" class="copy-btn">
+                            📋 Copy HTML
+                        </button>
+
+                        <button type="button" id="downloadBtn" class="download-btn">
+                            ⬇ Download HTML
+                        </button>
+                    </div>
+
+                    <p class="output-note">
+                        Add these tags inside the
+                        <strong>&lt;head&gt;</strong> section of your HTML page.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW TO USE -->
+    <section class="meta-how-section">
+
+        <div class="meta-section-heading">
+            <span>SIMPLE STEPS</span>
+            <h2>How To Use Meta Tag Generator?</h2>
+            <p>Generate your website meta tags in three easy steps.</p>
+        </div>
+
+        <div class="meta-steps-grid">
+
+            <div class="meta-step-card">
+                <div class="step-icon">📝</div>
+                <span>01</span>
+                <h3>Enter Details</h3>
+                <p>Enter your website title, description and other information.</p>
+            </div>
+
+            <div class="meta-step-card">
+                <div class="step-icon">⚡</div>
+                <span>02</span>
+                <h3>Generate Tags</h3>
+                <p>Click the generate button to instantly create HTML meta tags.</p>
+            </div>
+
+            <div class="meta-step-card">
+                <div class="step-icon">📋</div>
+                <span>03</span>
+                <h3>Copy & Use</h3>
+                <p>Copy your generated code and add it to your website HTML head.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INFORMATION -->
+    <section class="meta-info-section">
+
+        <h2>What Are Meta Tags?</h2>
+
+        <p>
+            Meta tags are HTML elements that provide information about a webpage
+            to search engines and browsers. They help describe your page content,
+            control indexing instructions and improve how your website appears
+            when shared on social media.
+        </p>
+
+        <p>
+            This free Meta Tag Generator helps you create title, description,
+            canonical, robots, Open Graph and Twitter Card tags without
+            writing HTML manually.
+        </p>
+
+    </section>
+
+</main>
+
+
+<div id="common-footer"></div>
+
+<script src="/js/common.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
