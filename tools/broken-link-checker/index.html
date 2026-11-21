@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Broken Link Checker - Find Broken Links | Helpy Anand</title>
+    <meta name="description" content="Check any website for broken links with our free Broken Link Checker. Find broken URLs, redirects and HTTP errors with detailed reports and CSV export.">
+    <meta name="keywords" content="broken link checker, check broken links, website link checker, find dead links, free SEO tools">
+    <meta name="author" content="Helpy Anand">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#123b73">
+
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/broken-link-checker/">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/tools/broken-link-checker/style.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Broken Link Checker | Helpy Anand">
+    <meta property="og:description" content="Find broken links, redirects and website link errors with our free online tool.">
+    <meta property="og:url" content="https://helpy-anand-tools.vercel.app/tools/broken-link-checker/">
+    <meta property="og:site_name" content="Helpy Anand Tools">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Free Broken Link Checker">
+    <meta name="twitter:description" content="Find broken links on your website for free.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Helpy Anand Broken Link Checker",
+        "applicationCategory": "SEOApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Free online tool to find broken links, redirects and HTTP errors on websites.",
+        "url": "https://helpy-anand-tools.vercel.app/tools/broken-link-checker/"
+    }
+    </script>
+</head>
+
+<body>
+    <div id="common-navbar"></div>
+
+    <main class="broken-checker-page">
+
+        <section class="broken-hero">
+            <div class="broken-container">
+                <span class="broken-eyebrow">FREE WEBSITE SEO TOOL</span>
+                <h1>Broken Link Checker</h1>
+                <p>
+                    Find broken links, redirects and HTTP errors on your website.
+                    Scan internal and external links with a detailed report.
+                </p>
+
+                <div class="broken-hero-points">
+                    <span>✓ Free to use</span>
+                    <span>✓ Detailed link reports</span>
+                    <span>✓ CSV export</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="broken-container broken-main-section">
+
+            <div class="broken-scan-card">
+                <div class="broken-card-heading">
+                    <h2>Check Your Website Links</h2>
+                    <p>Enter your website URL to start scanning.</p>
+                </div>
+
+                <form id="scanForm">
+                    <label for="websiteUrl">Website URL</label>
+
+                    <div class="broken-url-input">
+                        <input
+                            type="url"
+                            id="websiteUrl"
+                            name="websiteUrl"
+                            placeholder="https://example.com"
+                            autocomplete="url"
+                            required
+                        >
+                        <button type="submit" id="scanBtn">
+                            Check Broken Links
+                        </button>
+                    </div>
+
+                    <div class="broken-options">
+                        <div>
+                            <label for="crawlDepth">Crawl Depth</label>
+                            <select id="crawlDepth" name="crawlDepth">
+                                <option value="1">Level 1 - Homepage links</option>
+                                <option value="2" selected>Level 2 - Two levels</option>
+                                <option value="3">Level 3 - Three levels</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="maxPages">Maximum Pages</label>
+                            <input type="number" id="maxPages" value="20" readonly>
+                        </div>
+
+                        <div>
+                            <label for="maxLinks">Maximum Links</label>
+                            <input type="number" id="maxLinks" value="100" readonly>
+                        </div>
+                    </div>
+
+                    <p class="broken-form-note">
+                        Scan limit: up to 20 internal pages and 100 unique links.
+                    </p>
+                </form>
+            </div>
+            <section class="broken-features">
+                <h2>What This Tool Checks</h2>
+
+                <div class="broken-feature-grid">
+                    <article class="broken-feature-card">
+                        <h3>Broken Links</h3>
+                        <p>Identify confirmed broken URLs, including HTTP 404 and 410 responses.</p>
+                    </article>
+
+                    <article class="broken-feature-card">
+                        <h3>Redirect Links</h3>
+                        <p>Find URLs that redirect to another page and review their destinations.</p>
+                    </article>
+
+                    <article class="broken-feature-card">
+                        <h3>Internal & External Links</h3>
+                        <p>Review links pointing to pages on your website and other websites.</p>
+                    </article>
+
+                    <article class="broken-feature-card">
+                        <h3>Detailed Reports</h3>
+                        <p>See the source page, target URL, anchor text and HTTP status.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="loadingSection" class="broken-loading" hidden>
+                <div class="broken-loader"></div>
+                <h2>Scanning Your Website...</h2>
+                <p id="progressText">Preparing website scan...</p>
+
+                <div class="broken-progress-track">
+                    <div id="progressBar" class="broken-progress-bar"></div>
+                </div>
+
+                <p id="scanProgress">Please wait while we check your links.</p>
+            </section>
+
+            <section id="errorSection" class="broken-error" hidden>
+                <h2>Unable to Complete Scan</h2>
+                <p id="errorMessage"></p>
+            </section>
+
+            <section id="resultsSection" class="broken-results" hidden>
+                <div class="broken-results-heading">
+                    <div>
+                        <span class="broken-eyebrow">SCAN REPORT</span>
+                        <h2>Website Link Report</h2>
+                        <p id="analyzedUrl"></p>
+                    </div>
+
+                    <button type="button" id="exportCsvBtn">
+                        Export CSV
+                    </button>
+                </div>
+
+                <div class="broken-stats-grid">
+                    <div class="broken-stat-card">
+                        <span>Pages Crawled</span>
+                        <strong id="pagesCrawled">0</strong>
+                    </div>
+
+		<div class="broken-stat-card">
+			<span>Links Discovered</span>
+			<strong id="linksDiscovered">0</strong>
+			</div>
+
+                    <div class="broken-stat-card">
+                        <span>Links Checked</span>
+                        <strong id="linksChecked">0</strong>
+	</div>
+
+		<div class="broken-stat-card">
+			<span>Links Skipped</span>
+			<strong id="linksSkipped">0</strong>
+			</div>
+
+                    <div class="broken-stat-card broken-stat-danger">
+                        <span>Broken Links</span>
+                        <strong id="brokenLinks">0</strong>
+                    </div>
+
+                    <div class="broken-stat-card broken-stat-success">
+                        <span>Working Links</span>
+                        <strong id="workingLinks">0</strong>
+                    </div>
+
+                    <div class="broken-stat-card broken-stat-warning">
+                        <span>Redirects</span>
+                        <strong id="redirectLinks">0</strong>
+                    </div>
+
+                    <div class="broken-stat-card">
+                        <span>Other Errors</span>
+                        <strong id="errorLinks">0</strong>
+                    </div>
+                </div>
+
+                <div class="broken-table-card">
+                    <div class="broken-table-heading">
+                        <h3>Link Details</h3>
+                        <span id="resultCount">0 results</span>
+                    </div>
+
+                    <div class="broken-filters">
+                        <select id="statusFilter" aria-label="Filter by status">
+                            <option value="all">All statuses</option>
+                            <option value="broken">Broken</option>
+                            <option value="working">Working</option>
+                            <option value="redirect">Redirect</option>
+                            <option value="error">Other errors</option>
+                        </select>
+
+                        <select id="typeFilter" aria-label="Filter by link type">
+                            <option value="all">All link types</option>
+                            <option value="internal">Internal</option>
+                            <option value="external">External</option>
+                        </select>
+                    </div>
+
+                    <div class="broken-table-wrapper">
+                        <table class="broken-link-table">
+                            <thead>
+			<tr>
+			<th>Source Page</th>
+				<th>Target URL</th>
+			<th>Final URL</th>
+			<th>Redirect Chain</th>
+			<th>Anchor Text</th>
+			<th>Type</th>
+			<th>Status</th>
+			<th>HTTP Code</th>
+			<th>Error Details</th>
+			</tr>
+				</thead>
+                            <tbody id="resultsTableBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div id="emptyState" class="broken-empty-state" hidden>
+                        No links match the selected filters.
+                    </div>
+                </div>
+
+                <div id="scanDetails" class="broken-scan-details"></div>
+            </section>
+            <section class="broken-guide">
+                <h2>Why Should You Check Broken Links?</h2>
+
+                <p>
+                    Broken links can frustrate visitors and make it harder for
+                    search engines to discover your website content. Regularly
+                    checking your links helps maintain a better user experience
+                    and a healthier website.
+                </p>
+
+                <h3>How to Use the Broken Link Checker</h3>
+                <ol>
+                    <li>Enter your website URL, including https://.</li>
+                    <li>Select how deeply you want the tool to crawl your website.</li>
+                    <li>Click the Check Broken Links button.</li>
+                    <li>Review the results and filter links by status or type.</li>
+                    <li>Export the report as a CSV file for further analysis.</li>
+                </ol>
+
+                <h3>Understanding Link Statuses</h3>
+                <ul>
+                    <li><strong>Working:</strong> The link returned a successful response.</li>
+                    <li><strong>Broken:</strong> The destination returned a confirmed 404 or 410 response.</li>
+                    <li><strong>Redirect:</strong> The destination redirected to another URL.</li>
+                    <li><strong>Other errors:</strong> Access restrictions, server errors, timeouts or network problems. These are not automatically classified as broken.</li>
+                </ul>
+            </section>
+
+            <section class="broken-faq">
+                <h2>Frequently Asked Questions</h2>
+
+                <details>
+                    <summary>What is a broken link?</summary>
+                    <p>A broken link points to a destination that cannot be accessed successfully, often because the page has been removed or the URL is incorrect.</p>
+                </details>
+
+                <details>
+                    <summary>Is this Broken Link Checker free?</summary>
+                    <p>Yes. You can use this tool for free without purchasing a subscription.</p>
+                </details>
+
+                <details>
+                    <summary>Can I check external links?</summary>
+                    <p>Yes. The tool checks both internal links and external links found on the scanned pages.</p>
+                </details>
+
+                <details>
+                    <summary>Does the tool check an entire website?</summary>
+                    <p>The current scan is limited to a maximum of 20 internal pages and 100 unique links. It does not guarantee that every page on a large website will be checked.</p>
+                </details>
+
+                <details>
+                    <summary>What does HTTP 404 mean?</summary>
+                    <p>HTTP 404 means the requested resource was not found. HTTP 410 means the resource is gone.</p>
+                </details>
+
+                <details>
+                    <summary>Are redirects considered broken links?</summary>
+                    <p>No. Redirects are reported separately because they may lead visitors to a valid destination.</p>
+                </details>
+
+                <details>
+                    <summary>Can I download the scan report?</summary>
+                    <p>Yes. After a scan is complete, use Export CSV to download the link report.</p>
+                </details>
+
+                <details>
+                    <summary>Why might some links show other errors?</summary>
+                    <p>Some websites block automated requests or temporarily fail to respond. Access restrictions and timeouts are reported separately rather than being treated as confirmed broken links.</p>
+                </details>
+            </section>
+
+            <p class="broken-disclaimer">
+                <strong>Note:</strong> Scan results depend on the responses returned
+                by destination websites at the time of checking. Some websites may
+                restrict automated requests, so results should be reviewed before
+                making changes.
+            </p>
+
+        </section>
+    </main>
+
+    <div id="common-footer"></div>
+
+    <script src="/js/common.js" defer></script>
+    <script src="/tools/broken-link-checker/script.js" defer></script>
+</body>
+</html>
