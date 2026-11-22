@@ -497,3 +497,101 @@ footer a:hover{
 color:#ffd54f;
 
 }
+
+/* ==========================================
+   TEXT REWRITING GUIDE SECTION
+========================================== */
+
+.text-rewriting-guide {
+    margin-top: 45px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.text-rewriting-guide h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 22px;
+    line-height: 1.4;
+    color: #1f2937;
+}
+
+.text-rewriting-guide h3 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #1f2937;
+}
+
+.text-rewriting-guide h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #1f2937;
+}
+
+.text-rewriting-guide p,
+.text-rewriting-guide li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.text-rewriting-guide p {
+    margin-bottom: 16px;
+}
+
+.text-rewriting-guide ul {
+    margin: 12px 0 22px 20px;
+    padding-left: 18px;
+}
+
+.text-rewriting-guide li {
+    margin-bottom: 9px;
+}
+
+.rewrite-example {
+    margin: 20px 0 25px;
+    padding: 22px;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.rewrite-example h4:not(:first-child) {
+    margin-top: 22px;
+}
+
+.rewrite-example p {
+    margin-bottom: 0;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+
+    .text-rewriting-guide {
+        margin-top: 35px;
+        padding-top: 25px;
+    }
+
+    .text-rewriting-guide h2 {
+        font-size: 19px;
+    }
+
+    .text-rewriting-guide h3 {
+        font-size: 16px;
+    }
+
+    .text-rewriting-guide p,
+    .text-rewriting-guide li {
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .rewrite-example {
+        padding: 16px;
+    }
+
+}
