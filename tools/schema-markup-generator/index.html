@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Free Schema Markup Generator - JSON-LD Structured Data | Helpy Anand</title>
+    <meta name="description" content="Create, edit and validate Schema.org JSON-LD structured data for websites. Generate Organization, LocalBusiness, Article, Product, FAQ and more for free.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Helpy Anand">
+    <link rel="canonical" href="https://helpy-anand-tools.vercel.app/tools/schema-markup-generator/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Schema Markup Generator - Helpy Anand Tools">
+    <meta property="og:description" content="Build and validate JSON-LD structured data with our free Schema Markup Generator.">
+    <meta property="og:url" content="https://helpy-anand-tools.vercel.app/tools/schema-markup-generator/">
+    <meta property="og:site_name" content="Helpy Anand Tools">
+    <meta property="og:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
+    <meta property="og:image:alt" content="Helpy Anand Tools Schema Markup Generator">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Schema Markup Generator - Helpy Anand Tools">
+    <meta name="twitter:description" content="Create and validate Schema.org JSON-LD structured data for free.">
+    <meta name="twitter:image" content="https://helpy-anand-tools.vercel.app/og-image.png">
+    <meta name="theme-color" content="#101a35">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Free Schema Markup Generator",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "Any",
+      "url": "https://helpy-anand-tools.vercel.app/tools/schema-markup-generator/",
+      "description": "Free client-side tool to create, edit and validate Schema.org JSON-LD structured data.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Helpy Anand Tools",
+        "url": "https://helpy-anand-tools.vercel.app/"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="/js/common.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+<div id="common-navbar"></div>
+
+<main class="schema-container">
+
+    <section class="schema-hero">
+        <div class="schema-hero-content">
+            <span class="schema-eyebrow">FREE ADVANCED SEO TOOL</span>
+            <h1>Schema Markup Generator</h1>
+            <p>Create, customize and validate Schema.org structured data with JSON-LD. Build search-engine-understandable markup without coding.</p>
+            <div class="schema-hero-points">
+                <span>✓ 20+ Schema Types</span>
+                <span>✓ Live JSON-LD Preview</span>
+                <span>✓ Built-in Validation</span>
+                <span>✓ 100% Client-Side</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="schema-workspace" aria-label="Schema generator workspace">
+
+        <div class="schema-workspace-heading">
+            <div>
+                <span class="schema-section-label">STRUCTURED DATA WORKSPACE</span>
+                <h2>Build Your Schema</h2>
+                <p>Select a schema type, enter your information and generate JSON-LD.</p>
+            </div>
+            <button type="button" class="schema-button schema-button-secondary" id="resetAllBtn">Reset Workspace</button>
+        </div>
+
+        <div class="schema-layout">
+
+            <section class="schema-panel schema-builder-panel">
+                <div class="schema-panel-heading">
+                    <div>
+                        <h2>Schema Builder</h2>
+                        <p>Choose a type and fill in its properties.</p>
+                    </div>
+                    <span class="schema-step">01</span>
+                </div>
+
+                <label class="schema-label" for="schemaType">Schema Type</label>
+                <select id="schemaType" class="schema-control">
+                    <optgroup label="Website & Identity">
+                        <option value="Organization">Organization</option>
+                        <option value="LocalBusiness">LocalBusiness</option>
+                        <option value="Person">Person</option>
+                        <option value="WebSite">WebSite</option>
+                        <option value="WebPage">WebPage</option>
+                        <option value="SoftwareApplication">SoftwareApplication</option>
+                    </optgroup>
+                    <optgroup label="Content">
+                        <option value="Article">Article</option>
+                        <option value="BlogPosting">BlogPosting</option>
+                        <option value="NewsArticle">NewsArticle</option>
+                        <option value="BreadcrumbList">BreadcrumbList</option>
+                        <option value="FAQPage">FAQPage</option>
+                        <option value="HowTo">HowTo</option>
+                    </optgroup>
+                    <optgroup label="Business & Commerce">
+                        <option value="Product">Product</option>
+                        <option value="Service">Service</option>
+                        <option value="Offer">Offer</option>
+                        <option value="Review">Review</option>
+                        <option value="Event">Event</option>
+                        <option value="JobPosting">JobPosting</option>
+                        <option value="Course">Course</option>
+                    </optgroup>
+                    <optgroup label="Media & Other">
+                        <option value="Recipe">Recipe</option>
+                        <option value="VideoObject">VideoObject</option>
+                        <option value="ImageObject">ImageObject</option>
+                        <option value="Book">Book</option>
+                        <option value="ContactPage">ContactPage</option>
+                        <option value="CollectionPage">CollectionPage</option>
+                    </optgroup>
+                </select>
+
+                <div id="schemaFormFields" class="schema-form-fields" aria-live="polite"></div>
+
+                <div class="schema-builder-actions">
+                    <button type="button" class="schema-button schema-button-primary" id="addSchemaBtn">Add Schema to Graph</button>
+                </div>
+
+                <div class="schema-graph-list">
+                    <div class="schema-subheading">
+                        <h3>Schema Graph</h3>
+                        <span id="schemaCount">0 items</span>
+                    </div>
+                    <div id="schemaItems" class="schema-items">
+                        <p class="schema-empty">Your added schema blocks will appear here.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="schema-panel schema-editor-panel">
+                <div class="schema-panel-heading">
+                    <div>
+                        <h2>Live JSON-LD Editor</h2>
+                        <p>Review and edit your generated structured data.</p>
+                    </div>
+                    <span class="schema-step">02</span>
+                </div>
+
+                <div class="schema-editor-toolbar">
+                    <label class="schema-label" for="jsonOutput">JSON-LD Output</label>
+                    <div class="schema-toolbar-actions">
+                        <button type="button" class="schema-button schema-button-small" id="formatJsonBtn">Format</button>
+                        <button type="button" class="schema-button schema-button-small" id="minifyJsonBtn">Minify</button>
+                    </div>
+                </div>
+
+                <textarea id="jsonOutput" class="schema-code-editor" spellcheck="false" aria-label="Editable JSON-LD code" placeholder="Your generated JSON-LD will appear here..."></textarea>
+                <p class="schema-editor-hint">You can edit this JSON directly. Validation checks the current editor content.</p>
+
+                <div class="schema-export-actions">
+                    <button type="button" class="schema-button schema-button-primary" id="copyJsonBtn">Copy JSON-LD</button>
+                    <button type="button" class="schema-button schema-button-secondary" id="downloadJsonBtn">Download JSON</button>
+                    <button type="button" class="schema-button schema-button-secondary" id="copyHtmlBtn">Copy HTML Script</button>
+                </div>
+
+                <div class="schema-import-area">
+                    <label class="schema-label" for="importJsonFile">Import existing JSON or JSON-LD</label>
+                    <div class="schema-import-row">
+                        <input type="file" id="importJsonFile" accept=".json,.ld+json,application/json,application/ld+json">
+                        <button type="button" class="schema-button schema-button-secondary" id="importJsonBtn">Import File</button>
+                    </div>
+                    <button type="button" class="schema-text-button" id="loadExampleBtn">Load sample Article schema</button>
+                </div>
+                <div id="schemaMessage" class="schema-message" role="status" aria-live="polite"></div>
+            </section>
+        </div>
+
+        <section class="schema-panel schema-validation-panel">
+            <div class="schema-panel-heading">
+                <div>
+                    <h2>Schema Validation & SEO Checks</h2>
+                    <p>Check JSON syntax, common properties and structured data recommendations.</p>
+                </div>
+                <span class="schema-step">03</span>
+            </div>
+            <div class="schema-validation-actions">
+                <button type="button" class="schema-button schema-button-primary" id="validateSchemaBtn">Validate Schema</button>
+                <span class="schema-validation-note">Local checks only · No data uploaded</span>
+            </div>
+            <div id="validationSummary" class="validation-summary">
+                <p>Add or import schema markup, then run validation to see the results.</p>
+            </div>
+            <div id="validationResults" class="validation-results" aria-live="polite"></div>
+        </section>
+    </section>
+
+    <section class="schema-guide">
+        <span class="schema-section-label">LEARN STRUCTURED DATA</span>
+        <h2>What Is Schema Markup?</h2>
+        <p>Schema markup is structured data added to a webpage to help search engines understand the meaning and context of its content. JSON-LD is a widely recommended format for implementing Schema.org structured data.</p>
+        <div class="schema-guide-grid">
+            <article class="schema-guide-card">
+                <h3>Why Use JSON-LD?</h3>
+                <p>JSON-LD keeps structured data separate from visible HTML, making it easier to create, maintain and update.</p>
+            </article>
+            <article class="schema-guide-card">
+                <h3>Schema.org Vocabulary</h3>
+                <p>Schema.org defines shared types and properties for describing organizations, articles, products, events and more.</p>
+            </article>
+            <article class="schema-guide-card">
+                <h3>Better Search Understanding</h3>
+                <p>Accurate structured data can help search engines interpret page content. It does not guarantee higher rankings or rich results.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="schema-guide">
+        <h2>How to Use This Schema Markup Generator</h2>
+        <ol>
+            <li>Select the schema type that matches the visible content of your page.</li>
+            <li>Complete the relevant fields using accurate information.</li>
+            <li>Add the schema to your graph and review the generated JSON-LD.</li>
+            <li>Run local validation and fix any reported issues.</li>
+            <li>Copy the JSON-LD or HTML script tag and add it to the appropriate webpage.</li>
+            <li>Test your deployed page with Google's Rich Results Test when applicable.</li>
+        </ol>
+    </section>
+
+    <section class="schema-guide schema-faq">
+        <h2>Frequently Asked Questions</h2>
+        <article>
+            <h3>Is this Schema Markup Generator free?</h3>
+            <p>Yes. You can create, edit, validate and download JSON-LD structured data without registration or a paid API.</p>
+        </article>
+        <article>
+            <h3>What schema types are supported?</h3>
+            <p>The tool includes common schema types for websites, organizations, people, articles, products, services, events, recipes, FAQs and more.</p>
+        </article>
+        <article>
+            <h3>Does valid schema guarantee Google rich results?</h3>
+            <p>No. Google decides rich result eligibility based on its current feature requirements, page quality and other policies. Correct markup does not guarantee a rich result or higher rankings.</p>
+        </article>
+        <article>
+            <h3>Does this tool upload my data?</h3>
+            <p>No. Schema generation and local validation run in your browser. Your entered content is not sent to our server by this tool.</p>
+        </article>
+        <article>
+            <h3>Can I edit an existing JSON-LD file?</h3>
+            <p>Yes. Import a JSON or JSON-LD file, edit the code in the editor and validate it before using it on your website.</p>
+        </article>
+        <article>
+            <h3>Is the built-in validation a replacement for Google's tools?</h3>
+            <p>No. It checks JSON syntax and common schema recommendations. Use Schema.org Validator and Google's Rich Results Test for additional checks.</p>
+        </article>
+    </section>
+
+</main>
+
+<div id="common-footer"></div>
+</body>
+</html>
